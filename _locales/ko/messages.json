@@ -1,0 +1,68 @@
+{
+   "Description": {
+      "message": "현재 열려 있는 웹 페이지의 URL을 부분적으로 대체하여 새 탭에서 엽니다. 도메인 변경이나 테스트 환경 전환 등에 사용하세요."
+   },
+   "Name": {
+      "message": "The Switcher[도메인 변경]"
+   },
+   "option_message_01": {
+      "message": "※ver.1.20부터 데이터 저장 위치가 변경되었습니다. 이전 버전을 사용하신 분들은 다시 설정해 주시기 바랍니다."
+   },
+   "option_message_02": {
+      "message": "또한, 기존 데이터는 옵션 화면 최초 표시 시 삭제됩니다."
+   },
+   "option_message_03": {
+      "message": "현재 열려 있는 웹 페이지의 URL을 부분적으로 대체하여 새 탭에서 여는 확장 기능입니다. 도메인 변경이나 테스트 환경 전환 등에 사용하세요."
+   },
+   "option_message_04": {
+      "message": "프로젝트 추가"
+   },
+   "option_message_05": {
+      "message": "업데이트"
+   },
+   "option_message_06": {
+      "message": "저장"
+   },
+   "option_message_07": {
+      "message": "프로젝트 삭제"
+   },
+   "option_message_08": {
+      "message": "문서 루트 추가"
+   },
+   "option_message_09": {
+      "message": "업데이트 내역"
+   },
+   "option_message_10": {
+      "message": "자세한 내용은 \u003Ca href='https://chrome.google.com/webstore/detail/the-switcher/ibnjhiipcjlebggficnjfanodgpabpcm' target='_blank'>Chrome 웹 스토어\u003C/a>에서 확인하세요."
+   },
+   "option_message_11": {
+      "message": "힌트 ▼"
+   },
+   "option_message_12": {
+      "message": "위 예시처럼 '운영 환경', '스테이징 환경', '로컬 환경' 등의 도메인 루트를 설정합니다."
+   },
+   "option_message_13": {
+      "message": "설정한 URL이 포함된 웹 페이지를 Chrome에서 탐색할 때 확장 기능 탭에 있는 \u003Cimg class='icon' src='./image/icon16.png'>를 클릭하면 전환용 링크가 표시됩니다."
+   },
+   "option_message_14": {
+      "message": "(1) 문서 루트가 \u003Cspan style='color: red'>2개만 설정되어 있는 경우, 직접 새 탭이 열립니다\u003C/span>."
+   },
+   "option_message_14_0": {
+      "message": "주요 특징 3가지"
+   },
+   "option_message_15": {
+      "message": "(2) \u003Cspan style='color:red;'>페이지 안에서 오른쪽 클릭으로도 컨텍스트 메뉴가 표시됩니다\u003C/span>."
+   },
+   "option_message_16": {
+      "message": "(3) \u003Cspan class='code'>ctrl\u003C/span> + \u003Cspan class='code'>Shift\u003C/span> + \u003Cspan class='code'>Up\u003C/span>（위쪽 화살표）를 눌러 \u003Cspan style='color: red;'>단축키로 실행할 수 있습니다\u003C/span>! URL에 포커스가 맞춰진 상태에서 \u003Cspan class='code'>Enter\u003C/span>를 누르면 Switching...합니다. 간편하고 유용합니다. \u003Cspan class='code'>Up\u003C/span>, \u003Cspan class='code'>Down\u003C/span>으로 선택 가능합니다."
+   },
+   "option_message_17": {
+      "message": "같은 탭에서 열기 (2개의 도메인의 경우)"
+   },
+   "popup_message_01": {
+      "message": "이 URL은 대상이 아닙니다. \u003Ca href='options.html' target='_blank'>옵션 페이지\u003C/a>에서 프로젝트 또는 URL을 추가하세요."
+   },
+   "popup_message_02": {
+      "message": "※ver.1.20부터 데이터 저장 위치가 변경되었습니다. 다시 설정해 주시기 바랍니다."
+   }
+}

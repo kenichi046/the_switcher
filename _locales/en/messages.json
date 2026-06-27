@@ -1,0 +1,68 @@
+{
+   "Description": {
+      "message": "Partially replace the URL of the currently open web page and open it in another tab. Please use it for switching domains. etc..."
+   },
+   "Name": {
+      "message": "The Switcher[Change Domains]"
+   },
+   "option_message_01": {
+      "message": "*From ver.1.20, the data save destination has been changed. Please make the settings again."
+   },
+   "option_message_02": {
+      "message": "Please be assured that the old data will be deleted when the option screen is initially displayed."
+   },
+   "option_message_03": {
+      "message": "An extension that replaces the URL of the currently open web page and opens it in an another tab. Please use it for switching domains, switching test environments and other."
+   },
+   "option_message_04": {
+      "message": "add new project"
+   },
+   "option_message_05": {
+      "message": "reload"
+   },
+   "option_message_06": {
+      "message": "save options"
+   },
+   "option_message_07": {
+      "message": "remove project"
+   },
+   "option_message_08": {
+      "message": "add enviroment"
+   },
+   "option_message_09": {
+      "message": "updates"
+   },
+   "option_message_10": {
+      "message": "Please check the \u003Ca href='https://chrome.google.com/webstore/detail/the-switcher/ibnjhiipcjlebggficnjfanodgpabpcm' target='_blank'>Crome Web Store\u003C/a>"
+   },
+   "option_message_11": {
+      "message": "More HINT ▼"
+   },
+   "option_message_12": {
+      "message": "As in the above sample, set the domain root such as 'production environment', 'staging environment', and 'local environment'."
+   },
+   "option_message_13": {
+      "message": "When browsing a web page containing the set URL in Chrome, clicking on the extension tab (\u003Cimg class='icon' src='./image/icon16.png'>) will display links for switching."
+   },
+   "option_message_14": {
+      "message": "(1) If only two document roots are set, another tab will \u003Cspan style='color:red;'>open directly\u003C/span>."
+   },
+   "option_message_14_0": {
+      "message": "CHEK IT"
+   },
+   "option_message_15": {
+      "message": "(2) You can also \u003Cspan style='color:red;'>right-click within the page to display the context menu\u003C/span>."
+   },
+   "option_message_16": {
+      "message": "(3) In addition, \u003Cspan class='code'>ctrl\u003C/span> + \u003Cspan class='code'>Shift\u003C/span> + \u003Cspan class='code'>Up\u003C/span> (up arrow) opens the shortcut! Soberly convenient."
+   },
+   "option_message_17": {
+      "message": "Open in the same tab (for 2 domains)"
+   },
+   "popup_message_01": {
+      "message": "This URL is out of scope. Add a project or URL on the options page."
+   },
+   "popup_message_02": {
+      "message": "*From ver.1.20, the data save destination has been changed. Please make the \u003Ca href='options.html' target='_blank'>settings\u003C/a> again."
+   }
+}

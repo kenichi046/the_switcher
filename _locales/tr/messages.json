@@ -1,0 +1,68 @@
+{
+   "Description": {
+      "message": "Şu anda açık olan web sayfasının URL'sini kısmen değiştirerek yeni bir sekmede açar. Alan adı değişikliği veya test ortamına geçiş gibi durumlar için kullanabilirsiniz."
+   },
+   "Name": {
+      "message": "The Switcher[Alan Adı Değişimi]"
+   },
+   "option_message_01": {
+      "message": "※ver.1.20'den itibaren, veri kaydetme yeri değişmiştir. Daha önceki sürümü kullananlar lütfen yeniden ayar yapınız."
+   },
+   "option_message_02": {
+      "message": "Ayrıca, eski veriler seçenekler ekranının ilk gösteriminde silinecektir."
+   },
+   "option_message_03": {
+      "message": "Şu anda açık olan web sayfasının URL'sini kısmen değiştirerek yeni bir sekmede açan bir uzantıdır. Alan adı değişikliği veya test ortamına geçiş gibi durumlar için kullanabilirsiniz."
+   },
+   "option_message_04": {
+      "message": "Proje ekle"
+   },
+   "option_message_05": {
+      "message": "Güncelle"
+   },
+   "option_message_06": {
+      "message": "Kaydet"
+   },
+   "option_message_07": {
+      "message": "Projeyi sil"
+   },
+   "option_message_08": {
+      "message": "Doküman kökü ekle"
+   },
+   "option_message_09": {
+      "message": "Güncelleme geçmişi"
+   },
+   "option_message_10": {
+      "message": "Lütfen \u003Ca href='https://chrome.google.com/webstore/detail/the-switcher/ibnjhiipcjlebggficnjfanodgpabpcm' target='_blank'>Chrome Web Mağazası\u003C/a>'nı kontrol edin."
+   },
+   "option_message_11": {
+      "message": "İpucu ▼"
+   },
+   "option_message_12": {
+      "message": "Yukarıdaki örnekte olduğu gibi, 'canlı ortam', 'hazırlık ortamı', 'yerel ortam' gibi alan adı köklerini ayarlayın."
+   },
+   "option_message_13": {
+      "message": "Chrome'da ayarladığınız URL'yi içeren bir web sayfasını gezinirken, uzantı sekmesindeki \u003Cimg class='icon' src='./image/icon16.png'> simgesine tıklayarak geçiş için bir bağlantı görüntülenir."
+   },
+   "option_message_14": {
+      "message": "(1) Eğer yalnızca \u003Cspan style='color: red'>iki doküman kökü ayarlanmışsa, doğrudan yeni bir sekme açılır\u003C/span>."
+   },
+   "option_message_14_0": {
+      "message": "Farklı olan üç önemli özellik"
+   },
+   "option_message_15": {
+      "message": "(2) \u003Cspan style='color:red;'>Sayfa içinde sağ tıklandığında da bir bağlam menüsü görüntülenir\u003C/span>."
+   },
+   "option_message_16": {
+      "message": "(3) \u003Cspan class='code'>ctrl\u003C/span> + \u003Cspan class='code'>Shift\u003C/span> + \u003Cspan class='code'>Up\u003C/span> (yukarı ok) tuşlarına basarak \u003Cspan style='color: red;'>kısayol ile başlatabilirsiniz\u003C/span>! URL'ye odaklandığınızda \u003Cspan class='code'>Enter\u003C/span>'a basarak geçiş yaparsınız. Sade ama kullanışlıdır. \u003Cspan class='code'>Up\u003C/span>, \u003Cspan class='code'>Down\u003C/span> ile seçim yapabilirsiniz."
+   },
+   "option_message_17": {
+      "message": "Aynı sekmede aç (2 alan adı için)"
+   },
+   "popup_message_01": {
+      "message": "Bu URL kapsam dışıdır. Lütfen bir proje veya URL eklemek için \u003Ca href='options.html' target='_blank'>Seçenekler sayfasını\u003C/a> ziyaret edin."
+   },
+   "popup_message_02": {
+      "message": "※ver.1.20'den itibaren, veri kaydetme yeri değişmiştir. Lütfen yeniden ayar yapınız."
+   }
+}

@@ -1,0 +1,68 @@
+{
+   "Description": {
+      "message": "Ouvre dans un nouvel onglet l'URL de la page Web actuellement ouverte après en avoir partiellement substitué. Utilisez-le pour changer de domaine ou basculer vers un environnement de test."
+   },
+   "Name": {
+      "message": "The Switcher[Changement de Domaine]"
+   },
+   "option_message_01": {
+      "message": "※Depuis la version 1.20, l'emplacement de sauvegarde des données a été modifié. Veuillez reconfigurer si vous utilisiez une version antérieure."
+   },
+   "option_message_02": {
+      "message": "De plus, les anciennes données seront supprimées lors de la première affichage de l'écran des options."
+   },
+   "option_message_03": {
+      "message": "C'est une extension qui ouvre dans un nouvel onglet l'URL de la page Web actuellement ouverte après en avoir partiellement substitué. Utilisez-le pour changer de domaine ou basculer vers un environnement de test."
+   },
+   "option_message_04": {
+      "message": "Ajouter un projet"
+   },
+   "option_message_05": {
+      "message": "Mettre à jour"
+   },
+   "option_message_06": {
+      "message": "Sauvegarder"
+   },
+   "option_message_07": {
+      "message": "Supprimer un projet"
+   },
+   "option_message_08": {
+      "message": "Ajouter une racine de document"
+   },
+   "option_message_09": {
+      "message": "Historique des mises à jour"
+   },
+   "option_message_10": {
+      "message": "Veuillez vérifier sur le \u003Ca href='https://chrome.google.com/webstore/detail/the-switcher/ibnjhiipcjlebggficnjfanodgpabpcm' target='_blank'>Chrome Web Store\u003C/a>."
+   },
+   "option_message_11": {
+      "message": "Astuce ▼"
+   },
+   "option_message_12": {
+      "message": "Comme dans l'exemple ci-dessus, configurez les racines de domaine telles que 'environnement de production', 'environnement de staging', 'environnement local'."
+   },
+   "option_message_13": {
+      "message": "Lorsque vous naviguez sur une page Web contenant l'URL configurée dans Chrome, cliquez sur \u003Cimg class='icon' src='./image/icon16.png'> dans l'onglet de l'extension pour afficher le lien de basculement."
+   },
+   "option_message_14": {
+      "message": "(1) Si seulement \u003Cspan style='color: red'>deux racines de document sont configurées, un nouvel onglet s'ouvre directement\u003C/span>."
+   },
+   "option_message_14_0": {
+      "message": "Trois caractéristiques principales"
+   },
+   "option_message_15": {
+      "message": "(2) \u003Cspan style='color:red;'>Un menu contextuel s'affiche également en cliquant avec le bouton droit de la souris dans la page\u003C/span>."
+   },
+   "option_message_16": {
+      "message": "(3) Appuyez sur \u003Cspan class='code'>ctrl\u003C/span> + \u003Cspan class='code'>Shift\u003C/span> + \u003Cspan class='code'>Up\u003C/span> (flèche vers le haut) pour \u003Cspan style='color: red;'>démarrer avec un raccourci\u003C/span>! Appuyez sur \u003Cspan class='code'>Enter\u003C/span> lorsque l'URL est en focus pour commuter. C'est subtilement pratique. Vous pouvez choisir avec \u003Cspan class='code'>Up\u003C/span>, \u003Cspan class='code'>Down\u003C/span>."
+   },
+   "option_message_17": {
+      "message": "Ouvrir dans le même onglet (pour 2 domaines)"
+   },
+   "popup_message_01": {
+      "message": "Cette URL n'est pas concernée. Veuillez ajouter un projet ou une URL sur la \u003Ca href='options.html' target='_blank'>page des options\u003C/a>."
+   },
+   "popup_message_02": {
+      "message": "※Depuis la version 1.20, l'emplacement de sauvegarde des données a été modifié. Veuillez reconfigurer."
+   }
+}

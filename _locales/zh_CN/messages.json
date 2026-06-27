@@ -1,0 +1,68 @@
+{
+   "Description": {
+      "message": "当前打开的Web页面的URL进行部分替换后在新标签页中打开。请用于切换域名或测试环境等。"
+   },
+   "Name": {
+      "message": "The Switcher[域名切换]"
+   },
+   "option_message_01": {
+      "message": "※从ver.1.20开始，数据的保存位置已更改。给使用之前版本的用户带来不便，敬请重新设置。"
+   },
+   "option_message_02": {
+      "message": "另外，旧数据将在选项页面首次显示时被删除。"
+   },
+   "option_message_03": {
+      "message": "这是一个扩展功能，可以部分替换当前打开的Web页面的URL，并在新标签页中打开。请用于切换域名或测试环境等。"
+   },
+   "option_message_04": {
+      "message": "添加项目"
+   },
+   "option_message_05": {
+      "message": "更新"
+   },
+   "option_message_06": {
+      "message": "保存"
+   },
+   "option_message_07": {
+      "message": "删除项目"
+   },
+   "option_message_08": {
+      "message": "添加文档根目录"
+   },
+   "option_message_09": {
+      "message": "更新历史"
+   },
+   "option_message_10": {
+      "message": "详情请查看\u003Ca href='https://chrome.google.com/webstore/detail/the-switcher/ibnjhiipcjlebggficnjfanodgpabpcm' target='_blank'>Chrome网络商店\u003C/a>。"
+   },
+   "option_message_11": {
+      "message": "提示 ▼"
+   },
+   "option_message_12": {
+      "message": "如上示例所示，设置“生产环境”、“暂存环境”、“本地环境”等域名根目录。"
+   },
+   "option_message_13": {
+      "message": "在Chrome中浏览包含设置的URL的网页时，点击扩展功能标签中的\u003Cimg class='icon' src='./image/icon16.png'>将显示切换用链接。"
+   },
+   "option_message_14": {
+      "message": "(1) 如果仅设置了\u003Cspan style='color: red'>两个文档根目录，将直接打开新标签页\u003C/span>。"
+   },
+   "option_message_14_0": {
+      "message": "三个主要特点"
+   },
+   "option_message_15": {
+      "message": "(2) \u003Cspan style='color:red;'>在页面内右键点击也会显示上下文菜单\u003C/span>。"
+   },
+   "option_message_16": {
+      "message": "(3) 按\u003Cspan class='code'>ctrl\u003C/span> + \u003Cspan class='code'>Shift\u003C/span> + \u003Cspan class='code'>Up\u003C/span>（上箭头）可以\u003Cspan style='color: red;'>使用快捷键启动\u003C/span>！在URL聚焦状态下按\u003Cspan class='code'>Enter\u003C/span>进行切换。简单且实用。\u003Cspan class='code'>Up\u003C/span>、\u003Cspan class='code'>Down\u003C/span>可选。"
+   },
+   "option_message_17": {
+      "message": "在同一个标签页中打开（适用于2个域名）"
+   },
+   "popup_message_01": {
+      "message": "此URL不在范围内。请在\u003Ca href='options.html' target='_blank'>选项页面\u003C/a>添加项目或URL。"
+   },
+   "popup_message_02": {
+      "message": "※从ver.1.20开始，数据的保存位置已更改。请重新设置。"
+   }
+}

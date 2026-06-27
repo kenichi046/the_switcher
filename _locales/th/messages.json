@@ -1,0 +1,68 @@
+{
+   "Description": {
+      "message": "เปิด URL ของหน้าเว็บที่กำลังเปิดอยู่ในแท็บใหม่หลังจากเปลี่ยนแปลง URL บางส่วน ใช้สำหรับเปลี่ยนโดเมนหรือเปลี่ยนไปยังสภาพแวดล้อมการทดสอบ"
+   },
+   "Name": {
+      "message": "The Switcher[เปลี่ยนโดเมน]"
+   },
+   "option_message_01": {
+      "message": "※ตั้งแต่เวอร์ชัน 1.20 ตำแหน่งการเก็บข้อมูลได้เปลี่ยนแปลง ผู้ที่ใช้เวอร์ชันก่อนหน้านี้กรุณาตั้งค่าใหม่"
+   },
+   "option_message_02": {
+      "message": "นอกจากนี้ ข้อมูลเก่าจะถูกลบเมื่อแสดงหน้าตัวเลือกครั้งแรก"
+   },
+   "option_message_03": {
+      "message": "เป็นส่วนขยายที่เปิด URL ของหน้าเว็บที่กำลังเปิดอยู่ในแท็บใหม่หลังจากเปลี่ยนแปลง URL บางส่วน ใช้สำหรับเปลี่ยนโดเมนหรือเปลี่ยนไปยังสภาพแวดล้อมการทดสอบ"
+   },
+   "option_message_04": {
+      "message": "เพิ่มโปรเจค"
+   },
+   "option_message_05": {
+      "message": "อัปเดต"
+   },
+   "option_message_06": {
+      "message": "บันทึก"
+   },
+   "option_message_07": {
+      "message": "ลบโปรเจค"
+   },
+   "option_message_08": {
+      "message": "เพิ่มรากเอกสาร"
+   },
+   "option_message_09": {
+      "message": "ประวัติการอัปเดต"
+   },
+   "option_message_10": {
+      "message": "โปรดตรวจสอบที่ \u003Ca href='https://chrome.google.com/webstore/detail/the-switcher/ibnjhiipcjlebggficnjfanodgpabpcm' target='_blank'>Crome Web Store\u003C/a>"
+   },
+   "option_message_11": {
+      "message": "เคล็ดลับ ▼"
+   },
+   "option_message_12": {
+      "message": "ตั้งค่ารากโดเมนเช่น 'สภาพแวดล้อมการผลิต', 'สภาพแวดล้อมการเตรียม', 'สภาพแวดล้อมท้องถิ่น' เหมือนตัวอย่างข้างต้น"
+   },
+   "option_message_13": {
+      "message": "เมื่อคุณเรียกดูหน้าเว็บที่มี URL ที่ตั้งค่าไว้ใน Chrome คลิกที่ \u003Cimg class='icon' src='./image/icon16.png'> ในแท็บส่วนขยายเพื่อแสดงลิงก์สำหรับสลับ"
+   },
+   "option_message_14": {
+      "message": "(1) หากมีการตั้งค่ารากเอกสารเพียง \u003Cspan style='color: red'>2 รากเท่านั้น จะเปิดแท็บใหม่โดยตรง\u003C/span>"
+   },
+   "option_message_14_0": {
+      "message": "3 คุณสมบัติสำคัญที่แตกต่าง"
+   },
+   "option_message_15": {
+      "message": "(2) \u003Cspan style='color:red;'>คลิกขวาภายในหน้าเพจเพื่อแสดงเมนูบริบท\u003C/span>"
+   },
+   "option_message_16": {
+      "message": "(3) กด \u003Cspan class='code'>ctrl\u003C/span> + \u003Cspan class='code'>Shift\u003C/span> + \u003Cspan class='code'>Up\u003C/span> (ลูกศรขึ้น) เพื่อ\u003Cspan style='color: red;'>เริ่มด้วยทางลัด\u003C/span>! กด \u003Cspan class='code'>Enter\u003C/span> เมื่อ URL อยู่ในโฟกัสเพื่อสลับ มีประโยชน์แบบไม่ฉูดฉาด เลือกได้ด้วย \u003Cspan class='code'>Up\u003C/span>, \u003Cspan class='code'>Down\u003C/span>"
+   },
+   "option_message_17": {
+      "message": "เปิดในแท็บเดียวกัน (กรณี 2 โดเมน)"
+   },
+   "popup_message_01": {
+      "message": "URL นี้ไม่อยู่ในขอบเขต โปรดเพิ่มโปรเจคหรือ URL ใน\u003Ca href='options.html' target='_blank'>หน้าตัวเลือก\u003C/a>"
+   },
+   "popup_message_02": {
+      "message": "※ตั้งแต่เวอร์ชัน 1.20 ตำแหน่งการเก็บข้อมูลได้เปลี่ยนแปลง กรุณาตั้งค่าใหม่"
+   }
+}

@@ -1,0 +1,31 @@
+{
+   "action": {
+      "default_popup": "popup.html"
+   },
+   "background": {
+      "service_worker": "js/background.js"
+   },
+   "commands": {
+      "_execute_action": {
+         "description": "__MSG_Name__",
+         "suggested_key": {
+            "default": "Ctrl+Shift+Up",
+            "mac": "MacCtrl+Shift+Up"
+         }
+      }
+   },
+   "default_locale": "en",
+   "description": "__MSG_Description__",
+   "icons": {
+      "128": "image/icon128.png",
+      "16": "image/icon16.png",
+      "48": "image/icon48.png"
+   },
+   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAti9flo74dKPCIFk1++7KgtioYy+iDDv/vAmzFPpAUau0IBXi6LzDo6QpH1FcTRVYO7hpTK1b/F/L0Coz4aAXLy06CnynkZQMmx+ZUUGTHScrXexGfldJwjiEUvsdUBO8JjKbUk3D5OZdty1pxg0fDZwdCL8J7xAZ9vQwPgNXuXjpIW4+d5RybOrQv5KL+DyzMKchdIo/f7dUT7JckPSiRRuMBPYichfUEGjX1LoQVr7NGkPn4ugAN9L4bUqlDZ5dVGCY+JTX4mS4UnM1X8K8ATKF2fKj+5ydonMMOnz81uQc9Yi3AQIlI/0iGKE0IKMtIgX252kQg9oV8owjesg8oQIDAQAB",
+   "manifest_version": 3,
+   "name": "__MSG_Name__",
+   "options_page": "options.html",
+   "permissions": [ "activeTab", "contextMenus", "storage", "tabs", "scripting" ],
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "1.334.5"
+}

@@ -1,0 +1,68 @@
+{
+   "Description": {
+      "message": "現在開いているWebページのURLを部分置換して別タブで開きます。ドメインの切り替えやテスト環境の切り替えなどにご利用ください。"
+   },
+   "Name": {
+      "message": "The Switcher[ドメイン切り替え]"
+   },
+   "option_message_01": {
+      "message": "※ver.1.20より、データの保存先が変更になりました。お手数ですがそれ以前のバージョンをご利用いただいていた方は、再度設定をお願いします。"
+   },
+   "option_message_02": {
+      "message": "尚、旧データはオプション画面初期表示の際に消去するようにしております。"
+   },
+   "option_message_03": {
+      "message": "現在開いているWebページのURLを部分置換して別タブで開く拡張機能です。ドメインの切り替えやテスト環境の切り替えなどにご利用ください。"
+   },
+   "option_message_04": {
+      "message": "プロジェクトを追加"
+   },
+   "option_message_05": {
+      "message": "更新"
+   },
+   "option_message_06": {
+      "message": "保存"
+   },
+   "option_message_07": {
+      "message": "プロジェクトを削除"
+   },
+   "option_message_08": {
+      "message": "ドキュメントルートを追加"
+   },
+   "option_message_09": {
+      "message": "更新履歴"
+   },
+   "option_message_10": {
+      "message": "\u003Ca href='https://chrome.google.com/webstore/detail/the-switcher/ibnjhiipcjlebggficnjfanodgpabpcm' target='_blank'>Crome Web Store\u003C/a>をご確認ください。"
+   },
+   "option_message_11": {
+      "message": "ヒント ▼"
+   },
+   "option_message_12": {
+      "message": "上記サンプルのように、「本番環境」「ステージング環境」「ローカル環境」などのドメインルートを設定します。"
+   },
+   "option_message_13": {
+      "message": "設定したURLを含むウェブページをChromeで閲覧している時に、拡張機能タブにある\u003Cimg class='icon' src='./image/icon16.png'>をクリックすることで切り替え用のリンクが表示されます。"
+   },
+   "option_message_14": {
+      "message": "(1) ドキュメントルートが\u003Cspan style='color: red'>2個のみ設定されている場合は、ダイレクトに別タブが開きます\u003Cspan>。"
+   },
+   "option_message_14_0": {
+      "message": "アピールポイントココが違う3つの特長"
+   },
+   "option_message_15": {
+      "message": "(2) \u003Cspan style='color:red;'>ページ内で右クリックでもコンテキストメニューが表示\u003C/span>されます。"
+   },
+   "option_message_16": {
+      "message": "(3) )\u003Cspan class='code'>ctrl\u003C/span> + \u003Cspan class='code'>Shift\u003C/span> + \u003Cspan class='code'>Up\u003C/span>（上矢印）で\u003Cspan style='color: red;'>ショートカット起動できます\u003C/span>！URLにフォーカスが当たった状態で\u003Cspan class='code'>Enter\u003C/span>を押すとSwitching...します。地味に便利です。\u003Cspan class='code'>Up\u003C/span>,\u003Cspan class='code'>Down\u003C/span>で選択可能です。"
+   },
+   "option_message_17": {
+      "message": "同じタブで開く（２ドメインの場合は別タブで開かない）"
+   },
+   "popup_message_01": {
+      "message": "このURLは対象外です。\u003Ca href='options.html' target='_blank'>オプションページ\u003C/a>でプロジェクト、またはURLを追加してください。"
+   },
+   "popup_message_02": {
+      "message": "※ver.1.20より、データの保存先が変更になりました。お手数ですが再度設定をお願いします。"
+   }
+}

@@ -1,0 +1,68 @@
+{
+   "Description": {
+      "message": "將當前打開的網頁URL部分替換並在新標籤頁中打開。可用於切換域名或測試環境等。"
+   },
+   "Name": {
+      "message": "The Switcher[域名切換]"
+   },
+   "option_message_01": {
+      "message": "※自ver.1.20起，數據的存儲位置已更改。對於使用較早版本的用戶，請重新設置。"
+   },
+   "option_message_02": {
+      "message": "此外，舊數據在選項頁面首次顯示時將被刪除。"
+   },
+   "option_message_03": {
+      "message": "這是一個將當前打開的網頁URL部分替換並在新標籤頁中打開的擴展功能。可用於切換域名或測試環境等。"
+   },
+   "option_message_04": {
+      "message": "添加項目"
+   },
+   "option_message_05": {
+      "message": "更新"
+   },
+   "option_message_06": {
+      "message": "保存"
+   },
+   "option_message_07": {
+      "message": "刪除項目"
+   },
+   "option_message_08": {
+      "message": "添加文檔根目錄"
+   },
+   "option_message_09": {
+      "message": "更新歷史"
+   },
+   "option_message_10": {
+      "message": "\u003Ca href='https://chrome.google.com/webstore/detail/the-switcher/ibnjhiipcjlebggficnjfanodgpabpcm' target='_blank'>查看Chrome Web Store\u003C/a>。"
+   },
+   "option_message_11": {
+      "message": "提示 ▼"
+   },
+   "option_message_12": {
+      "message": "如上示例，設置“生產環境”、“暫存環境”、“本地環境”等域名路徑。"
+   },
+   "option_message_13": {
+      "message": "在Chrome中查看包含設置的URL的網頁時，點擊擴展標籤中的\u003Cimg class='icon' src='./image/icon16.png'>，切換鏈接將顯示。"
+   },
+   "option_message_14": {
+      "message": "(1) 如果僅設置了\u003Cspan style='color: red'>2個文檔根目錄，將直接在新標籤頁中打開\u003Cspan>。"
+   },
+   "option_message_14_0": {
+      "message": "3個不同特點的亮點"
+   },
+   "option_message_15": {
+      "message": "(2) 在頁面內右鍵點擊也會顯示上下文菜單\u003C/span>。"
+   },
+   "option_message_16": {
+      "message": "(3) )\u003Cspan class='code'>ctrl\u003C/span> + \u003Cspan class='code'>Shift\u003C/span> + \u003Cspan class='code'>Up\u003C/span>（上箭頭）可以\u003Cspan style='color: red;'>快捷啟動\u003C/span>！URL聚焦狀態下按\u003Cspan class='code'>Enter\u003C/span>切換...。非常方便。\u003Cspan class='code'>Up\u003C/span>和\u003Cspan class='code'>Down\u003C/span>可選擇。"
+   },
+   "option_message_17": {
+      "message": "在同一標籤頁中打開（2個域名時不在新標籤頁中打開）"
+   },
+   "popup_message_01": {
+      "message": "此URL不在範圍內。請在\u003Ca href='options.html' target='_blank'>選項頁面\u003C/a>中添加項目或URL。"
+   },
+   "popup_message_02": {
+      "message": "※自ver.1.20起，數據的存儲位置已更改。請重新設置。"
+   }
+}

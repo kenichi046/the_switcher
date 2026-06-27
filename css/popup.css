@@ -1,0 +1,100 @@
+#theswitcher .switcherContainer {
+  padding: 10px 20px;
+  width: 430px;
+}
+
+#theswitcher .switcherContainer h1,
+#theswitcher .switcherContainer h2 {
+  margin-bottom: 1em;
+}
+
+#theswitcher .switcherContainer h2 {
+  border-bottom: 1px solid #CCC;
+  padding-bottom: 0.5em;
+}
+
+#theswitcher .switcherContainer .appContainer h2.listed {
+  margin-bottom: 0;
+}
+
+#theswitcher .switcherContainer .urlBlock {
+  padding: 10px;
+  font-size: 1.2rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+#theswitcher .switcherContainer .urlBlock.active {
+  position: relative;
+}
+
+#theswitcher .switcherContainer .urlBlock.active a {
+  color: #999;
+}
+
+#theswitcher .switcherContainer .urlBlock.active::after {
+  content: "NOW";
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 0.6rem;
+  display: inline-block;
+  background-color: red;
+  color: white;
+  padding: 0 0.5em;
+}
+
+#theswitcher .switcherContainer .urlBlock a:hover {
+  opacity: .6;
+}
+
+#theswitcher .switcherContainer .urlBlock.notice {
+  width: 100%;
+  overflow: visible;
+  text-overflow: initial;
+  white-space: initial;
+  display: block;
+}
+
+#theswitcher .switcherContainer .urlBlock.notice .txtUnderLine {
+  text-decoration: underline dotted #d90368;
+}
+
+#theswitcher .switcherContainer .urlBlock.notice a {
+  font-size: 100%;
+}
+
+.urlBlock {
+  display: flex;
+  align-items: end;
+}
+
+.urlBlock i {
+  font-size: 50%;
+  margin-left: 0.5em;
+}
+
+.urlBlock a:first-child {
+  width: atuo;
+  max-width: 78%;
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.urlBlock a:last-child {
+  width: auto;
+  font-size: 65%;
+  padding: 0 0.25em;
+  margin-left: auto;
+}
+
+#theswitcher .appContainer p {
+  margin-bottom: 1em;
+}
+
+#theswitcher .setting {
+  margin-left: 1em;
+}

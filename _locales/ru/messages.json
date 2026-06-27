@@ -1,0 +1,68 @@
+{
+   "Description": {
+      "message": "Открывает в новой вкладке URL текущей открытой веб-страницы после частичной замены. Используйте для переключения доменов или перехода в тестовую среду."
+   },
+   "Name": {
+      "message": "The Switcher[Переключение Доменов]"
+   },
+   "option_message_01": {
+      "message": "※Начиная с версии 1.20, изменилось место сохранения данных. Просим пользователей предыдущих версий повторно настроить параметры."
+   },
+   "option_message_02": {
+      "message": "Кроме того, старые данные будут удалены при первом отображении экрана настроек."
+   },
+   "option_message_03": {
+      "message": "Это расширение открывает в новой вкладке URL текущей открытой веб-страницы после частичной замены. Используйте для переключения доменов или перехода в тестовую среду."
+   },
+   "option_message_04": {
+      "message": "Добавить проект"
+   },
+   "option_message_05": {
+      "message": "Обновить"
+   },
+   "option_message_06": {
+      "message": "Сохранить"
+   },
+   "option_message_07": {
+      "message": "Удалить проект"
+   },
+   "option_message_08": {
+      "message": "Добавить корневой документ"
+   },
+   "option_message_09": {
+      "message": "История обновлений"
+   },
+   "option_message_10": {
+      "message": "Пожалуйста, проверьте на \u003Ca href='https://chrome.google.com/webstore/detail/the-switcher/ibnjhiipcjlebggficnjfanodgpabpcm' target='_blank'>Crome Web Store\u003C/a>."
+   },
+   "option_message_11": {
+      "message": "Совет ▼"
+   },
+   "option_message_12": {
+      "message": "Как в примере выше, настройте корневые домены для 'рабочей среды', 'стейджинговой среды', 'локальной среды'."
+   },
+   "option_message_13": {
+      "message": "При просмотре веб-страницы в Chrome, содержащей настроенный URL, нажмите на \u003Cimg class='icon' src='./image/icon16.png'> во вкладке расширения, чтобы отобразить ссылку для переключения."
+   },
+   "option_message_14": {
+      "message": "(1) Если установлены только \u003Cspan style='color: red'>два корневых документа, новая вкладка открывается непосредственно\u003C/span>."
+   },
+   "option_message_14_0": {
+      "message": "Три ключевые особенности, которые отличают нас"
+   },
+   "option_message_15": {
+      "message": "(2) \u003Cspan style='color:red;'>В контекстном меню страницы также отображается при правом клике\u003C/span>."
+   },
+   "option_message_16": {
+      "message": "(3) Нажмите \u003Cspan class='code'>ctrl\u003C/span> + \u003Cspan class='code'>Shift\u003C/span> + \u003Cspan class='code'>Up\u003C/span> (стрелка вверх) для \u003Cspan style='color: red;'>запуска с помощью сочетания клавиш\u003C/span>! Нажатие \u003Cspan class='code'>Enter\u003C/span>, когда URL находится в фокусе, произведет переключение. Это удобно и незаметно. Выбор возможен с помощью \u003Cspan class='code'>Up\u003C/span>, \u003Cspan class='code'>Down\u003C/span>."
+   },
+   "option_message_17": {
+      "message": "Открыть в той же вкладке (для 2 доменов)"
+   },
+   "popup_message_01": {
+      "message": "Этот URL не подходит. Пожалуйста, добавьте проект или URL на \u003Ca href='options.html' target='_blank'>странице настроек\u003C/a>."
+   },
+   "popup_message_02": {
+      "message": "※Начиная с версии 1.20, изменилось место сохранения данных. Просим повторно настроить параметры."
+   }
+}
