@@ -33,7 +33,7 @@
       "message": "更新履歴"
    },
    "option_message_10": {
-      "message": "\u003Ca href='https://chrome.google.com/webstore/detail/the-switcher/ibnjhiipcjlebggficnjfanodgpabpcm' target='_blank'>Crome Web Store\u003C/a>をご確認ください。"
+      "message": "<a href='https://chrome.google.com/webstore/detail/the-switcher/ibnjhiipcjlebggficnjfanodgpabpcm' target='_blank'>Crome Web Store</a>をご確認ください。"
    },
    "option_message_11": {
       "message": "ヒント ▼"
@@ -42,27 +42,168 @@
       "message": "上記サンプルのように、「本番環境」「ステージング環境」「ローカル環境」などのドメインルートを設定します。"
    },
    "option_message_13": {
-      "message": "設定したURLを含むウェブページをChromeで閲覧している時に、拡張機能タブにある\u003Cimg class='icon' src='./image/icon16.png'>をクリックすることで切り替え用のリンクが表示されます。"
+      "message": "設定したURLを含むウェブページをChromeで閲覧している時に、拡張機能タブにある<img class='icon' src='./image/icon16.png'>をクリックすることで切り替え用のリンクが表示されます。"
    },
    "option_message_14": {
-      "message": "(1) ドキュメントルートが\u003Cspan style='color: red'>2個のみ設定されている場合は、ダイレクトに別タブが開きます\u003Cspan>。"
+      "message": "(1) ドキュメントルートが<span style='color: red'>2個のみ設定されている場合は、ダイレクトに別タブが開きます<span>。"
    },
    "option_message_14_0": {
       "message": "アピールポイントココが違う3つの特長"
    },
    "option_message_15": {
-      "message": "(2) \u003Cspan style='color:red;'>ページ内で右クリックでもコンテキストメニューが表示\u003C/span>されます。"
+      "message": "(2) <span style='color:red;'>ページ内で右クリックでもコンテキストメニューが表示</span>されます。"
    },
    "option_message_16": {
-      "message": "(3) )\u003Cspan class='code'>ctrl\u003C/span> + \u003Cspan class='code'>Shift\u003C/span> + \u003Cspan class='code'>Up\u003C/span>（上矢印）で\u003Cspan style='color: red;'>ショートカット起動できます\u003C/span>！URLにフォーカスが当たった状態で\u003Cspan class='code'>Enter\u003C/span>を押すとSwitching...します。地味に便利です。\u003Cspan class='code'>Up\u003C/span>,\u003Cspan class='code'>Down\u003C/span>で選択可能です。"
+      "message": "(3) )<span class='code'>ctrl</span> + <span class='code'>Shift</span> + <span class='code'>Up</span>（上矢印）で<span style='color: red;'>ショートカット起動できます</span>！URLにフォーカスが当たった状態で<span class='code'>Enter</span>を押すとSwitching...します。地味に便利です。<span class='code'>Up</span>,<span class='code'>Down</span>で選択可能です。"
    },
    "option_message_17": {
-      "message": "同じタブで開く（２ドメインの場合は別タブで開かない）"
+      "message": "同じタブで開く（登録URLが2つの時はアイコン押下で即切替／OFFは別タブ）"
    },
    "popup_message_01": {
-      "message": "このURLは対象外です。\u003Ca href='options.html' target='_blank'>オプションページ\u003C/a>でプロジェクト、またはURLを追加してください。"
+      "message": "このURLは対象外です。<a href='options.html' target='_blank'>オプションページ</a>でプロジェクト、またはURLを追加してください。"
    },
    "popup_message_02": {
       "message": "※ver.1.20より、データの保存先が変更になりました。お手数ですが再度設定をお願いします。"
+   },
+   "option_data_tools_title": {
+      "message": "設定の共有・同期"
+   },
+   "option_export": {
+      "message": "エクスポート"
+   },
+   "option_import": {
+      "message": "インポート"
+   },
+   "option_sync_label": {
+      "message": "複数端末で設定を同期する"
+   },
+   "option_sync_description": {
+      "message": "同一Googleアカウントでサインイン中のすべての端末と設定が同期されます。"
+   },
+   "option_import_confirm": {
+      "message": "現在の設定を上書きします。よろしいですか？"
+   },
+   "option_import_invalid": {
+      "message": "設定ファイルの形式が正しくありません。"
+   },
+   "option_import_done": {
+      "message": "設定を読み込みました。"
+   },
+   "option_save_error": {
+      "message": "設定の保存に失敗しました。"
+   },
+   "option_sync_error": {
+      "message": "設定を同期できませんでした。同期サイズの上限を超えている可能性があります。"
+   },
+   "option_export_unsaved": {
+      "message": "未保存の変更があります。最後に保存した設定をエクスポートしますか？（未保存の編集は含まれません）"
+   },
+   "popup_copy": {
+      "message": "URLをコピー"
+   },
+   "popup_copied": {
+      "message": "コピーしました"
+   },
+   "omnibox_hint": {
+      "message": "このページの環境を切り替えます"
+   },
+   "omnibox_filter": {
+      "message": "絞り込み入力、または下の候補から選択"
+   },
+   "omnibox_nomatch": {
+      "message": "このページに一致する環境がありません"
+   },
+   "option_restore": {
+      "message": "バックアップから復元"
+   },
+   "option_restore_confirm": {
+      "message": "バックアップから復元します。現在の設定は上書きされます。よろしいですか？"
+   },
+   "option_restore_done": {
+      "message": "バックアップから復元しました。"
+   },
+   "option_restore_none": {
+      "message": "まだバックアップがありません。"
+   },
+   "option_empty_save_confirm": {
+      "message": "プロジェクトが0件です。このまま保存すると設定が空データで上書きされます。続行しますか？"
+   },
+   "option_export_copy": {
+      "message": "エクスポートをコピー"
+   },
+   "option_export_copied": {
+      "message": "コピーしました"
+   },
+   "option_export_copy_failed": {
+      "message": "クリップボードへのコピーに失敗しました。"
+   },
+   "popup_sametab_quick": {
+      "message": "同じタブで開く"
+   },
+   "option_filter_placeholder": {
+      "message": "プロジェクト名・URLで絞り込み..."
+   },
+   "option_eyebrow": {
+      "message": "オプション"
+   },
+   "option_section_behavior": {
+      "message": "動作設定"
+   },
+   "option_section_projects": {
+      "message": "プロジェクト"
+   },
+   "option_features_title": {
+      "message": "便利な機能 8 選！"
+   },
+   "option_feature_01_label": {
+      "message": "アドレスバーから直接起動"
+   },
+   "option_feature_01_body": {
+      "message": "アドレスバーに「sw」と入力してスペースを押すだけで、現在のページの切り替え先候補が表示されます。テキスト入力でさらに絞り込み可能。"
+   },
+   "option_feature_02_label": {
+      "message": "ドラッグ＆ドロップで並び替え"
+   },
+   "option_feature_02_body": {
+      "message": "プロジェクトカードをつかんで好きな順に並べ替えられます。よく使うプロジェクトを上位に固定しましょう。"
+   },
+   "option_feature_03_label": {
+      "message": "プロジェクトを素早く検索"
+   },
+   "option_feature_03_body": {
+      "message": "プロジェクト名や URL キーワードでリアルタイムにフィルタリング。プロジェクト数が増えても目的のものをすぐ見つけられます。"
+   },
+   "option_feature_04_label": {
+      "message": "URL をワンクリックでコピー"
+   },
+   "option_feature_04_body": {
+      "message": "ポップアップの各 URL にコピーボタンが追加されました。クリックひとつでクリップボードに取得できます。"
+   },
+   "option_feature_05_label": {
+      "message": "設定のエクスポート／インポート"
+   },
+   "option_feature_05_body": {
+      "message": "設定を JSON ファイルで書き出し・読み込みできます。チームへの共有や PC の乗り換えに役立ちます。"
+   },
+   "option_feature_06_label": {
+      "message": "複数端末で自動同期"
+   },
+   "option_feature_06_body": {
+      "message": "同一 Google アカウントの Chrome 間で設定を自動同期。どの端末でも同じ環境がすぐに使えます。"
+   },
+   "option_feature_07_label": {
+      "message": "ポップアップから「同じタブ」を即設定"
+   },
+   "option_feature_07_body": {
+      "message": "ポップアップ下部のトグルで「同じタブ／別タブ」をその場で切り替え。設定ページを開く必要はありません。"
+   },
+   "option_feature_08_label": {
+      "message": "URLに色でラベリング"
+   },
+   "option_feature_08_body": {
+      "message": "オプションページで各 URL に色を設定すると、ポップアップの URL 先頭に丸いカラードットが表示されます。dev / stg / prod の環境を一目で見分けられます。"
+   },
+   "popup_color_hint": {
+      "message": "見分けにくい場合は、オプション画面でプロジェクトごとに色を設定できます"
    }
 }

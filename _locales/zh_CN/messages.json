@@ -33,7 +33,7 @@
       "message": "更新历史"
    },
    "option_message_10": {
-      "message": "详情请查看\u003Ca href='https://chrome.google.com/webstore/detail/the-switcher/ibnjhiipcjlebggficnjfanodgpabpcm' target='_blank'>Chrome网络商店\u003C/a>。"
+      "message": "详情请查看<a href='https://chrome.google.com/webstore/detail/the-switcher/ibnjhiipcjlebggficnjfanodgpabpcm' target='_blank'>Chrome网络商店</a>。"
    },
    "option_message_11": {
       "message": "提示 ▼"
@@ -42,27 +42,168 @@
       "message": "如上示例所示，设置“生产环境”、“暂存环境”、“本地环境”等域名根目录。"
    },
    "option_message_13": {
-      "message": "在Chrome中浏览包含设置的URL的网页时，点击扩展功能标签中的\u003Cimg class='icon' src='./image/icon16.png'>将显示切换用链接。"
+      "message": "在Chrome中浏览包含设置的URL的网页时，点击扩展功能标签中的<img class='icon' src='./image/icon16.png'>将显示切换用链接。"
    },
    "option_message_14": {
-      "message": "(1) 如果仅设置了\u003Cspan style='color: red'>两个文档根目录，将直接打开新标签页\u003C/span>。"
+      "message": "(1) 如果仅设置了<span style='color: red'>两个文档根目录，将直接打开新标签页</span>。"
    },
    "option_message_14_0": {
       "message": "三个主要特点"
    },
    "option_message_15": {
-      "message": "(2) \u003Cspan style='color:red;'>在页面内右键点击也会显示上下文菜单\u003C/span>。"
+      "message": "(2) <span style='color:red;'>在页面内右键点击也会显示上下文菜单</span>。"
    },
    "option_message_16": {
-      "message": "(3) 按\u003Cspan class='code'>ctrl\u003C/span> + \u003Cspan class='code'>Shift\u003C/span> + \u003Cspan class='code'>Up\u003C/span>（上箭头）可以\u003Cspan style='color: red;'>使用快捷键启动\u003C/span>！在URL聚焦状态下按\u003Cspan class='code'>Enter\u003C/span>进行切换。简单且实用。\u003Cspan class='code'>Up\u003C/span>、\u003Cspan class='code'>Down\u003C/span>可选。"
+      "message": "(3) 按<span class='code'>ctrl</span> + <span class='code'>Shift</span> + <span class='code'>Up</span>（上箭头）可以<span style='color: red;'>使用快捷键启动</span>！在URL聚焦状态下按<span class='code'>Enter</span>进行切换。简单且实用。<span class='code'>Up</span>、<span class='code'>Down</span>可选。"
    },
    "option_message_17": {
-      "message": "在同一个标签页中打开（适用于2个域名）"
+      "message": "在同一个标签页中打开（仅2个URL时点击即切换；关闭则用新标签页）"
    },
    "popup_message_01": {
-      "message": "此URL不在范围内。请在\u003Ca href='options.html' target='_blank'>选项页面\u003C/a>添加项目或URL。"
+      "message": "此URL不在范围内。请在<a href='options.html' target='_blank'>选项页面</a>添加项目或URL。"
    },
    "popup_message_02": {
       "message": "※从ver.1.20开始，数据的保存位置已更改。请重新设置。"
+   },
+   "option_data_tools_title": {
+      "message": "设置共享与同步"
+   },
+   "option_export": {
+      "message": "导出"
+   },
+   "option_import": {
+      "message": "导入"
+   },
+   "option_import_confirm": {
+      "message": "将覆盖当前设置，是否继续？"
+   },
+   "option_import_invalid": {
+      "message": "配置文件格式不正确。"
+   },
+   "option_import_done": {
+      "message": "设置已加载。"
+   },
+   "option_save_error": {
+      "message": "设置保存失败。"
+   },
+   "option_sync_error": {
+      "message": "无法同步设置，可能超出了同步大小限制。"
+   },
+   "option_export_unsaved": {
+      "message": "存在未保存的更改。是否导出最后一次保存的设置？（未保存的编辑不包含在内）"
+   },
+   "popup_copy": {
+      "message": "复制URL"
+   },
+   "popup_copied": {
+      "message": "已复制"
+   },
+   "omnibox_hint": {
+      "message": "切换此页面的环境"
+   },
+   "omnibox_filter": {
+      "message": "输入以筛选，或从下方候选中选择"
+   },
+   "omnibox_nomatch": {
+      "message": "此页面没有匹配的环境"
+   },
+   "option_restore": {
+      "message": "从备份恢复"
+   },
+   "option_restore_confirm": {
+      "message": "从备份恢复设置，当前设置将被覆盖。是否继续？"
+   },
+   "option_restore_done": {
+      "message": "已从备份恢复。"
+   },
+   "option_restore_none": {
+      "message": "暂无备份。"
+   },
+   "option_empty_save_confirm": {
+      "message": "项目数为0。保存后将以空数据覆盖设置，是否继续？"
+   },
+   "option_export_copy": {
+      "message": "复制导出内容"
+   },
+   "option_export_copied": {
+      "message": "已复制"
+   },
+   "option_export_copy_failed": {
+      "message": "复制到剪贴板失败。"
+   },
+   "popup_sametab_quick": {
+      "message": "在同一标签页中打开"
+   },
+   "option_filter_placeholder": {
+      "message": "按项目名称或URL筛选..."
+   },
+   "option_eyebrow": {
+      "message": "选项"
+   },
+   "option_section_behavior": {
+      "message": "行为设置"
+   },
+   "option_section_projects": {
+      "message": "项目"
+   },
+   "option_sync_label": {
+      "message": "在多台设备间同步设置"
+   },
+   "option_sync_description": {
+      "message": "设置将在登录同一Google账号的所有设备之间同步。"
+   },
+   "option_features_title": {
+      "message": "8个实用功能！"
+   },
+   "option_feature_01_label": {
+      "message": "从地址栏直接启动"
+   },
+   "option_feature_01_body": {
+      "message": "在地址栏输入「sw」并按空格键，即可显示当前页面的切换目标。还可通过关键词进一步筛选。"
+   },
+   "option_feature_02_label": {
+      "message": "拖拽排序"
+   },
+   "option_feature_02_body": {
+      "message": "拖动项目卡片，按喜好调整顺序。将常用项目置顶，操作更高效。"
+   },
+   "option_feature_03_label": {
+      "message": "实时项目搜索"
+   },
+   "option_feature_03_body": {
+      "message": "通过项目名称或URL关键词实时筛选列表，项目再多也能快速定位。"
+   },
+   "option_feature_04_label": {
+      "message": "一键复制URL"
+   },
+   "option_feature_04_body": {
+      "message": "弹出窗口的每个URL行都有复制按钮，点击即可将目标URL复制到剪贴板。"
+   },
+   "option_feature_05_label": {
+      "message": "导出 / 导入设置"
+   },
+   "option_feature_05_body": {
+      "message": "将设置导出为JSON文件或从文件中导入，便于团队共享或更换电脑时快速恢复。"
+   },
+   "option_feature_06_label": {
+      "message": "跨设备自动同步"
+   },
+   "option_feature_06_body": {
+      "message": "通过Google账号自动同步设置，登录同一账号的任意Chrome设备均可立即使用相同配置。"
+   },
+   "option_feature_07_label": {
+      "message": "从弹窗切换标签页模式"
+   },
+   "option_feature_07_body": {
+      "message": "直接在弹出窗口底部切换「同标签页 / 新标签页」，无需打开选项页面。"
+   },
+   "option_feature_08_label": {
+      "message": "为环境URL添加颜色标签"
+   },
+   "option_feature_08_body": {
+      "message": "在选项页面为每个URL设置颜色后，弹窗中该URL前方会显示彩色圆点。一眼即可区分dev / stg / prod等不同环境。"
+   },
+   "popup_color_hint": {
+      "message": "不容易区分？您可以在选项页面为每个项目设置颜色。"
    }
 }

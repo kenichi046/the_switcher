@@ -33,7 +33,7 @@
       "message": "ประวัติการอัปเดต"
    },
    "option_message_10": {
-      "message": "โปรดตรวจสอบที่ \u003Ca href='https://chrome.google.com/webstore/detail/the-switcher/ibnjhiipcjlebggficnjfanodgpabpcm' target='_blank'>Crome Web Store\u003C/a>"
+      "message": "โปรดตรวจสอบที่ <a href='https://chrome.google.com/webstore/detail/the-switcher/ibnjhiipcjlebggficnjfanodgpabpcm' target='_blank'>Crome Web Store</a>"
    },
    "option_message_11": {
       "message": "เคล็ดลับ ▼"
@@ -42,27 +42,168 @@
       "message": "ตั้งค่ารากโดเมนเช่น 'สภาพแวดล้อมการผลิต', 'สภาพแวดล้อมการเตรียม', 'สภาพแวดล้อมท้องถิ่น' เหมือนตัวอย่างข้างต้น"
    },
    "option_message_13": {
-      "message": "เมื่อคุณเรียกดูหน้าเว็บที่มี URL ที่ตั้งค่าไว้ใน Chrome คลิกที่ \u003Cimg class='icon' src='./image/icon16.png'> ในแท็บส่วนขยายเพื่อแสดงลิงก์สำหรับสลับ"
+      "message": "เมื่อคุณเรียกดูหน้าเว็บที่มี URL ที่ตั้งค่าไว้ใน Chrome คลิกที่ <img class='icon' src='./image/icon16.png'> ในแท็บส่วนขยายเพื่อแสดงลิงก์สำหรับสลับ"
    },
    "option_message_14": {
-      "message": "(1) หากมีการตั้งค่ารากเอกสารเพียง \u003Cspan style='color: red'>2 รากเท่านั้น จะเปิดแท็บใหม่โดยตรง\u003C/span>"
+      "message": "(1) หากมีการตั้งค่ารากเอกสารเพียง <span style='color: red'>2 รากเท่านั้น จะเปิดแท็บใหม่โดยตรง</span>"
    },
    "option_message_14_0": {
       "message": "3 คุณสมบัติสำคัญที่แตกต่าง"
    },
    "option_message_15": {
-      "message": "(2) \u003Cspan style='color:red;'>คลิกขวาภายในหน้าเพจเพื่อแสดงเมนูบริบท\u003C/span>"
+      "message": "(2) <span style='color:red;'>คลิกขวาภายในหน้าเพจเพื่อแสดงเมนูบริบท</span>"
    },
    "option_message_16": {
-      "message": "(3) กด \u003Cspan class='code'>ctrl\u003C/span> + \u003Cspan class='code'>Shift\u003C/span> + \u003Cspan class='code'>Up\u003C/span> (ลูกศรขึ้น) เพื่อ\u003Cspan style='color: red;'>เริ่มด้วยทางลัด\u003C/span>! กด \u003Cspan class='code'>Enter\u003C/span> เมื่อ URL อยู่ในโฟกัสเพื่อสลับ มีประโยชน์แบบไม่ฉูดฉาด เลือกได้ด้วย \u003Cspan class='code'>Up\u003C/span>, \u003Cspan class='code'>Down\u003C/span>"
+      "message": "(3) กด <span class='code'>ctrl</span> + <span class='code'>Shift</span> + <span class='code'>Up</span> (ลูกศรขึ้น) เพื่อ<span style='color: red;'>เริ่มด้วยทางลัด</span>! กด <span class='code'>Enter</span> เมื่อ URL อยู่ในโฟกัสเพื่อสลับ มีประโยชน์แบบไม่ฉูดฉาด เลือกได้ด้วย <span class='code'>Up</span>, <span class='code'>Down</span>"
    },
    "option_message_17": {
-      "message": "เปิดในแท็บเดียวกัน (กรณี 2 โดเมน)"
+      "message": "เปิดในแท็บเดียวกัน (ถ้ามี 2 URL จะสลับทันทีเมื่อคลิก / OFF เปิดแท็บใหม่)"
    },
    "popup_message_01": {
-      "message": "URL นี้ไม่อยู่ในขอบเขต โปรดเพิ่มโปรเจคหรือ URL ใน\u003Ca href='options.html' target='_blank'>หน้าตัวเลือก\u003C/a>"
+      "message": "URL นี้ไม่อยู่ในขอบเขต โปรดเพิ่มโปรเจคหรือ URL ใน<a href='options.html' target='_blank'>หน้าตัวเลือก</a>"
    },
    "popup_message_02": {
       "message": "※ตั้งแต่เวอร์ชัน 1.20 ตำแหน่งการเก็บข้อมูลได้เปลี่ยนแปลง กรุณาตั้งค่าใหม่"
+   },
+   "option_data_tools_title": {
+      "message": "การแชร์และซิงค์การตั้งค่า"
+   },
+   "option_export": {
+      "message": "ส่งออก"
+   },
+   "option_import": {
+      "message": "นำเข้า"
+   },
+   "option_import_confirm": {
+      "message": "การตั้งค่าปัจจุบันจะถูกเขียนทับ ต้องการดำเนินการต่อหรือไม่?"
+   },
+   "option_import_invalid": {
+      "message": "รูปแบบไฟล์การตั้งค่าไม่ถูกต้อง"
+   },
+   "option_import_done": {
+      "message": "โหลดการตั้งค่าเรียบร้อยแล้ว"
+   },
+   "option_save_error": {
+      "message": "บันทึกการตั้งค่าล้มเหลว"
+   },
+   "option_sync_error": {
+      "message": "ไม่สามารถซิงค์การตั้งค่าได้ อาจเกินขีดจำกัดขนาดการซิงค์"
+   },
+   "option_export_unsaved": {
+      "message": "มีการเปลี่ยนแปลงที่ยังไม่ได้บันทึก ต้องการส่งออกการตั้งค่าที่บันทึกล่าสุดหรือไม่? (การแก้ไขที่ยังไม่บันทึกจะไม่รวมอยู่)"
+   },
+   "popup_copy": {
+      "message": "คัดลอก URL"
+   },
+   "popup_copied": {
+      "message": "คัดลอกแล้ว"
+   },
+   "omnibox_hint": {
+      "message": "สลับสภาพแวดล้อมของหน้านี้"
+   },
+   "omnibox_filter": {
+      "message": "พิมพ์เพื่อกรอง หรือเลือกจากตัวเลือกด้านล่าง"
+   },
+   "omnibox_nomatch": {
+      "message": "ไม่มีสภาพแวดล้อมที่ตรงกับหน้านี้"
+   },
+   "option_restore": {
+      "message": "กู้คืนจากการสำรองข้อมูล"
+   },
+   "option_restore_confirm": {
+      "message": "กู้คืนการตั้งค่าจากการสำรองข้อมูล? การตั้งค่าปัจจุบันจะถูกเขียนทับ"
+   },
+   "option_restore_done": {
+      "message": "กู้คืนจากการสำรองข้อมูลเรียบร้อยแล้ว"
+   },
+   "option_restore_none": {
+      "message": "ยังไม่มีการสำรองข้อมูล"
+   },
+   "option_empty_save_confirm": {
+      "message": "ไม่มีโปรเจค การบันทึกจะเขียนทับการตั้งค่าด้วยข้อมูลว่าง ต้องการดำเนินการต่อหรือไม่?"
+   },
+   "option_export_copy": {
+      "message": "คัดลอกการส่งออกไปยังคลิปบอร์ด"
+   },
+   "option_export_copied": {
+      "message": "คัดลอกแล้ว"
+   },
+   "option_export_copy_failed": {
+      "message": "คัดลอกไปยังคลิปบอร์ดล้มเหลว"
+   },
+   "popup_sametab_quick": {
+      "message": "เปิดในแท็บเดียวกัน"
+   },
+   "option_filter_placeholder": {
+      "message": "กรองตามชื่อโปรเจคหรือ URL..."
+   },
+   "option_eyebrow": {
+      "message": "ตัวเลือก"
+   },
+   "option_section_behavior": {
+      "message": "การตั้งค่าการทำงาน"
+   },
+   "option_section_projects": {
+      "message": "โปรเจค"
+   },
+   "option_sync_label": {
+      "message": "ซิงค์การตั้งค่าระหว่างอุปกรณ์"
+   },
+   "option_sync_description": {
+      "message": "การตั้งค่าจะซิงค์กับอุปกรณ์ทั้งหมดที่ลงชื่อเข้าใช้บัญชี Google เดียวกัน"
+   },
+   "option_features_title": {
+      "message": "8 ฟีเจอร์เด็ดที่ควรรู้!"
+   },
+   "option_feature_01_label": {
+      "message": "เปิดใช้งานจากแถบที่อยู่"
+   },
+   "option_feature_01_body": {
+      "message": "พิมพ์ \"sw\" ในแถบที่อยู่แล้วกดสเปซ เพื่อแสดงตัวเลือกการสลับสำหรับหน้าปัจจุบัน กรองเพิ่มเติมด้วยคีย์เวิร์ดได้เลย"
+   },
+   "option_feature_02_label": {
+      "message": "จัดเรียงด้วยการลากวาง"
+   },
+   "option_feature_02_body": {
+      "message": "ลากการ์ดโปรเจคไปยังตำแหน่งที่ต้องการ จัดโปรเจคที่ใช้บ่อยไว้ด้านบนเพื่อความสะดวก"
+   },
+   "option_feature_03_label": {
+      "message": "ค้นหาโปรเจคแบบเรียลไทม์"
+   },
+   "option_feature_03_body": {
+      "message": "กรองรายการโปรเจคด้วยชื่อหรือ URL ขณะพิมพ์ รวดเร็วไม่ว่าจะมีโปรเจคจำนวนมากแค่ไหน"
+   },
+   "option_feature_04_label": {
+      "message": "คัดลอก URL ด้วยคลิกเดียว"
+   },
+   "option_feature_04_body": {
+      "message": "ทุก URL ในป๊อปอัปมีปุ่มคัดลอก กดปุ่มเดียวก็ได้ URL ไปยังคลิปบอร์ดทันที"
+   },
+   "option_feature_05_label": {
+      "message": "ส่งออก / นำเข้าการตั้งค่า"
+   },
+   "option_feature_05_body": {
+      "message": "บันทึกการตั้งค่าเป็นไฟล์ JSON หรือแชร์ให้ทีม นำเข้าได้ภายในไม่กี่วินาทีบนเครื่องใหม่"
+   },
+   "option_feature_06_label": {
+      "message": "ซิงค์อัตโนมัติระหว่างอุปกรณ์"
+   },
+   "option_feature_06_body": {
+      "message": "การตั้งค่าซิงค์ผ่านบัญชี Google โดยอัตโนมัติ ใช้การตั้งค่าเดียวกันได้บนทุกอุปกรณ์ Chrome"
+   },
+   "option_feature_07_label": {
+      "message": "สลับโหมดแท็บจากป๊อปอัป"
+   },
+   "option_feature_07_body": {
+      "message": "สลับระหว่าง \"แท็บเดียวกัน\" และ \"แท็บใหม่\" จากด้านล่างของป๊อปอัปโดยตรง ไม่ต้องเปิดหน้าตัวเลือก"
+   },
+   "option_feature_08_label": {
+      "message": "ติดป้ายสีให้แต่ละ URL"
+   },
+   "option_feature_08_body": {
+      "message": "กำหนดสีให้แต่ละ URL ในหน้าตัวเลือก แล้วจุดสีจะปรากฏหน้า URL ในป๊อปอัป แยกแยะ dev / stg / prod ได้ทันทีด้วยการมองเพียงครั้งเดียว"
+   },
+   "popup_color_hint": {
+      "message": "แยกยากใช่ไหม? คุณสามารถตั้งค่าสีให้แต่ละโปรเจกต์ได้ในหน้าตัวเลือก"
    }
 }

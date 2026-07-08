@@ -33,7 +33,7 @@
       "message": "Güncelleme geçmişi"
    },
    "option_message_10": {
-      "message": "Lütfen \u003Ca href='https://chrome.google.com/webstore/detail/the-switcher/ibnjhiipcjlebggficnjfanodgpabpcm' target='_blank'>Chrome Web Mağazası\u003C/a>'nı kontrol edin."
+      "message": "Lütfen <a href='https://chrome.google.com/webstore/detail/the-switcher/ibnjhiipcjlebggficnjfanodgpabpcm' target='_blank'>Chrome Web Mağazası</a>'nı kontrol edin."
    },
    "option_message_11": {
       "message": "İpucu ▼"
@@ -42,27 +42,168 @@
       "message": "Yukarıdaki örnekte olduğu gibi, 'canlı ortam', 'hazırlık ortamı', 'yerel ortam' gibi alan adı köklerini ayarlayın."
    },
    "option_message_13": {
-      "message": "Chrome'da ayarladığınız URL'yi içeren bir web sayfasını gezinirken, uzantı sekmesindeki \u003Cimg class='icon' src='./image/icon16.png'> simgesine tıklayarak geçiş için bir bağlantı görüntülenir."
+      "message": "Chrome'da ayarladığınız URL'yi içeren bir web sayfasını gezinirken, uzantı sekmesindeki <img class='icon' src='./image/icon16.png'> simgesine tıklayarak geçiş için bir bağlantı görüntülenir."
    },
    "option_message_14": {
-      "message": "(1) Eğer yalnızca \u003Cspan style='color: red'>iki doküman kökü ayarlanmışsa, doğrudan yeni bir sekme açılır\u003C/span>."
+      "message": "(1) Eğer yalnızca <span style='color: red'>iki doküman kökü ayarlanmışsa, doğrudan yeni bir sekme açılır</span>."
    },
    "option_message_14_0": {
       "message": "Farklı olan üç önemli özellik"
    },
    "option_message_15": {
-      "message": "(2) \u003Cspan style='color:red;'>Sayfa içinde sağ tıklandığında da bir bağlam menüsü görüntülenir\u003C/span>."
+      "message": "(2) <span style='color:red;'>Sayfa içinde sağ tıklandığında da bir bağlam menüsü görüntülenir</span>."
    },
    "option_message_16": {
-      "message": "(3) \u003Cspan class='code'>ctrl\u003C/span> + \u003Cspan class='code'>Shift\u003C/span> + \u003Cspan class='code'>Up\u003C/span> (yukarı ok) tuşlarına basarak \u003Cspan style='color: red;'>kısayol ile başlatabilirsiniz\u003C/span>! URL'ye odaklandığınızda \u003Cspan class='code'>Enter\u003C/span>'a basarak geçiş yaparsınız. Sade ama kullanışlıdır. \u003Cspan class='code'>Up\u003C/span>, \u003Cspan class='code'>Down\u003C/span> ile seçim yapabilirsiniz."
+      "message": "(3) <span class='code'>ctrl</span> + <span class='code'>Shift</span> + <span class='code'>Up</span> (yukarı ok) tuşlarına basarak <span style='color: red;'>kısayol ile başlatabilirsiniz</span>! URL'ye odaklandığınızda <span class='code'>Enter</span>'a basarak geçiş yaparsınız. Sade ama kullanışlıdır. <span class='code'>Up</span>, <span class='code'>Down</span> ile seçim yapabilirsiniz."
    },
    "option_message_17": {
-      "message": "Aynı sekmede aç (2 alan adı için)"
+      "message": "Aynı sekmede aç (2 URL varsa tıklayınca anında geçiş; OFF yeni sekme)"
    },
    "popup_message_01": {
-      "message": "Bu URL kapsam dışıdır. Lütfen bir proje veya URL eklemek için \u003Ca href='options.html' target='_blank'>Seçenekler sayfasını\u003C/a> ziyaret edin."
+      "message": "Bu URL kapsam dışıdır. Lütfen bir proje veya URL eklemek için <a href='options.html' target='_blank'>Seçenekler sayfasını</a> ziyaret edin."
    },
    "popup_message_02": {
       "message": "※ver.1.20'den itibaren, veri kaydetme yeri değişmiştir. Lütfen yeniden ayar yapınız."
+   },
+   "option_data_tools_title": {
+      "message": "Ayar paylaşımı ve senkronizasyonu"
+   },
+   "option_export": {
+      "message": "Dışa aktar"
+   },
+   "option_import": {
+      "message": "İçe aktar"
+   },
+   "option_import_confirm": {
+      "message": "Mevcut ayarlarınızın üzerine yazılacak. Devam edilsin mi?"
+   },
+   "option_import_invalid": {
+      "message": "Yapılandırma dosyası formatı geçersiz."
+   },
+   "option_import_done": {
+      "message": "Ayarlar içe aktarıldı."
+   },
+   "option_save_error": {
+      "message": "Ayarlar kaydedilemedi."
+   },
+   "option_sync_error": {
+      "message": "Ayarlar senkronize edilemedi. Senkronizasyon boyut sınırı aşılmış olabilir."
+   },
+   "option_export_unsaved": {
+      "message": "Kaydedilmemiş değişiklikler var. Son kaydedilen ayarlar dışa aktarılsın mı? (Kaydedilmemiş düzenlemeler dahil edilmeyecek.)"
+   },
+   "popup_copy": {
+      "message": "URL'yi kopyala"
+   },
+   "popup_copied": {
+      "message": "Kopyalandı!"
+   },
+   "omnibox_hint": {
+      "message": "Bu sayfanın ortamını değiştir"
+   },
+   "omnibox_filter": {
+      "message": "Filtrelemek için yazın veya aşağıdan bir ortam seçin"
+   },
+   "omnibox_nomatch": {
+      "message": "Bu sayfa için eşleşen ortam bulunamadı"
+   },
+   "option_restore": {
+      "message": "Yedekten geri yükle"
+   },
+   "option_restore_confirm": {
+      "message": "Yedekten ayarlar geri yüklensin mi? Mevcut ayarlarınızın üzerine yazılacak."
+   },
+   "option_restore_done": {
+      "message": "Yedekten geri yüklendi."
+   },
+   "option_restore_none": {
+      "message": "Henüz yedek mevcut değil."
+   },
+   "option_empty_save_confirm": {
+      "message": "Hiç proje yok. Şu an kaydedilirse ayarlar boş verilerle üzerine yazılır. Devam edilsin mi?"
+   },
+   "option_export_copy": {
+      "message": "Dışa aktarılanı panoya kopyala"
+   },
+   "option_export_copied": {
+      "message": "Kopyalandı!"
+   },
+   "option_export_copy_failed": {
+      "message": "Panoya kopyalanamadı."
+   },
+   "popup_sametab_quick": {
+      "message": "Aynı sekmede aç"
+   },
+   "option_filter_placeholder": {
+      "message": "Proje adı veya URL'ye göre filtrele..."
+   },
+   "option_eyebrow": {
+      "message": "Seçenekler"
+   },
+   "option_section_behavior": {
+      "message": "Davranış ayarları"
+   },
+   "option_section_projects": {
+      "message": "Projeler"
+   },
+   "option_sync_label": {
+      "message": "Ayarları cihazlar arasında senkronize et"
+   },
+   "option_sync_description": {
+      "message": "Ayarlar, aynı Google hesabına giriş yapılmış tüm cihazlarda senkronize edilir."
+   },
+   "option_features_title": {
+      "message": "Bilmeniz gereken 8 kullanışlı özellik!"
+   },
+   "option_feature_01_label": {
+      "message": "Adres çubuğundan doğrudan başlatma"
+   },
+   "option_feature_01_body": {
+      "message": "Adres çubuğuna «sw» yazıp Boşluk tuşuna basın; mevcut sayfa için geçiş hedefleri listelenir. Anahtar kelimeyle daha da daraltın."
+   },
+   "option_feature_02_label": {
+      "message": "Sürükle & bırak ile sıralama"
+   },
+   "option_feature_02_body": {
+      "message": "Proje kartlarını tutup istediğiniz konuma sürükleyin. En sık kullandığınız projeleri listenin başına alın."
+   },
+   "option_feature_03_label": {
+      "message": "Gerçek zamanlı proje arama"
+   },
+   "option_feature_03_body": {
+      "message": "Proje listesini ad veya URL ile yazarken filtreleyin. Proje sayısından bağımsız olarak hızlı çalışır."
+   },
+   "option_feature_04_label": {
+      "message": "Tek tıkla URL kopyalama"
+   },
+   "option_feature_04_body": {
+      "message": "Popup'taki her URL satırında kopyalama düğmesi bulunur; istediğiniz URL'yi anında panoya alın."
+   },
+   "option_feature_05_label": {
+      "message": "Ayarları dışa / içe aktarma"
+   },
+   "option_feature_05_body": {
+      "message": "Ayarlarınızı JSON dosyasına kaydedin veya ekibinizle paylaşın. Yeni bir makinede saniyeler içinde içe aktarın."
+   },
+   "option_feature_06_label": {
+      "message": "Cihazlar arası otomatik senkronizasyon"
+   },
+   "option_feature_06_body": {
+      "message": "Ayarlar Google hesabınız üzerinden otomatik senkronize edilir. Aynı kurulum, giriş yaptığınız her Chrome cihazında hazırdır."
+   },
+   "option_feature_07_label": {
+      "message": "Popup'tan sekme modunu değiştirme"
+   },
+   "option_feature_07_body": {
+      "message": "Popup'ın alt kısmından doğrudan «aynı sekme / yeni sekme» arasında geçiş yapın; seçenekler sayfasını açmanıza gerek yok."
+   },
+   "option_feature_08_label": {
+      "message": "URL'lere renk etiketi ekle"
+   },
+   "option_feature_08_body": {
+      "message": "Seçenekler sayfasında her URL'ye bir renk atayın; popup'ta o URL'nin önünde renkli bir nokta belirir. dev, staging ve production'ı tek bakışta ayırt edin."
+   },
+   "popup_color_hint": {
+      "message": "Ayırt etmek zor mu? Ayarlar sayfasında her proje için bir renk belirleyebilirsiniz."
    }
 }

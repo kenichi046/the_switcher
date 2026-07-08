@@ -7,55 +7,168 @@
   <link rel="stylesheet" href="./css/options.css">
   <link rel="stylesheet" href="./fontawesome-free-6.2.1-web/css/fontawesome.min.css">
   <link rel="stylesheet" href="./fontawesome-free-6.2.1-web/css/solid.css">
-  <script src="./js/jquery-3.6.3.min.js"></script>
+  <script src="./js/storage.js"></script>
   <script src="./js/options.js"></script>
 </head>
 
 <body id="theswitcher">
-  <div id="wrap">
-    <h1>The Switcher - options</h1>
-    <!-- <div class="caution">
-      <p style="color: red;">__MSG_option_message_01__</p>
-      <p style="color: red;">__MSG_option_message_02__</p>
-    </div> -->
-    <p id="debugdata"></p>
-    <p class="explain">__MSG_option_message_03__</p>
-    <p class="explain vmiddle">optional:<input type="checkbox" value="0" name="sametab" id="sametab"><label
-        for="sametab">__MSG_option_message_17__</label></p>
-    <div class="switcherContainer">
-      <div class="left_btns">
-        <button class="btnAddProject"><i class="fa-solid fa-file-circle-plus"></i> __MSG_option_message_04__</button>
-      </div>
-      <div class="right-btns">
-        <button class="reload"><i class="fa-solid fa-rotate-right"></i> __MSG_option_message_05__</button><button
-          class="saveData"><i class="fa-solid fa-floppy-disk"></i> __MSG_option_message_06__</button>
-      </div>
-      <div class="appContainer"></div>
-      <div class="sample"><img src="./image/sample.png"></div>
-      <div class="logs">
-        <h3>__MSG_option_message_09__</h3>
-        <ul>
-          <li>__MSG_option_message_10__</li>
-        </ul>
-      </div>
-      <h2 class="morehint"><a><i class="fa-solid fa-file-circle-question"></i> __MSG_option_message_11__</a></h2>
-      <div class="close">
-        <div class="operation">
-          <p>__MSG_option_message_12__</p>
-          <p>__MSG_option_message_13__</p>
-          <h3 class="checkitout">__MSG_option_message_14_0__</h3>
-          <p class="checkpoint">__MSG_option_message_14__</p>
-          <p class="checkpoint">__MSG_option_message_15__</p>
-          <p class="checkpoint">__MSG_option_message_16__</p>
+  <div class="page">
+
+    <header class="masthead">
+      <div class="brand">
+        <img class="brandMark" src="./image/icon128.png" alt="">
+        <div class="brandText">
+          <p class="eyebrow">__MSG_option_eyebrow__</p>
+          <h1>The&nbsp;Switcher</h1>
         </div>
       </div>
-    </div>
-  </div>
-  <footer>(c) <a
-      href="https://engineering.webstudio168.jp/2023/02/multi-domain-switching-and-changeng-extension-the-switcher/"
-      target="_blank"><span class="icon-ew168"></span>engineering.webstudio168.jp</a> All rights reserved.
-    2021-</footer>
+      <p class="lede explain">__MSG_option_message_03__</p>
+    </header>
 
+    <main class="stack">
+
+      <section class="card">
+        <p class="sectionLabel">__MSG_option_section_behavior__</p>
+        <label class="switchRow">
+          <input type="checkbox" value="0" name="sametab" id="sametab" class="switch">
+          <span class="switchText">__MSG_option_message_17__</span>
+        </label>
+      </section>
+
+      <section class="card dataTools">
+        <p class="sectionLabel"><i class="fa-solid fa-share-nodes"></i> __MSG_option_data_tools_title__</p>
+        <div class="dataToolsRow">
+          <div class="btnGroup">
+            <button class="ghostBtn btnExport" type="button"><i class="fa-solid fa-file-export"></i> __MSG_option_export__</button>
+            <button class="ghostBtn btnExportCopy" type="button"><i class="fa-solid fa-clipboard"></i> __MSG_option_export_copy__</button>
+            <button class="ghostBtn btnImport" type="button"><i class="fa-solid fa-file-import"></i> __MSG_option_import__</button>
+            <button class="ghostBtn btnRestore" type="button"><i class="fa-solid fa-clock-rotate-left"></i> __MSG_option_restore__</button>
+            <input type="file" id="importFile" accept="application/json,.json" style="display:none">
+          </div>
+          <label class="switchRow compact syncToggle">
+            <input type="checkbox" id="useSync" class="switch">
+            <span class="switchText">__MSG_option_sync_label__</span>
+          </label>
+          <p class="syncDescription">__MSG_option_sync_description__</p>
+        </div>
+      </section>
+
+      <section class="card projectsCard switcherContainer">
+        <div class="projectsHead">
+          <p class="sectionLabel">__MSG_option_section_projects__</p>
+          <div class="toolbar right-btns">
+            <button class="reload" type="button"><i class="fa-solid fa-rotate-right"></i> __MSG_option_message_05__</button>
+            <button class="saveData" type="button"><i class="fa-solid fa-floppy-disk"></i> __MSG_option_message_06__</button>
+          </div>
+        </div>
+
+        <div class="projectsTools">
+          <div class="left_btns">
+            <button class="btnAddProject" type="button"><i class="fa-solid fa-file-circle-plus"></i> __MSG_option_message_04__</button>
+          </div>
+          <div class="projectFilterWrap">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" id="projectFilter" class="projectFilter" placeholder="__MSG_option_filter_placeholder__">
+            <span class="filterCount" id="filterCount"></span>
+          </div>
+        </div>
+
+        <div class="appContainer"></div>
+      </section>
+
+      <section class="card subtle">
+        <p class="sectionLabel">__MSG_option_message_09__</p>
+        <ul class="logs">
+          <li>__MSG_option_message_10__</li>
+        </ul>
+        <figure class="sample">
+          <img src="./image/sample.png" alt="">
+        </figure>
+      </section>
+
+      <section class="card featuresCard">
+        <p class="sectionLabel"><i class="fa-solid fa-star"></i> __MSG_option_features_title__</p>
+        <ul class="featureList">
+          <li class="featureItem">
+            <span class="featureIcon"><i class="fa-solid fa-keyboard"></i></span>
+            <div class="featureBody">
+              <strong class="featureLabel">__MSG_option_feature_01_label__</strong>
+              <span class="featureDesc">__MSG_option_feature_01_body__</span>
+            </div>
+          </li>
+          <li class="featureItem">
+            <span class="featureIcon"><i class="fa-solid fa-arrows-up-down"></i></span>
+            <div class="featureBody">
+              <strong class="featureLabel">__MSG_option_feature_02_label__</strong>
+              <span class="featureDesc">__MSG_option_feature_02_body__</span>
+            </div>
+          </li>
+          <li class="featureItem">
+            <span class="featureIcon"><i class="fa-solid fa-filter"></i></span>
+            <div class="featureBody">
+              <strong class="featureLabel">__MSG_option_feature_03_label__</strong>
+              <span class="featureDesc">__MSG_option_feature_03_body__</span>
+            </div>
+          </li>
+          <li class="featureItem">
+            <span class="featureIcon"><i class="fa-solid fa-copy"></i></span>
+            <div class="featureBody">
+              <strong class="featureLabel">__MSG_option_feature_04_label__</strong>
+              <span class="featureDesc">__MSG_option_feature_04_body__</span>
+            </div>
+          </li>
+          <li class="featureItem">
+            <span class="featureIcon"><i class="fa-solid fa-file-export"></i></span>
+            <div class="featureBody">
+              <strong class="featureLabel">__MSG_option_feature_05_label__</strong>
+              <span class="featureDesc">__MSG_option_feature_05_body__</span>
+            </div>
+          </li>
+          <li class="featureItem">
+            <span class="featureIcon"><i class="fa-solid fa-cloud"></i></span>
+            <div class="featureBody">
+              <strong class="featureLabel">__MSG_option_feature_06_label__</strong>
+              <span class="featureDesc">__MSG_option_feature_06_body__</span>
+            </div>
+          </li>
+          <li class="featureItem">
+            <span class="featureIcon"><i class="fa-solid fa-bolt"></i></span>
+            <div class="featureBody">
+              <strong class="featureLabel">__MSG_option_feature_07_label__</strong>
+              <span class="featureDesc">__MSG_option_feature_07_body__</span>
+            </div>
+          </li>
+          <li class="featureItem">
+            <span class="featureIcon"><i class="fa-solid fa-palette"></i></span>
+            <div class="featureBody">
+              <strong class="featureLabel">__MSG_option_feature_08_label__</strong>
+              <span class="featureDesc">__MSG_option_feature_08_body__</span>
+            </div>
+          </li>
+        </ul>
+      </section>
+
+      <section class="card subtle help">
+        <h2 class="morehint"><a><i class="fa-solid fa-circle-question"></i> __MSG_option_message_11__ <i class="fa-solid fa-chevron-down chev"></i></a></h2>
+        <div class="close">
+          <div class="operation">
+            <p>__MSG_option_message_12__</p>
+            <p>__MSG_option_message_13__</p>
+            <h3 class="checkitout">__MSG_option_message_14_0__</h3>
+            <p class="checkpoint">__MSG_option_message_14__</p>
+            <p class="checkpoint">__MSG_option_message_15__</p>
+            <p class="checkpoint">__MSG_option_message_16__</p>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <footer>(c) <a
+        href="https://engineering.webstudio168.jp/2023/02/multi-domain-switching-and-changeng-extension-the-switcher/"
+        target="_blank"><span class="icon-ew168"></span>engineering.webstudio168.jp</a> All rights reserved. 2021-</footer>
+
+  </div>
 </body>
 
 </html>

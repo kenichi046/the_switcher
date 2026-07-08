@@ -7,7 +7,6 @@
   <link rel="stylesheet" href="./css/popup.css">
   <link rel="stylesheet" href="./fontawesome-free-6.2.1-web/css/fontawesome.min.css">
   <link rel="stylesheet" href="./fontawesome-free-6.2.1-web/css/solid.css">
-  <script src="./js/jquery-3.6.3.min.js"></script>
 </head>
 
 <body id="theswitcher">
@@ -15,12 +14,18 @@
     <div class="appContainer">
       <h2>The Switcher<a href="options.html" target="_blank" class="setting"><i class="fa-solid fa-gear"></i></a></h2>
       <p>__MSG_popup_message_01__</p>
-      <p style="color: red;">__MSG_popup_message_02__</p>
-      </p>(c) <a
+    </div>
+    <div class="quickSettings" style="display:none">
+      <label class="sametabQuickToggle">
+        <input type="checkbox" id="sametabQuick">
+        <span>__MSG_popup_sametab_quick__</span>
+      </label>
+    </div>
+    <p class="copyright">(c) <a
         href="https://engineering.webstudio168.jp/2023/02/multi-domain-switching-and-changeng-extension-the-switcher/"
         target="_blank">QTW</a> 2022- All rights reserved.</p>
-    </div>
   </div>
+  <script src="./js/storage.js"></script>
   <script src="./js/popup.js"></script>
 </body>
 

@@ -33,7 +33,7 @@
       "message": "История обновлений"
    },
    "option_message_10": {
-      "message": "Пожалуйста, проверьте на \u003Ca href='https://chrome.google.com/webstore/detail/the-switcher/ibnjhiipcjlebggficnjfanodgpabpcm' target='_blank'>Crome Web Store\u003C/a>."
+      "message": "Пожалуйста, проверьте на <a href='https://chrome.google.com/webstore/detail/the-switcher/ibnjhiipcjlebggficnjfanodgpabpcm' target='_blank'>Crome Web Store</a>."
    },
    "option_message_11": {
       "message": "Совет ▼"
@@ -42,27 +42,168 @@
       "message": "Как в примере выше, настройте корневые домены для 'рабочей среды', 'стейджинговой среды', 'локальной среды'."
    },
    "option_message_13": {
-      "message": "При просмотре веб-страницы в Chrome, содержащей настроенный URL, нажмите на \u003Cimg class='icon' src='./image/icon16.png'> во вкладке расширения, чтобы отобразить ссылку для переключения."
+      "message": "При просмотре веб-страницы в Chrome, содержащей настроенный URL, нажмите на <img class='icon' src='./image/icon16.png'> во вкладке расширения, чтобы отобразить ссылку для переключения."
    },
    "option_message_14": {
-      "message": "(1) Если установлены только \u003Cspan style='color: red'>два корневых документа, новая вкладка открывается непосредственно\u003C/span>."
+      "message": "(1) Если установлены только <span style='color: red'>два корневых документа, новая вкладка открывается непосредственно</span>."
    },
    "option_message_14_0": {
       "message": "Три ключевые особенности, которые отличают нас"
    },
    "option_message_15": {
-      "message": "(2) \u003Cspan style='color:red;'>В контекстном меню страницы также отображается при правом клике\u003C/span>."
+      "message": "(2) <span style='color:red;'>В контекстном меню страницы также отображается при правом клике</span>."
    },
    "option_message_16": {
-      "message": "(3) Нажмите \u003Cspan class='code'>ctrl\u003C/span> + \u003Cspan class='code'>Shift\u003C/span> + \u003Cspan class='code'>Up\u003C/span> (стрелка вверх) для \u003Cspan style='color: red;'>запуска с помощью сочетания клавиш\u003C/span>! Нажатие \u003Cspan class='code'>Enter\u003C/span>, когда URL находится в фокусе, произведет переключение. Это удобно и незаметно. Выбор возможен с помощью \u003Cspan class='code'>Up\u003C/span>, \u003Cspan class='code'>Down\u003C/span>."
+      "message": "(3) Нажмите <span class='code'>ctrl</span> + <span class='code'>Shift</span> + <span class='code'>Up</span> (стрелка вверх) для <span style='color: red;'>запуска с помощью сочетания клавиш</span>! Нажатие <span class='code'>Enter</span>, когда URL находится в фокусе, произведет переключение. Это удобно и незаметно. Выбор возможен с помощью <span class='code'>Up</span>, <span class='code'>Down</span>."
    },
    "option_message_17": {
-      "message": "Открыть в той же вкладке (для 2 доменов)"
+      "message": "Открыть в той же вкладке (при 2 URL — мгновенно по клику; OFF — новая вкладка)"
    },
    "popup_message_01": {
-      "message": "Этот URL не подходит. Пожалуйста, добавьте проект или URL на \u003Ca href='options.html' target='_blank'>странице настроек\u003C/a>."
+      "message": "Этот URL не подходит. Пожалуйста, добавьте проект или URL на <a href='options.html' target='_blank'>странице настроек</a>."
    },
    "popup_message_02": {
       "message": "※Начиная с версии 1.20, изменилось место сохранения данных. Просим повторно настроить параметры."
+   },
+   "option_data_tools_title": {
+      "message": "Общий доступ и синхронизация настроек"
+   },
+   "option_export": {
+      "message": "Экспорт"
+   },
+   "option_import": {
+      "message": "Импорт"
+   },
+   "option_import_confirm": {
+      "message": "Это перезапишет ваши текущие настройки. Продолжить?"
+   },
+   "option_import_invalid": {
+      "message": "Неверный формат файла конфигурации."
+   },
+   "option_import_done": {
+      "message": "Настройки импортированы."
+   },
+   "option_save_error": {
+      "message": "Не удалось сохранить настройки."
+   },
+   "option_sync_error": {
+      "message": "Не удалось синхронизировать настройки. Возможно, превышен лимит размера синхронизации."
+   },
+   "option_export_unsaved": {
+      "message": "Есть несохранённые изменения. Экспортировать последние сохранённые настройки? (Несохранённые правки не будут включены.)"
+   },
+   "popup_copy": {
+      "message": "Копировать URL"
+   },
+   "popup_copied": {
+      "message": "Скопировано!"
+   },
+   "omnibox_hint": {
+      "message": "Переключить среду этой страницы"
+   },
+   "omnibox_filter": {
+      "message": "Введите для фильтрации или выберите вариант ниже"
+   },
+   "omnibox_nomatch": {
+      "message": "Для этой страницы нет подходящей среды"
+   },
+   "option_restore": {
+      "message": "Восстановить из резервной копии"
+   },
+   "option_restore_confirm": {
+      "message": "Восстановить настройки из резервной копии? Текущие настройки будут перезаписаны."
+   },
+   "option_restore_done": {
+      "message": "Настройки восстановлены из резервной копии."
+   },
+   "option_restore_none": {
+      "message": "Резервная копия ещё недоступна."
+   },
+   "option_empty_save_confirm": {
+      "message": "Нет ни одного проекта. Сохранение перезапишет настройки пустыми данными. Продолжить?"
+   },
+   "option_export_copy": {
+      "message": "Копировать экспорт в буфер обмена"
+   },
+   "option_export_copied": {
+      "message": "Скопировано!"
+   },
+   "option_export_copy_failed": {
+      "message": "Не удалось скопировать в буфер обмена."
+   },
+   "popup_sametab_quick": {
+      "message": "Открыть в той же вкладке"
+   },
+   "option_filter_placeholder": {
+      "message": "Фильтр по имени проекта или URL..."
+   },
+   "option_eyebrow": {
+      "message": "Настройки"
+   },
+   "option_section_behavior": {
+      "message": "Поведение"
+   },
+   "option_section_projects": {
+      "message": "Проекты"
+   },
+   "option_sync_label": {
+      "message": "Синхронизировать настройки между устройствами"
+   },
+   "option_sync_description": {
+      "message": "Настройки синхронизируются на всех устройствах, вошедших в один аккаунт Google."
+   },
+   "option_features_title": {
+      "message": "8 полезных функций!"
+   },
+   "option_feature_01_label": {
+      "message": "Запуск из адресной строки"
+   },
+   "option_feature_01_body": {
+      "message": "Введите «sw» в адресной строке и нажмите пробел — отобразятся цели переключения для текущей страницы. Уточните поиск ключевым словом."
+   },
+   "option_feature_02_label": {
+      "message": "Сортировка перетаскиванием"
+   },
+   "option_feature_02_body": {
+      "message": "Перетащите карточку проекта на нужное место. Поставьте наиболее используемые проекты в начало списка."
+   },
+   "option_feature_03_label": {
+      "message": "Мгновенный поиск проектов"
+   },
+   "option_feature_03_body": {
+      "message": "Фильтруйте список проектов по имени или URL в реальном времени. Работает быстро независимо от количества проектов."
+   },
+   "option_feature_04_label": {
+      "message": "Копирование URL одним кликом"
+   },
+   "option_feature_04_body": {
+      "message": "Каждая строка URL во всплывающем окне имеет кнопку копирования — получите любой целевой URL в буфер обмена мгновенно."
+   },
+   "option_feature_05_label": {
+      "message": "Экспорт / Импорт настроек"
+   },
+   "option_feature_05_body": {
+      "message": "Сохраните настройки в JSON-файл или поделитесь ими с командой. Быстро импортируйте на новом компьютере."
+   },
+   "option_feature_06_label": {
+      "message": "Автоматическая синхронизация между устройствами"
+   },
+   "option_feature_06_body": {
+      "message": "Настройки синхронизируются через аккаунт Google. Одинаковая конфигурация доступна на каждом устройстве с Chrome."
+   },
+   "option_feature_07_label": {
+      "message": "Переключение режима вкладки из попапа"
+   },
+   "option_feature_07_body": {
+      "message": "Переключайте «та же вкладка» / «новая вкладка» прямо из нижней части всплывающего окна — открывать настройки не нужно."
+   },
+   "option_feature_08_label": {
+      "message": "Цветовые метки для URL среды"
+   },
+   "option_feature_08_body": {
+      "message": "Назначьте цвет каждому URL на странице настроек — перед этим URL в попапе появится цветная точка. Мгновенно различайте dev, staging и production с первого взгляда."
+   },
+   "popup_color_hint": {
+      "message": "Трудно различить? Вы можете задать цвет для каждого проекта на странице настроек."
    }
 }

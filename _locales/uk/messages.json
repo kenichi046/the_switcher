@@ -33,7 +33,7 @@
       "message": "Історія оновлень"
    },
    "option_message_10": {
-      "message": "Будь ласка, перевірте на \u003Ca href='https://chrome.google.com/webstore/detail/the-switcher/ibnjhiipcjlebggficnjfanodgpabpcm' target='_blank'>Crome Web Store\u003C/a>."
+      "message": "Будь ласка, перевірте на <a href='https://chrome.google.com/webstore/detail/the-switcher/ibnjhiipcjlebggficnjfanodgpabpcm' target='_blank'>Crome Web Store</a>."
    },
    "option_message_11": {
       "message": "Підказка ▼"
@@ -42,27 +42,168 @@
       "message": "Як у наведеному вище прикладі, налаштуйте корені доменів для 'робочого середовища', 'стейджингового середовища', 'локального середовища'."
    },
    "option_message_13": {
-      "message": "При перегляді веб-сторінки в Chrome, що містить налаштований URL, натисніть на \u003Cimg class='icon' src='./image/icon16.png'> у вкладці розширення, щоб відобразити посилання для перемикання."
+      "message": "При перегляді веб-сторінки в Chrome, що містить налаштований URL, натисніть на <img class='icon' src='./image/icon16.png'> у вкладці розширення, щоб відобразити посилання для перемикання."
    },
    "option_message_14": {
-      "message": "(1) Якщо налаштовано лише \u003Cspan style='color: red'>два корені документів, нова вкладка відкривається безпосередньо\u003C/span>."
+      "message": "(1) Якщо налаштовано лише <span style='color: red'>два корені документів, нова вкладка відкривається безпосередньо</span>."
    },
    "option_message_14_0": {
       "message": "Три ключові особливості, що відрізняють нас"
    },
    "option_message_15": {
-      "message": "(2) \u003Cspan style='color:red;'>Також відображається контекстне меню при правому кліку на сторінці\u003C/span>."
+      "message": "(2) <span style='color:red;'>Також відображається контекстне меню при правому кліку на сторінці</span>."
    },
    "option_message_16": {
-      "message": "(3) Натисніть \u003Cspan class='code'>ctrl\u003C/span> + \u003Cspan class='code'>Shift\u003C/span> + \u003Cspan class='code'>Up\u003C/span> (стрілка вгору) для \u003Cspan style='color: red;'>запуску за допомогою гарячих клавіш\u003C/span>! Натиснення \u003Cspan class='code'>Enter\u003C/span>, коли URL у фокусі, здійснить перемикання. Це зручно і непомітно. Вибір можливий за допомогою \u003Cspan class='code'>Up\u003C/span>, \u003Cspan class='code'>Down\u003C/span>."
+      "message": "(3) Натисніть <span class='code'>ctrl</span> + <span class='code'>Shift</span> + <span class='code'>Up</span> (стрілка вгору) для <span style='color: red;'>запуску за допомогою гарячих клавіш</span>! Натиснення <span class='code'>Enter</span>, коли URL у фокусі, здійснить перемикання. Це зручно і непомітно. Вибір можливий за допомогою <span class='code'>Up</span>, <span class='code'>Down</span>."
    },
    "option_message_17": {
-      "message": "Відкрити в тій самій вкладці (для 2 доменів)"
+      "message": "Відкрити в тій самій вкладці (за 2 URL — миттєво за кліком; OFF — нова вкладка)"
    },
    "popup_message_01": {
-      "message": "Цей URL не відповідає критеріям. Будь ласка, додайте проект або URL на \u003Ca href='options.html' target='_blank'>сторінці опцій\u003C/a>."
+      "message": "Цей URL не відповідає критеріям. Будь ласка, додайте проект або URL на <a href='options.html' target='_blank'>сторінці опцій</a>."
    },
    "popup_message_02": {
       "message": "※З версії 1.20 місце зберігання даних змінилося. Будь ласка, переналаштуйте."
+   },
+   "option_data_tools_title": {
+      "message": "Спільний доступ та синхронізація налаштувань"
+   },
+   "option_export": {
+      "message": "Експорт"
+   },
+   "option_import": {
+      "message": "Імпорт"
+   },
+   "option_import_confirm": {
+      "message": "Це перезапише ваші поточні налаштування. Продовжити?"
+   },
+   "option_import_invalid": {
+      "message": "Невірний формат файлу конфігурації."
+   },
+   "option_import_done": {
+      "message": "Налаштування імпортовано."
+   },
+   "option_save_error": {
+      "message": "Не вдалося зберегти налаштування."
+   },
+   "option_sync_error": {
+      "message": "Не вдалося синхронізувати налаштування. Можливо, перевищено ліміт розміру синхронізації."
+   },
+   "option_export_unsaved": {
+      "message": "Є незбережені зміни. Експортувати останні збережені налаштування? (Незбережені правки не будуть включені.)"
+   },
+   "popup_copy": {
+      "message": "Копіювати URL"
+   },
+   "popup_copied": {
+      "message": "Скопійовано!"
+   },
+   "omnibox_hint": {
+      "message": "Перемкнути середовище цієї сторінки"
+   },
+   "omnibox_filter": {
+      "message": "Введіть для фільтрації або виберіть нижче"
+   },
+   "omnibox_nomatch": {
+      "message": "Для цієї сторінки немає відповідного середовища"
+   },
+   "option_restore": {
+      "message": "Відновити з резервної копії"
+   },
+   "option_restore_confirm": {
+      "message": "Відновити налаштування з резервної копії? Поточні налаштування буде перезаписано."
+   },
+   "option_restore_done": {
+      "message": "Налаштування відновлено з резервної копії."
+   },
+   "option_restore_none": {
+      "message": "Резервна копія ще недоступна."
+   },
+   "option_empty_save_confirm": {
+      "message": "Немає жодного проекту. Збереження перезапише налаштування порожніми даними. Продовжити?"
+   },
+   "option_export_copy": {
+      "message": "Копіювати експорт у буфер обміну"
+   },
+   "option_export_copied": {
+      "message": "Скопійовано!"
+   },
+   "option_export_copy_failed": {
+      "message": "Не вдалося скопіювати у буфер обміну."
+   },
+   "popup_sametab_quick": {
+      "message": "Відкрити у тій же вкладці"
+   },
+   "option_filter_placeholder": {
+      "message": "Фільтр за назвою проекту або URL..."
+   },
+   "option_eyebrow": {
+      "message": "Налаштування"
+   },
+   "option_section_behavior": {
+      "message": "Поведінка"
+   },
+   "option_section_projects": {
+      "message": "Проекти"
+   },
+   "option_sync_label": {
+      "message": "Синхронізувати налаштування між пристроями"
+   },
+   "option_sync_description": {
+      "message": "Налаштування синхронізуються на всіх пристроях, що увійшли в один обліковий запис Google."
+   },
+   "option_features_title": {
+      "message": "8 корисних функцій!"
+   },
+   "option_feature_01_label": {
+      "message": "Запуск з адресного рядка"
+   },
+   "option_feature_01_body": {
+      "message": "Введіть «sw» в адресному рядку та натисніть пробіл — з'являться цілі переключення для поточної сторінки. Уточніть пошук ключовим словом."
+   },
+   "option_feature_02_label": {
+      "message": "Сортування перетягуванням"
+   },
+   "option_feature_02_body": {
+      "message": "Перетягніть картку проекту на потрібне місце. Розмістіть найбільш використовувані проекти на початку списку."
+   },
+   "option_feature_03_label": {
+      "message": "Миттєвий пошук проектів"
+   },
+   "option_feature_03_body": {
+      "message": "Фільтруйте список проектів за назвою або URL у реальному часі. Швидко працює незалежно від кількості проектів."
+   },
+   "option_feature_04_label": {
+      "message": "Копіювання URL одним кліком"
+   },
+   "option_feature_04_body": {
+      "message": "Кожен рядок URL у спливаючому вікні має кнопку копіювання — отримайте будь-який цільовий URL у буфер обміну миттєво."
+   },
+   "option_feature_05_label": {
+      "message": "Експорт / Імпорт налаштувань"
+   },
+   "option_feature_05_body": {
+      "message": "Збережіть налаштування у JSON-файл або поділіться ними з командою. Швидко імпортуйте на новому комп'ютері."
+   },
+   "option_feature_06_label": {
+      "message": "Автоматична синхронізація між пристроями"
+   },
+   "option_feature_06_body": {
+      "message": "Налаштування синхронізуються через обліковий запис Google. Однакова конфігурація доступна на кожному пристрої з Chrome."
+   },
+   "option_feature_07_label": {
+      "message": "Перемикання режиму вкладки зі спливаючого вікна"
+   },
+   "option_feature_07_body": {
+      "message": "Перемикайте «та сама вкладка» / «нова вкладка» прямо з нижньої частини спливаючого вікна — відкривати налаштування не потрібно."
+   },
+   "option_feature_08_label": {
+      "message": "Кольорові мітки для URL середовища"
+   },
+   "option_feature_08_body": {
+      "message": "Призначте колір кожному URL на сторінці налаштувань — перед цим URL у спливаючому вікні з'явиться кольорова точка. Миттєво розрізняйте dev, staging і production з першого погляду."
+   },
+   "popup_color_hint": {
+      "message": "Важко розрізнити? Ви можете задати колір для кожного проєкту на сторінці налаштувань."
    }
 }

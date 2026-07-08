@@ -1,100 +1,343 @@
-#theswitcher .switcherContainer {
-  padding: 10px 20px;
-  width: 430px;
+:root {
+  --bg: #f0f2ff;
+  --card-bg: #ffffff;
+  --header-from: #4f46e5;
+  --header-to: #7c3aed;
+  --text-url: #2563eb;
+  --text-muted: #6b7280;
+  --text-dark: #1e1b4b;
+  --accent: #4f46e5;
+  --active-bg: #f5f3ff;
+  --active-border: #7c3aed;
+  --now-bg: #ef4444;
+  --item-border: #e5e7eb;
+  --hover-bg: #faf9ff;
+  --sametab-bg: #ede9fe;
+  --sametab-color: #5b21b6;
+  --sametab-hover-bg: #4f46e5;
+  --sametab-hover-color: #ffffff;
+  --icon-color: #9ca3af;
+  --gear-color: rgba(255, 255, 255, 0.72);
+  --copied-color: #16a34a;
+  --header-text: #ffffff;
+  --badge-text: #ffffff;
 }
 
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #15151f;
+    --card-bg: #1e1e2c;
+    --header-from: #4338ca;
+    --header-to: #6d28d9;
+    --text-url: #93c5fd;
+    --text-muted: #9ca3af;
+    --text-dark: #e5e7eb;
+    --accent: #a78bfa;
+    --active-bg: #2a2440;
+    --active-border: #a78bfa;
+    --now-bg: #f87171;
+    --item-border: #2e2e40;
+    --hover-bg: #262635;
+    --sametab-bg: #322a55;
+    --sametab-color: #d4c9fb;
+    --sametab-hover-bg: #7c3aed;
+    --sametab-hover-color: #ffffff;
+    --icon-color: #71717a;
+    --gear-color: rgba(255, 255, 255, 0.72);
+    --copied-color: #4ade80;
+    --header-text: #f3f4f6;
+    --badge-text: #ffffff;
+  }
+}
+
+#theswitcher {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+  background: var(--bg);
+}
+
+#theswitcher .switcherContainer {
+  padding: 0;
+  width: 500px;
+}
+
+/* ── Header ─────────────────────────────────────────── */
 #theswitcher .switcherContainer h1,
 #theswitcher .switcherContainer h2 {
-  margin-bottom: 1em;
-}
-
-#theswitcher .switcherContainer h2 {
-  border-bottom: 1px solid #CCC;
-  padding-bottom: 0.5em;
+  display: flex;
+  align-items: center;
+  background: linear-gradient(135deg, var(--header-from) 0%, var(--header-to) 100%);
+  color: var(--header-text);
+  margin: 0;
+  padding: 13px 16px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  border-bottom: none;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
 }
 
 #theswitcher .switcherContainer .appContainer h2.listed {
   margin-bottom: 0;
 }
 
+#theswitcher .setting {
+  margin-left: auto;
+  color: var(--gear-color);
+  display: flex;
+  align-items: center;
+  font-size: 0.9rem;
+  transition: color 0.2s ease, transform 0.35s ease;
+}
+
+#theswitcher .setting:hover {
+  color: var(--header-text);
+  transform: rotate(75deg);
+}
+
+/* ── URL blocks ──────────────────────────────────────── */
+.urlBlock {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 14px;
+  background: var(--card-bg);
+  border-bottom: 1px solid var(--item-border);
+  overflow: hidden;
+  position: relative;
+  transition: background 0.12s ease;
+}
+
+.urlBlock:last-child {
+  border-bottom: none;
+}
+
+.urlBlock:hover {
+  background: var(--hover-bg);
+}
+
 #theswitcher .switcherContainer .urlBlock {
-  padding: 10px;
-  font-size: 1.2rem;
+  font-size: 0.9rem;
+}
+
+/* Active (NOW) block */
+#theswitcher .switcherContainer .urlBlock.active {
+  background: var(--active-bg);
+  border-left: 3px solid var(--active-border);
+  padding-left: 11px;
+}
+
+/* NOW badge — ::before appears first in flex row */
+#theswitcher .switcherContainer .urlBlock.active::before {
+  content: "NOW";
+  flex-shrink: 0;
+  font-size: 0.58rem;
+  font-weight: 800;
+  letter-spacing: 0.07em;
+  background: var(--now-bg);
+  color: var(--badge-text);
+  padding: 2px 5px;
+  border-radius: 3px;
+}
+
+/* suppress the old ::after badge */
+#theswitcher .switcherContainer .urlBlock.active::after {
+  content: none;
+}
+
+#theswitcher .switcherContainer .urlBlock.active a:first-of-type {
+  color: var(--text-muted);
+}
+
+/* ── Color dot ───────────────────────────────────────── */
+.urlColorDot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* ── Links inside URL blocks ─────────────────────────── */
+.urlBlock a:first-of-type {
+  flex: 1;
+  min-width: 0;
+  display: block;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  color: var(--text-url);
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: opacity 0.15s;
 }
 
-#theswitcher .switcherContainer .urlBlock.active {
-  position: relative;
+.urlBlock a:first-of-type:hover {
+  opacity: 0.7;
+  text-decoration: underline;
 }
 
-#theswitcher .switcherContainer .urlBlock.active a {
-  color: #999;
+/* External-link icon */
+.urlBlock i {
+  font-size: 0.58rem;
+  color: var(--icon-color);
+  flex-shrink: 0;
+  margin: 0;
 }
 
-#theswitcher .switcherContainer .urlBlock.active::after {
-  content: "NOW";
-  position: absolute;
-  left: 0;
-  top: 0;
-  font-size: 0.6rem;
-  display: inline-block;
-  background-color: red;
-  color: white;
-  padding: 0 0.5em;
+/* SameTab pill button */
+.urlBlock a:last-child {
+  flex-shrink: 0;
+  width: auto;
+  font-size: 0.68rem;
+  font-weight: 600;
+  color: var(--sametab-color);
+  background: var(--sametab-bg);
+  padding: 3px 11px;
+  border-radius: 999px;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+  margin-left: 2px;
+  transition: background 0.15s, color 0.15s, box-shadow 0.15s;
 }
 
-#theswitcher .switcherContainer .urlBlock a:hover {
-  opacity: .6;
+.urlBlock a:last-child:hover {
+  background: var(--sametab-hover-bg);
+  color: var(--sametab-hover-color);
+  box-shadow: 0 2px 8px rgba(79, 70, 229, 0.35);
 }
 
+/* ── Notice block ────────────────────────────────────── */
 #theswitcher .switcherContainer .urlBlock.notice {
   width: 100%;
   overflow: visible;
   text-overflow: initial;
   white-space: initial;
   display: block;
+  color: var(--text-muted);
+  padding: 14px 16px;
+  font-size: 0.85rem;
 }
 
 #theswitcher .switcherContainer .urlBlock.notice .txtUnderLine {
   text-decoration: underline dotted #d90368;
+  color: var(--text-dark);
 }
 
 #theswitcher .switcherContainer .urlBlock.notice a {
   font-size: 100%;
+  color: var(--accent);
 }
 
-.urlBlock {
+/* ── Color-setting hint (shown when 3+ roots list is displayed and no custom color is set) ── */
+#theswitcher .switcherContainer .urlBlock.colorHint {
+  width: 100%;
+  overflow: visible;
+  text-overflow: initial;
+  white-space: initial;
   display: flex;
-  align-items: end;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-muted);
+  padding: 10px 16px;
+  font-size: 0.78rem;
+  border-top: 1px dashed var(--border-color, rgba(0, 0, 0, 0.08));
+  margin-top: 4px;
 }
 
-.urlBlock i {
-  font-size: 50%;
-  margin-left: 0.5em;
+#theswitcher .switcherContainer .urlBlock.colorHint i {
+  color: var(--accent);
+  font-size: 0.9em;
+  flex: none;
 }
 
-.urlBlock a:first-child {
-  width: atuo;
-  max-width: 78%;
-  display: block;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-.urlBlock a:last-child {
-  width: auto;
-  font-size: 65%;
-  padding: 0 0.25em;
-  margin-left: auto;
-}
-
+/* ── Default-state paragraphs (no URL match) ─────────── */
 #theswitcher .appContainer p {
-  margin-bottom: 1em;
+  padding: 10px 16px;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  background: var(--card-bg);
+  border-bottom: 1px solid var(--item-border);
+  margin-bottom: 0;
 }
 
-#theswitcher .setting {
-  margin-left: 1em;
+/* ── Copy button ─────────────────────────────────────── */
+.urlBlock .copyBtn {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  margin-left: 2px;
+  border: none;
+  border-radius: 6px;
+  background: transparent;
+  color: var(--icon-color);
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+.urlBlock .copyBtn:hover {
+  background: var(--sametab-bg);
+  color: var(--sametab-color);
+}
+.urlBlock .copyBtn i {
+  font-size: 0.82rem;
+  color: inherit;
+  margin: 0;
+}
+.urlBlock .copyBtn.copied,
+.urlBlock .copyBtn.copied i {
+  color: var(--copied-color);
+}
+
+/* ── Quick settings (footer toggle) ──────────────────── */
+.quickSettings {
+  padding: 8px 16px;
+  border-top: 1px solid var(--item-border);
+  background: var(--card-bg);
+}
+
+.sametabQuickToggle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  cursor: pointer;
+  user-select: none;
+}
+
+.sametabQuickToggle input {
+  margin: 0;
+  width: 14px;
+  height: 14px;
+  accent-color: var(--accent);
+  cursor: pointer;
+}
+
+/* ── URL diff highlight ──────────────────────────────── */
+.urlDiff {
+  color: #60a5fa;
+  font-weight: 500;
+}
+
+#theswitcher .switcherContainer .urlBlock.active a:first-of-type .urlDiff {
+  color: #60a5fa;
+}
+
+.copyright {
+  padding: 6px 12px 8px;
+  font-size: .68rem;
+  color: var(--text-muted);
+  text-align: center;
+}
+
+.copyright a {
+  color: var(--text-muted);
+  text-decoration: none;
+}
+
+.copyright a:hover {
+  text-decoration: underline;
 }

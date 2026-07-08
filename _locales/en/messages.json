@@ -33,7 +33,7 @@
       "message": "updates"
    },
    "option_message_10": {
-      "message": "Please check the \u003Ca href='https://chrome.google.com/webstore/detail/the-switcher/ibnjhiipcjlebggficnjfanodgpabpcm' target='_blank'>Crome Web Store\u003C/a>"
+      "message": "Please check the <a href='https://chrome.google.com/webstore/detail/the-switcher/ibnjhiipcjlebggficnjfanodgpabpcm' target='_blank'>Crome Web Store</a>"
    },
    "option_message_11": {
       "message": "More HINT ▼"
@@ -42,27 +42,168 @@
       "message": "As in the above sample, set the domain root such as 'production environment', 'staging environment', and 'local environment'."
    },
    "option_message_13": {
-      "message": "When browsing a web page containing the set URL in Chrome, clicking on the extension tab (\u003Cimg class='icon' src='./image/icon16.png'>) will display links for switching."
+      "message": "When browsing a web page containing the set URL in Chrome, clicking on the extension tab (<img class='icon' src='./image/icon16.png'>) will display links for switching."
    },
    "option_message_14": {
-      "message": "(1) If only two document roots are set, another tab will \u003Cspan style='color:red;'>open directly\u003C/span>."
+      "message": "(1) If only two document roots are set, another tab will <span style='color:red;'>open directly</span>."
    },
    "option_message_14_0": {
       "message": "CHEK IT"
    },
    "option_message_15": {
-      "message": "(2) You can also \u003Cspan style='color:red;'>right-click within the page to display the context menu\u003C/span>."
+      "message": "(2) You can also <span style='color:red;'>right-click within the page to display the context menu</span>."
    },
    "option_message_16": {
-      "message": "(3) In addition, \u003Cspan class='code'>ctrl\u003C/span> + \u003Cspan class='code'>Shift\u003C/span> + \u003Cspan class='code'>Up\u003C/span> (up arrow) opens the shortcut! Soberly convenient."
+      "message": "(3) In addition, <span class='code'>ctrl</span> + <span class='code'>Shift</span> + <span class='code'>Up</span> (up arrow) opens the shortcut! Soberly convenient."
    },
    "option_message_17": {
-      "message": "Open in the same tab (for 2 domains)"
+      "message": "Open in the same tab (with exactly 2 URLs, switch instantly on click; OFF uses a new tab)"
    },
    "popup_message_01": {
       "message": "This URL is out of scope. Add a project or URL on the options page."
    },
    "popup_message_02": {
-      "message": "*From ver.1.20, the data save destination has been changed. Please make the \u003Ca href='options.html' target='_blank'>settings\u003C/a> again."
+      "message": "*From ver.1.20, the data save destination has been changed. Please make the <a href='options.html' target='_blank'>settings</a> again."
+   },
+   "option_data_tools_title": {
+      "message": "Share / Sync settings"
+   },
+   "option_export": {
+      "message": "Export"
+   },
+   "option_import": {
+      "message": "Import"
+   },
+   "option_sync_label": {
+      "message": "Sync settings across your devices"
+   },
+   "option_sync_description": {
+      "message": "Settings are synced across all devices signed into the same Google account."
+   },
+   "option_import_confirm": {
+      "message": "This will overwrite your current settings. Continue?"
+   },
+   "option_import_invalid": {
+      "message": "Invalid configuration file."
+   },
+   "option_import_done": {
+      "message": "Settings imported."
+   },
+   "option_save_error": {
+      "message": "Failed to save settings."
+   },
+   "option_sync_error": {
+      "message": "Could not sync settings. They may exceed the sync size limit."
+   },
+   "option_export_unsaved": {
+      "message": "There are unsaved changes. Export the last saved settings? (Unsaved edits will not be included.)"
+   },
+   "popup_copy": {
+      "message": "Copy URL"
+   },
+   "popup_copied": {
+      "message": "Copied!"
+   },
+   "omnibox_hint": {
+      "message": "Switch this page's environment"
+   },
+   "omnibox_filter": {
+      "message": "Type to filter, or pick an environment below"
+   },
+   "omnibox_nomatch": {
+      "message": "No matching environment for this page"
+   },
+   "option_restore": {
+      "message": "Restore from backup"
+   },
+   "option_restore_confirm": {
+      "message": "Restore settings from backup? Your current settings will be overwritten."
+   },
+   "option_restore_done": {
+      "message": "Settings restored from backup."
+   },
+   "option_restore_none": {
+      "message": "No backup is available yet."
+   },
+   "option_empty_save_confirm": {
+      "message": "There are no projects. Saving now overwrites your settings with empty data. Continue?"
+   },
+   "option_export_copy": {
+      "message": "Copy export to clipboard"
+   },
+   "option_export_copied": {
+      "message": "Copied!"
+   },
+   "option_export_copy_failed": {
+      "message": "Failed to copy to clipboard."
+   },
+   "popup_sametab_quick": {
+      "message": "Open in same tab"
+   },
+   "option_filter_placeholder": {
+      "message": "Filter by project name or URL..."
+   },
+   "option_eyebrow": {
+      "message": "Options"
+   },
+   "option_section_behavior": {
+      "message": "Behavior"
+   },
+   "option_section_projects": {
+      "message": "Projects"
+   },
+   "option_features_title": {
+      "message": "8 Handy Features!"
+   },
+   "option_feature_01_label": {
+      "message": "Launch from the address bar"
+   },
+   "option_feature_01_body": {
+      "message": "Type \"sw\" in the address bar and press Space to see switch targets for the current page. Filter further by typing a keyword."
+   },
+   "option_feature_02_label": {
+      "message": "Drag & drop to reorder"
+   },
+   "option_feature_02_body": {
+      "message": "Grab any project card and drag it to your preferred position. Keep your most-used projects at the top."
+   },
+   "option_feature_03_label": {
+      "message": "Real-time project search"
+   },
+   "option_feature_03_body": {
+      "message": "Filter the project list by name or URL as you type. Stays fast no matter how many projects you have."
+   },
+   "option_feature_04_label": {
+      "message": "One-click URL copy"
+   },
+   "option_feature_04_body": {
+      "message": "Every URL row in the popup has a copy button — grab any target URL to your clipboard instantly."
+   },
+   "option_feature_05_label": {
+      "message": "Export / Import settings"
+   },
+   "option_feature_05_body": {
+      "message": "Back up your settings as a JSON file or share them with your team. Re-import in seconds on a new machine."
+   },
+   "option_feature_06_label": {
+      "message": "Auto-sync across devices"
+   },
+   "option_feature_06_body": {
+      "message": "Settings sync automatically via your Google account. The same setup is ready on every Chrome device you sign into."
+   },
+   "option_feature_07_label": {
+      "message": "Toggle same-tab mode from the popup"
+   },
+   "option_feature_07_body": {
+      "message": "Flip between \"same tab\" and \"new tab\" directly from the popup footer — no need to open the options page."
+   },
+   "option_feature_08_label": {
+      "message": "Color-label each environment URL"
+   },
+   "option_feature_08_body": {
+      "message": "Assign a color to each URL in the options page and a colored dot appears before that URL in the popup. Tell dev, staging, and production apart at a glance."
+   },
+   "popup_color_hint": {
+      "message": "Hard to tell apart? You can set a color for each project in the options page."
    }
 }

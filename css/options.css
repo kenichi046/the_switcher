@@ -1,238 +1,768 @@
-#theswitcher #wrap {
-  max-width: 900px;
+/* =========================================================================
+   The Switcher — options
+   White-based, refined developer aesthetic.
+   Palette: white canvas + faint cards, indigo→violet accent, champagne-gold
+   hairline signature. Type: system serif display + system sans body +
+   monospace for URLs (the subject's own material). Signature: each project's
+   environment URLs are stacked along a soft vertical "environment rail".
+   ========================================================================= */
+
+#theswitcher {
+  /* light theme tokens */
+  --bg: #f6f7f9;
+  --surface: #ffffff;
+  --surface-2: #fafbfc;
+  --ink: #15171d;
+  --ink-2: #3c4150;
+  --muted: #757b8a;
+  --line: #e9ebf0;
+  --line-strong: #d9dce4;
+  --accent: #4338ca;
+  --accent-2: #7c3aed;
+  --accent-weak: #eef0fe;
+  --gold: #ab8a4f;
+  --danger: #d3415a;
+  --danger-weak: #fcebee;
+  --ok: #1f9d6b;
+
+  --radius: 16px;
+  --radius-sm: 10px;
+  --shadow: 0 1px 2px rgba(18, 22, 40, .04), 0 10px 30px -16px rgba(18, 22, 40, .16);
+  --shadow-lift: 0 2px 6px rgba(18, 22, 40, .06), 0 22px 48px -20px rgba(43, 36, 120, .26);
+
+  --serif: Georgia, "Yu Mincho", "YuMincho", "Hiragino Mincho ProN", "Times New Roman", "Iowan Old Style", serif;
+  --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial,
+    "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic UI", Meiryo, system-ui, sans-serif;
+  --mono: "SF Mono", "Cascadia Code", "JetBrains Mono", "Roboto Mono", "Segoe UI Mono", Menlo, Consolas, monospace;
+
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--sans);
+  line-height: 1.62;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+@media (prefers-color-scheme: dark) {
+  #theswitcher {
+    --bg: #0f1014;
+    --surface: #17181f;
+    --surface-2: #1c1e26;
+    --ink: #f1f2f6;
+    --ink-2: #c4c8d2;
+    --muted: #8b909e;
+    --line: #282b35;
+    --line-strong: #353945;
+    --accent: #8c88f6;
+    --accent-2: #b48cf2;
+    --accent-weak: #20223a;
+    --gold: #cBad7e;
+    --danger: #f1697d;
+    --danger-weak: #2b1a20;
+    --ok: #46c596;
+    --shadow: 0 1px 2px rgba(0, 0, 0, .4), 0 12px 32px -18px rgba(0, 0, 0, .7);
+    --shadow-lift: 0 2px 8px rgba(0, 0, 0, .5), 0 24px 50px -22px rgba(0, 0, 0, .8);
+  }
+}
+
+#theswitcher * { box-sizing: border-box; }
+
+.page {
+  max-width: 880px;
   margin: 0 auto;
-  font-size: 1rem;
-  padding-bottom: 20px;
-  padding-top: 20px;
+  padding: 60px 28px 96px;
 }
 
-#theswitcher button {
-  padding: 0.25em 0.5em;
-  border: 1px solid #AAA;
+/* ---------- Masthead ---------------------------------------------------- */
+.masthead { margin-bottom: 40px; }
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 18px;
 }
 
-#theswitcher input {
-  padding-left: 0.25em;
+.brandMark {
+  width: 56px;
+  height: 56px;
+  border-radius: 14px;
+  box-shadow: var(--shadow);
+  flex: none;
 }
 
-#theswitcher ::placeholder {
-  color: #CCC;
+.eyebrow {
+  margin: 0 0 2px;
+  font-size: .7rem;
+  font-weight: 600;
+  letter-spacing: .26em;
+  text-transform: uppercase;
+  color: var(--gold);
 }
 
-#theswitcher button:not(.saveData):hover {
-  opacity: .6;
+.masthead h1 {
+  margin: 0;
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: 2.7rem;
+  line-height: 1.04;
+  letter-spacing: -.012em;
+  color: var(--ink);
 }
 
-#theswitcher h1 {
-  margin-bottom: 20px;
-}
-
-#theswitcher .explain {
-  margin-bottom: 20px;
-}
-
-#theswitcher .appContainer {
-  padding: 30px 0 20px;
-  clear: both;
-}
-
-#theswitcher .projectWrap {
+/* signature gold→indigo hairline */
+.masthead .lede {
   position: relative;
-  margin-bottom: 20px;
-  padding: 10px 0 10px 10px;
-  border-left: 10px solid #333333;
-  ;
+  margin: 22px 0 0;
+  padding-top: 22px;
+  max-width: 60ch;
+  color: var(--ink-2);
+  font-size: .95rem;
 }
 
-#theswitcher .projectWrap.is-active {
-  border-left-color: #5acd46;
+.masthead .lede::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 120px;
+  height: 2px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2) 45%, var(--gold) 85%, transparent);
 }
 
-#theswitcher .projectWrap dt {
+/* ---------- Cards ------------------------------------------------------- */
+.stack { display: flex; flex-direction: column; gap: 20px; }
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 24px 26px;
+  box-shadow: var(--shadow);
+}
+
+.card.subtle {
+  background: var(--surface-2);
+  box-shadow: none;
+}
+
+.sectionLabel {
+  margin: 0 0 16px;
+  font-size: .72rem;
+  font-weight: 700;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.sectionLabel i { color: var(--accent); margin-right: 4px; }
+
+/* ---------- Toggle switch ---------------------------------------------- */
+.switchRow {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.switchText {
+  font-size: .92rem;
+  color: var(--ink-2);
+}
+
+input.switch {
+  appearance: none;
+  -webkit-appearance: none;
+  flex: none;
   position: relative;
-  margin-bottom: 10px;
-  border-bottom: 1px solid #EEE;
-  padding-bottom: 10px;
+  width: 46px;
+  height: 26px;
+  margin: 0;
+  border-radius: 999px;
+  background: linear-gradient(180deg, var(--line-strong), var(--line));
+  box-shadow: inset 0 1px 2px rgba(18, 22, 40, .08);
+  cursor: pointer;
+  transition: background .22s ease, box-shadow .22s ease;
 }
 
-#theswitcher .projectWrap dt input {
-  margin-right: 10px;
+input.switch::before {
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, .28);
+  transition: transform .22s cubic-bezier(.3, .8, .4, 1);
 }
 
-#theswitcher .projectWrap dd {
+input.switch:checked {
+  background: linear-gradient(120deg, var(--accent), var(--accent-2));
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, .12);
+}
+
+input.switch:checked::before { transform: translateX(20px); }
+
+input.switch:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 4px var(--accent-weak);
+}
+
+.switchRow.compact .switchText { font-size: .85rem; color: var(--muted); }
+
+.syncDescription {
+  margin: 6px 0 0 60px;
+  font-size: .78rem;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+/* ---------- Data tools -------------------------------------------------- */
+.dataToolsRow {
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
   justify-content: space-between;
+  gap: 16px;
 }
 
-#theswitcher .projectWrap dd::after {
+.btnGroup { display: flex; flex-wrap: wrap; gap: 8px; }
+
+.ghostBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 9px 14px;
+  font-family: var(--sans);
+  font-size: .85rem;
+  font-weight: 500;
+  color: var(--ink-2);
+  background: var(--surface);
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: border-color .16s ease, background .16s ease, color .16s ease, transform .08s ease;
+}
+
+.ghostBtn i { color: var(--accent); font-size: .9em; }
+
+.ghostBtn:hover {
+  border-color: var(--accent);
+  background: var(--accent-weak);
+  color: var(--accent);
+}
+
+.ghostBtn:hover i { color: var(--accent); }
+.ghostBtn:active { transform: translateY(1px); }
+
+/* ---------- Projects: head & tools ------------------------------------- */
+.projectsHead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 18px;
+}
+
+.projectsHead .sectionLabel { margin: 0; }
+
+.toolbar { display: flex; gap: 8px; }
+
+.reload {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 9px 14px;
+  font-family: var(--sans);
+  font-size: .85rem;
+  font-weight: 500;
+  color: var(--ink-2);
+  background: transparent;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: border-color .16s ease, color .16s ease;
+}
+
+.reload i { color: var(--muted); }
+.reload:hover { border-color: var(--accent); color: var(--accent); }
+.reload:hover i { color: var(--accent); }
+
+.saveData {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 20px;
+  font-family: var(--sans);
+  font-size: .87rem;
+  font-weight: 600;
+  color: #fff;
+  background: linear-gradient(120deg, var(--accent), var(--accent-2));
+  border: none;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  box-shadow: 0 6px 18px -8px rgba(67, 56, 202, .7);
+  transition: transform .1s ease, box-shadow .18s ease, filter .18s ease;
+}
+
+.saveData i { color: rgba(255, 255, 255, .92); }
+.saveData:hover { filter: brightness(1.06); box-shadow: 0 10px 24px -10px rgba(67, 56, 202, .8); }
+.saveData:active { transform: translateY(1px); }
+
+/* unsaved-changes indicator */
+.saveData.changed::after {
   content: "";
-  height: 0;
-  width: 33%;
-}
-
-#theswitcher .projectWrap dd input {
-  margin-bottom: 10px;
-  width: 33%;
-}
-
-#theswitcher .btnRemeveProject {
   position: absolute;
-  right: 0;
-  top: -7px;
+  top: -4px;
+  right: -4px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--gold);
+  border: 2px solid var(--surface);
 }
 
-#theswitcher .left_btns {
-  float: left;
+.saveData:disabled {
+  opacity: .5;
+  cursor: progress;
+  box-shadow: none;
+  filter: saturate(.6);
+}
+
+.projectsTools {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.btnAddProject {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  font-family: var(--sans);
+  font-size: .87rem;
+  font-weight: 600;
+  color: var(--accent);
+  background: var(--accent-weak);
+  border: 1px solid transparent;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: background .16s ease, transform .08s ease;
+}
+
+.btnAddProject:hover { background: color-mix(in srgb, var(--accent-weak) 70%, var(--accent) 14%); }
+.btnAddProject:active { transform: translateY(1px); }
+
+.projectFilterWrap {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 1;
+  min-width: 200px;
+  padding: 0 14px;
+  background: var(--surface-2);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  transition: border-color .16s ease, box-shadow .16s ease;
+}
+
+.projectFilterWrap:focus-within {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 4px var(--accent-weak);
+}
+
+.projectFilterWrap > i { color: var(--muted); font-size: .85rem; }
+
+.projectFilter {
+  flex: 1;
+  padding: 10px 0;
+  border: none;
+  background: transparent;
+  font-family: var(--mono);
+  font-size: .85rem;
+  color: var(--ink);
+}
+
+.projectFilter:focus { outline: none; }
+.projectFilter::placeholder { color: var(--muted); font-family: var(--sans); }
+
+.filterCount {
+  font-size: .76rem;
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+/* ---------- Project cards (JS-generated) ------------------------------- */
+.appContainer { display: flex; flex-direction: column; gap: 14px; }
+
+.projectWrap {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 18px 20px 16px;
+  box-shadow: var(--shadow);
+  transition: border-color .16s ease, box-shadow .18s ease, opacity .16s ease, transform .12s ease;
+}
+
+.projectWrap:hover { border-color: var(--line-strong); box-shadow: var(--shadow-lift); }
+.projectWrap.dragging { opacity: .55; box-shadow: var(--shadow-lift); }
+.projectWrap.dragOver { border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-weak); }
+
+.projectWrap dl { margin: 0; }
+
+.projectWrap dt {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+/* drag grip */
+.dragHandle {
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 30px;
+  color: var(--muted);
+  cursor: grab;
+  border-radius: 8px;
+  transition: color .14s ease, background .14s ease;
+}
+
+.dragHandle:hover { color: var(--accent); background: var(--accent-weak); }
+.dragHandle:active { cursor: grabbing; }
+
+/* hide the hard-coded "Project Name :" label, let the field be the title */
+.projectWrap dt > span:not(.dragHandle):not(.btnRemeveProject) { display: none; }
+
+/* project name = editable title */
+.projectWrap dt input {
+  flex: 1;
+  min-width: 0;
+  padding: 6px 6px;
+  font-family: var(--sans);
+  font-size: 1.06rem;
+  font-weight: 600;
+  letter-spacing: -.01em;
+  color: var(--ink);
+  background: transparent;
+  border: none;
+  border-bottom: 1.5px solid transparent;
+  transition: border-color .16s ease;
+}
+
+.projectWrap dt input::placeholder { color: var(--muted); font-weight: 500; }
+.projectWrap dt input:focus { outline: none; border-bottom-color: var(--accent); }
+
+/* remove-project = icon-only button */
+.btnRemeveProject { margin-left: auto; flex: none; }
+
+.btnRemeveProject button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  font-size: 0;
+  color: var(--muted);
+  background: transparent;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: color .14s ease, background .14s ease;
+}
+
+.btnRemeveProject button i { font-size: 1rem; }
+.btnRemeveProject button:hover { color: var(--danger); background: var(--danger-weak); }
+
+/* environment rail + URL stack (signature) */
+.projectWrap dd {
   position: relative;
+  margin: 0;
+  padding-left: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 
-#theswitcher .btnAddProject,
-#theswitcher .saveData,
-#theswitcher .btnRemeveProject button,
-#theswitcher .addURL {
-  position: relative;
-  text-align: left;
-}
-
-#theswitcher .right-btns {
-  float: right;
-}
-
-#theswitcher .saveData {
+/* the connecting rail line — sits behind the per-row node dots below */
+.projectWrap dd::before {
+  content: "";
+  position: absolute;
+  left: 3px;
+  top: 18px;
+  bottom: 18px;
+  width: 2px;
+  border-radius: 2px;
+  background: linear-gradient(180deg, var(--accent), var(--accent-2));
   opacity: .4;
 }
 
-#theswitcher .reload {
-  margin-right: 1em;
+.projectWrap dd input {
   position: relative;
+  width: 100%;
+  padding: 10px 13px;
+  font-family: var(--mono);
+  font-size: .85rem;
+  color: var(--ink-2);
+  background-color: var(--surface-2);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  transition: border-color .16s ease, box-shadow .16s ease, background-color .16s ease;
+  /* node dot for this row, anchored to the input's own vertical center —
+     robust to row height/wrapping since it's relative to the element itself */
+  box-shadow: -20px 0 0 -16.5px var(--accent-2), -20px 0 0 -15px var(--surface-2);
 }
 
-#theswitcher .changed {
-  opacity: 1;
-  background-color: #E8BF51;
+.projectWrap dd input::placeholder { color: var(--muted); }
+
+.projectWrap dd input:focus {
+  outline: none;
+  background-color: var(--surface);
+  border-color: var(--accent);
+  box-shadow: -20px 0 0 -16.5px var(--accent), -20px 0 0 -15px var(--surface), 0 0 0 4px var(--accent-weak);
 }
 
-#theswitcher .error {
-  background-color: pink;
+.projectWrap dd input.error {
+  border-color: var(--danger);
+  background-color: var(--danger-weak);
+  box-shadow: -20px 0 0 -16.5px var(--danger), -20px 0 0 -15px var(--danger-weak);
 }
 
-#theswitcher .fa-solid.fa-user {
-  margin-right: 1em;
+/* URL row = text input + color picker side by side */
+.urlRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
-#theswitcher .sample {
-  opacity: .3;
-  margin-bottom: 20px;
-  padding-top: 40px;
-  border-top: 3px dashed #ccc;
+.urlRow input[type="text"] {
+  flex: 1;
+  min-width: 0;
 }
 
-#theswitcher .operation img {
-  display: inline-block;
-}
-
-#theswitcher .operation {
-  margin-top: 10px;
-  line-height: 1.6;
-}
-
-#theswitcher .operation span {
-  color: #d28e22;
-  font-weight: bold;
-}
-
-#theswitcher .operation span.code {
-  color: #666;
-  font-weight: bold;
-  display: inline-block;
-  background: #EEE;
-  border-radius: 5px;
-}
-
-#theswitcher .operation h3.checkitout {
-  margin-bottom: 0.5em;
-}
-
-#theswitcher .operation p {
-  margin-bottom: 10px;
-}
-
-#theswitcher .morehint a {
-  color: #5acd46;
-}
-
-#theswitcher .morehint a:hover {
-  color: #d28e22;
+/* Color swatch button — override the generic dd input styles */
+.projectWrap dd .urlColorPicker {
+  flex: 0 0 30px;
+  height: 34px;
+  padding: 2px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: transparent;
+  box-shadow: none;
   cursor: pointer;
 }
 
-#theswitcher .icon {
-  display: inline-block;
-  margin-left: 0.25em;
-  margin-right: 0.25em;
+.projectWrap dd .urlColorPicker:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px var(--accent-weak);
 }
 
-#theswitcher .close {
-  display: none;
-}
-
-#theswitcher .logs {
-  margin-bottom: 20px;
-}
-
-#theswitcher .caution {
-  border: 1px solid rgb(200, 50, 50);
-  padding: 0.25em 0.5em;
-  margin-bottom: 1em;
-}
-
-#theswitcher footer {
-  width: 100%;
-  text-align: center;
-  padding: 1em 0;
-  border-top: 1px solid #CCC;
-  font-size: 1rem;
-}
-
-#theswitcher .operation p.checkpoint:hover {
-  margin-left: 1em;
-  transition: ease-in-out 400ms;
-}
-
-#theswitcher footer .icon-ew168 {
-  background-image: url(../image/favicon.png);
-  content: "";
-  width: 48px;
-  height: 48px;
-  display: inline-block;
-  vertical-align: middle;
-  background-size: contain;
-}
-
-#theswitcher .explain input[type=checkbox] {
-  margin-right: 0.25em;
-  margin-left: 0.5em;
-  width: 1em;
-  height: 1em;
-}
-
-#theswitcher .explain.vmiddle {
+/* add-URL = dashed ghost aligned to the rail */
+.addURL {
+  display: inline-flex;
   align-items: center;
+  gap: 7px;
+  margin: 12px 0 0 22px;
+  padding: 8px 14px;
+  font-family: var(--sans);
+  font-size: .82rem;
+  font-weight: 500;
+  color: var(--accent);
+  background: transparent;
+  border: 1.5px dashed var(--line-strong);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: border-color .16s ease, background .16s ease;
+}
+
+.addURL:hover { border-color: var(--accent); background: var(--accent-weak); }
+
+/* ---------- Changelog + sample ----------------------------------------- */
+.logs { margin: 0; padding: 0; list-style: none; }
+
+.logs li {
+  position: relative;
+  padding-left: 18px;
+  margin-bottom: 6px;
+  font-size: .85rem;
+  color: var(--ink-2);
+}
+
+.logs li::before {
+  content: "";
+  position: absolute;
+  left: 2px;
+  top: .62em;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--gold);
+}
+
+.sample {
+  margin: 18px 0 0;
+}
+
+.sample img {
+  display: block;
+  max-width: min(100%, 520px);
+  height: auto;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+}
+
+/* ---------- Features grid ---------------------------------------------- */
+.featureList {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.featureItem {
   display: flex;
+  align-items: flex-start;
+  gap: 13px;
+  padding: 14px 16px;
+  background: var(--surface-2);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  transition: border-color .16s ease, box-shadow .16s ease;
 }
 
-#theswitcher .explain:last-of-type {
-  margin-bottom: 30px;
+.featureItem:hover {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-weak);
 }
 
-#theswitcher .explain.vmiddle::before {
-  content: 'new!';
-  display: inline-block;
-  background-color: #d90368;
-  color: #FFF;
-  font-weight: bold;
-  padding: 0 0.5em;
-  margin-right: 0.5em;
-  font-size: 50%;
+.featureIcon {
+  flex: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  background: var(--accent-weak);
+  color: var(--accent);
+  border-radius: 9px;
+  font-size: .95rem;
+}
+
+.featureBody {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+
+.featureLabel {
+  font-size: .87rem;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.featureDesc {
+  font-size: .79rem;
+  color: var(--muted);
+  line-height: 1.55;
+}
+
+/* ---------- Help (collapsible) ----------------------------------------- */
+.help .morehint { margin: 0; padding: 2px 0; }
+
+.morehint a {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-family: var(--sans);
+  font-size: .95rem;
+  font-weight: 600;
+  color: var(--ink);
+  cursor: pointer;
+}
+
+.morehint a > i:first-child { color: var(--accent); }
+.morehint .chev { margin-left: auto; font-size: .8rem; color: var(--muted); }
+
+/* MUST start hidden — JS slideToggle reads computed display:none */
+.close { display: none; }
+
+.operation {
+  margin-top: 18px;
+  padding-top: 18px;
+  border-top: 1px solid var(--line);
+}
+
+.operation p { margin: 0 0 10px; font-size: .88rem; color: var(--ink-2); }
+
+.checkitout {
+  margin: 18px 0 12px;
+  font-family: var(--serif);
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.checkpoint {
+  position: relative;
+  padding-left: 22px;
+  margin: 0 0 10px;
+  font-size: .88rem;
+  color: var(--ink-2);
+}
+
+.checkpoint::before {
+  content: "\f058"; /* fa-circle-check */
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  position: absolute;
+  left: 0;
+  top: 1px;
+  color: var(--ok);
+  font-size: .9rem;
+}
+
+/* ---------- Footer ------------------------------------------------------ */
+#theswitcher footer {
+  max-width: 880px;
+  margin: 40px auto 0;
+  padding: 24px 28px 0;
+  border-top: 1px solid var(--line);
+  font-size: .76rem;
+  color: var(--muted);
+  text-align: center;
+}
+
+#theswitcher footer a {
+  color: var(--ink-2);
+  text-decoration: none;
+  transition: color .14s ease;
+}
+
+#theswitcher footer a:hover { color: var(--accent); }
+
+/* ---------- Misc -------------------------------------------------------- */
+@media (max-width: 640px) {
+  .page { padding: 40px 18px 72px; }
+  .masthead h1 { font-size: 2.1rem; }
+  .projectsHead { flex-direction: column; align-items: flex-start; }
+  .dataToolsRow { flex-direction: column; align-items: flex-start; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #theswitcher * { transition: none !important; }
 }
