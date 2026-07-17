@@ -26,6 +26,7 @@ document.addEventListener('DOMContentLoaded', function () {
     localStorage.removeItem('theswitcher');
   }
 
+  const placeholderLabel = 'placeholder="ex) prod env"';
   const projectDom = `
   <div class="${projectWrap}" draggable="true">
     <dl>
@@ -37,6 +38,7 @@ document.addEventListener('DOMContentLoaded', function () {
       <dd>
         <div class="urlRow">
           <input ${placeholderURL} type="text" class="urlInput" value="" data-envname="url1" />
+          <input ${placeholderLabel} type="text" class="urlLabelInput" value="">
           <input type="color" class="urlColorPicker" value="#808080">
         </div>
       </dd>
@@ -119,11 +121,17 @@ document.addEventListener('DOMContentLoaded', function () {
               urlInput.className = 'urlInput';
               urlInput.placeholder = 'ex) https://yourprojectdomain/';
               urlInput.value = htmlDecode(item.url[i]);
+              const labelInput = document.createElement('input');
+              labelInput.type = 'text';
+              labelInput.className = 'urlLabelInput';
+              labelInput.placeholder = 'ex) prod env';
+              labelInput.value = (item.labels && item.labels[i]) ? htmlDecode(item.labels[i]) : '';
               const colorInput = document.createElement('input');
               colorInput.type = 'color';
               colorInput.className = 'urlColorPicker';
               colorInput.value = (item.colors && item.colors[i]) ? item.colors[i] : '#808080';
               urlRow.appendChild(urlInput);
+              urlRow.appendChild(labelInput);
               urlRow.appendChild(colorInput);
               dd.appendChild(urlRow);
             }
@@ -152,11 +160,17 @@ document.addEventListener('DOMContentLoaded', function () {
     input.placeholder = 'ex) https://yourprojectdomain/';
     input.value = '';
     input.setAttribute('data-envname', `url${areaNumber}`);
+    const labelInput = document.createElement('input');
+    labelInput.type = 'text';
+    labelInput.className = 'urlLabelInput';
+    labelInput.placeholder = 'ex) prod env';
+    labelInput.value = '';
     const colorInput = document.createElement('input');
     colorInput.type = 'color';
     colorInput.className = 'urlColorPicker';
     colorInput.value = '#808080';
     urlRow.appendChild(input);
+    urlRow.appendChild(labelInput);
     urlRow.appendChild(colorInput);
     dd.appendChild(urlRow);
   };
@@ -171,16 +185,19 @@ document.addEventListener('DOMContentLoaded', function () {
       const pName = escapeHtml(nameEl ? nameEl.value : '');
       const uName = [];
       const uColors = [];
+      const uLabels = [];
       wrap.querySelectorAll('dd .urlRow').forEach(function (row) {
-        const urlInp = row.querySelector('input[type="text"]');
-        const colorInp = row.querySelector('input[type="color"]');
+        const urlInp = row.querySelector('.urlInput');
+        const labelInp = row.querySelector('.urlLabelInput');
+        const colorInp = row.querySelector('.urlColorPicker');
         const inputValue = urlInp ? escapeHtml(urlInp.value) : '';
         if (inputValue) {
           uName.push(inputValue);
           uColors.push(colorInp ? colorInp.value : '#808080');
+          uLabels.push(labelInp ? escapeHtml(labelInp.value) : '');
         }
       });
-      userJSON.push({ "name": pName, "url": uName, "colors": uColors });
+      userJSON.push({ "name": pName, "url": uName, "colors": uColors, "labels": uLabels });
     });
     userJSON.push({ "sametab": isSametab });
     return userJSON;
@@ -220,7 +237,10 @@ document.addEventListener('DOMContentLoaded', function () {
           const colors = Array.isArray(item.colors)
             ? item.colors.map(function (c) { return (typeof c === 'string' && c) ? c : '#808080'; })
             : urls.map(function () { return '#808080'; });
-          out.push({ name: typeof item.name === 'string' ? item.name : '', url: urls, colors: colors });
+          const labels = Array.isArray(item.labels)
+            ? item.labels.map(function (l) { return typeof l === 'string' ? l : ''; })
+            : urls.map(function () { return ''; });
+          out.push({ name: typeof item.name === 'string' ? item.name : '', url: urls, colors: colors, labels: labels });
         } else if (typeof item.sametab === 'boolean') {
           sametab = item.sametab;
         }

@@ -2,17 +2,21 @@
 // Supports optional cross-device sync via chrome.storage.sync, plus an
 // automatic local backup of the previous config on every save.
 //
-// Data model (unchanged):
-//   theswitcher = [ {name, url:[...]}, ..., {sametab:bool} ]
+// Data model:
+//   theswitcher = [ {name, url:[...], colors:[...], labels:[...]}, ..., {sametab:bool} ]
 //
 // Keys:
-//   theswitcher        - the active config (local, or sync when enabled)
-//   theswitcher_sync   - sync-enabled flag (stored in sync so other devices know)
-//   theswitcher_backup - { data, savedAt } snapshot of the previous non-empty config (local)
+//   theswitcher              - the active config (local, or sync when enabled)
+//   theswitcher_sync         - sync-enabled flag (stored in sync so other devices know)
+//   theswitcher_backup       - { data, savedAt } snapshot of the previous non-empty config (local)
+//   theswitcher_display_mode - popup display mode, "url" or "label" (always local, per-device)
 (function (global) {
   const DATA_KEY = 'theswitcher';
   const SYNC_FLAG = 'theswitcher_sync';
   const BACKUP_KEY = 'theswitcher_backup';
+  const DISPLAY_MODE_KEY = 'theswitcher_display_mode';
+  const DISPLAY_MODE_URL = 'url';
+  const DISPLAY_MODE_LABEL = 'label';
 
   // A config "has projects" if it contains at least one project object (with a url array).
   function hasProjects(data) {
@@ -81,8 +85,22 @@
     return r[BACKUP_KEY] || null;
   }
 
+  // Popup display mode ("url" | "label") — always local-only, never synced,
+  // since it's a per-device UI preference rather than project data.
+  async function loadDisplayMode() {
+    const r = await chrome.storage.local.get(DISPLAY_MODE_KEY);
+    return r[DISPLAY_MODE_KEY] === DISPLAY_MODE_LABEL ? DISPLAY_MODE_LABEL : DISPLAY_MODE_URL;
+  }
+
+  async function saveDisplayMode(mode) {
+    const value = mode === DISPLAY_MODE_LABEL ? DISPLAY_MODE_LABEL : DISPLAY_MODE_URL;
+    await chrome.storage.local.set({ [DISPLAY_MODE_KEY]: value });
+  }
+
   global.TheSwitcherStore = {
     DATA_KEY, SYNC_FLAG, BACKUP_KEY,
-    load, save, loadBackup, hasProjects
+    DISPLAY_MODE_KEY, DISPLAY_MODE_URL, DISPLAY_MODE_LABEL,
+    load, save, loadBackup, hasProjects,
+    loadDisplayMode, saveDisplayMode
   };
 })(self);

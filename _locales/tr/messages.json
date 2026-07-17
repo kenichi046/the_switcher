@@ -153,7 +153,7 @@
       "message": "Ayarlar, aynı Google hesabına giriş yapılmış tüm cihazlarda senkronize edilir."
    },
    "option_features_title": {
-      "message": "Bilmeniz gereken 8 kullanışlı özellik!"
+      "message": "9 kullanışlı özellik!"
    },
    "option_feature_01_label": {
       "message": "Adres çubuğundan doğrudan başlatma"
@@ -205,5 +205,20 @@
    },
    "popup_color_hint": {
       "message": "Ayırt etmek zor mu? Ayarlar sayfasında her proje için bir renk belirleyebilirsiniz."
+   },
+   "popup_display_mode": {
+      "message": "Görünüm modu"
+   },
+   "popup_display_mode_url": {
+      "message": "URL"
+   },
+   "popup_display_mode_label": {
+      "message": "Etiket"
+   },
+   "option_feature_09_label": {
+      "message": "URL'lerinizi etiketleyin"
+   },
+   "option_feature_09_body": {
+      "message": "Ayarlar sayfasında her URL'ye \"prod env\" gibi bir görünen ad verin; açılır pencere ham URL yerine bu etiketi gösterebilir. Açılır pencerenin altındaki düğmelerle etiket ve URL görünümü arasında istediğiniz zaman geçiş yapabilirsiniz."
    }
 }

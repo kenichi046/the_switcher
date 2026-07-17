@@ -50,13 +50,16 @@ function getIsSametabValue(obj) {
 
 let activeTabURL = '';
 let currentSametab = false;
+let currentDisplayMode = TheSwitcherStore.DISPLAY_MODE_URL;
 
 getCurrentTab().then((tab) => {
   try {
     const appContainer = document.querySelector('.appContainer');
     let myOptions;
     let syncEnabled = false;
-    TheSwitcherStore.load().then(function (result) {
+    Promise.all([TheSwitcherStore.load(), TheSwitcherStore.loadDisplayMode()]).then(function (results) {
+      const result = results[0];
+      currentDisplayMode = results[1];
       if (!result.data) {
         console.log('No data found for theswitcher');
         return;
@@ -114,7 +117,13 @@ getCurrentTab().then((tab) => {
                   mainLink.setAttribute('tabindex', tabindex);
                   mainLink.href = newURL;
                   mainLink.target = '_blank';
-                  mainLink.appendChild(highlightUrlDiff(activeTabURL, newURL));
+                  const urlLabel = (proj.labels && proj.labels[j]) ? proj.labels[j] : '';
+                  if (currentDisplayMode === TheSwitcherStore.DISPLAY_MODE_LABEL && urlLabel) {
+                    mainLink.title = newURL;
+                    mainLink.appendChild(document.createTextNode(htmlDecode(urlLabel)));
+                  } else {
+                    mainLink.appendChild(highlightUrlDiff(activeTabURL, newURL));
+                  }
                   if (isActive) mainLink.setAttribute('autofocus', '');
 
                   const icon = document.createElement('i');
@@ -194,6 +203,7 @@ getCurrentTab().then((tab) => {
       // 3+ roots (or single/no match): keep the popup open and set up the quick toggle.
       const hasSwitchTargets = isSafeUrl(targetURL);
       setupSametabQuickToggle(myOptions, isSametab, syncEnabled, hasSwitchTargets);
+      setupDisplayModeToggle(hasSwitchTargets);
 
       // When the candidate list is shown (3+ document roots) and no custom
       // color has been set yet, suggest the per-project color feature.
@@ -208,6 +218,37 @@ getCurrentTab().then((tab) => {
     console.log(error);
   }
 });
+
+// Wire the footer display-mode toggle (URL / Label): reflect current value, persist on change.
+// Hidden entirely when this page has no environment to switch to.
+function setupDisplayModeToggle(visible) {
+  const wrap = document.querySelector('.displayModeToggle');
+  if (!wrap) return;
+  if (!visible) {
+    wrap.style.display = 'none';
+    return;
+  }
+  wrap.style.display = '';
+  const buttons = Array.from(wrap.querySelectorAll('.displayModeBtn'));
+  function reflect() {
+    buttons.forEach(function (btn) {
+      btn.classList.toggle('active', btn.dataset.mode === currentDisplayMode);
+    });
+  }
+  reflect();
+  buttons.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      const mode = btn.dataset.mode;
+      if (mode === currentDisplayMode) return;
+      currentDisplayMode = mode;
+      TheSwitcherStore.saveDisplayMode(mode).catch(function (err) {
+        console.log(err);
+      });
+      reflect();
+      location.reload();
+    });
+  });
+}
 
 // Wire the footer SameTab quick-toggle: reflect current value, persist on change.
 // Hidden entirely when this page has no environment to switch to.

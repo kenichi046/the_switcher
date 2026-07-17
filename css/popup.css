@@ -316,6 +316,39 @@
   cursor: pointer;
 }
 
+/* ── Display-mode toggle (URL / Label) ────────────────── */
+.displayModeToggle {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  margin-top: 8px;
+  padding: 2px;
+  width: fit-content;
+  background: var(--bg);
+  border-radius: 999px;
+}
+
+.displayModeBtn {
+  border: none;
+  background: transparent;
+  color: var(--text-muted);
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+
+.displayModeBtn:hover {
+  color: var(--text-dark);
+}
+
+.displayModeBtn.active {
+  background: var(--accent);
+  color: var(--badge-text);
+}
+
 /* ── URL diff highlight ──────────────────────────────── */
 .urlDiff {
   color: #60a5fa;
