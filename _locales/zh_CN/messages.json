@@ -33,7 +33,7 @@
       "message": "更新历史"
    },
    "option_message_10": {
-      "message": "详情请查看<a href='https://chrome.google.com/webstore/detail/the-switcher/ibnjhiipcjlebggficnjfanodgpabpcm' target='_blank'>Chrome网络商店</a>。"
+      "message": "详情请查看Chrome网络商店。"
    },
    "option_message_11": {
       "message": "提示 ▼"
@@ -43,18 +43,6 @@
    },
    "option_message_13": {
       "message": "在Chrome中浏览包含设置的URL的网页时，点击扩展功能标签中的<img class='icon' src='./image/icon16.png'>将显示切换用链接。"
-   },
-   "option_message_14": {
-      "message": "(1) 如果仅设置了<span style='color: red'>两个文档根目录，将直接打开新标签页</span>。"
-   },
-   "option_message_14_0": {
-      "message": "三个主要特点"
-   },
-   "option_message_15": {
-      "message": "(2) <span style='color:red;'>在页面内右键点击也会显示上下文菜单</span>。"
-   },
-   "option_message_16": {
-      "message": "(3) 按<span class='code'>ctrl</span> + <span class='code'>Shift</span> + <span class='code'>Up</span>（上箭头）可以<span style='color: red;'>使用快捷键启动</span>！在URL聚焦状态下按<span class='code'>Enter</span>进行切换。简单且实用。<span class='code'>Up</span>、<span class='code'>Down</span>可选。"
    },
    "option_message_17": {
       "message": "在同一个标签页中打开（仅2个URL时点击即切换；关闭则用新标签页）"
@@ -220,5 +208,26 @@
    },
    "option_feature_09_body": {
       "message": "在选项页面为每个 URL 设置一个显示名称，例如\"prod env\"，弹出窗口即可显示该标签而非原始 URL。可随时通过弹出窗口底部的按钮在标签视图和 URL 视图之间切换。"
+   },
+   "popup_drag_reorder": {
+      "message": "拖动以重新排序"
+   },
+   "popup_announce_close": {
+      "message": "关闭"
+   },
+   "popup_announce_v2_5_0_labels": {
+      "message": "现在可以为 URL 设置标签了。"
+   },
+   "popup_announce_v2_5_0_reorder": {
+      "message": "现在可以通过拖放来调整显示顺序了。"
+   },
+   "popup_open_new_tab": {
+      "message": "在新标签页中打开"
+   },
+   "popup_open_same_tab": {
+      "message": "在同一标签页中打开"
+   },
+   "option_remove_url_row": {
+      "message": "删除此文档根目录"
    }
 }

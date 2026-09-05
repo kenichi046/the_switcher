@@ -33,7 +33,7 @@
       "message": "Historique des mises à jour"
    },
    "option_message_10": {
-      "message": "Veuillez vérifier sur le <a href='https://chrome.google.com/webstore/detail/the-switcher/ibnjhiipcjlebggficnjfanodgpabpcm' target='_blank'>Chrome Web Store</a>."
+      "message": "Veuillez vérifier sur le Chrome Web Store."
    },
    "option_message_11": {
       "message": "Astuce ▼"
@@ -43,18 +43,6 @@
    },
    "option_message_13": {
       "message": "Lorsque vous naviguez sur une page Web contenant l'URL configurée dans Chrome, cliquez sur <img class='icon' src='./image/icon16.png'> dans l'onglet de l'extension pour afficher le lien de basculement."
-   },
-   "option_message_14": {
-      "message": "(1) Si seulement <span style='color: red'>deux racines de document sont configurées, un nouvel onglet s'ouvre directement</span>."
-   },
-   "option_message_14_0": {
-      "message": "Trois caractéristiques principales"
-   },
-   "option_message_15": {
-      "message": "(2) <span style='color:red;'>Un menu contextuel s'affiche également en cliquant avec le bouton droit de la souris dans la page</span>."
-   },
-   "option_message_16": {
-      "message": "(3) Appuyez sur <span class='code'>ctrl</span> + <span class='code'>Shift</span> + <span class='code'>Up</span> (flèche vers le haut) pour <span style='color: red;'>démarrer avec un raccourci</span>! Appuyez sur <span class='code'>Enter</span> lorsque l'URL est en focus pour commuter. C'est subtilement pratique. Vous pouvez choisir avec <span class='code'>Up</span>, <span class='code'>Down</span>."
    },
    "option_message_17": {
       "message": "Ouvrir dans le même onglet (avec 2 URL, bascule instantanée au clic ; OFF = nouvel onglet)"
@@ -220,5 +208,26 @@
    },
    "option_feature_09_body": {
       "message": "Donnez à chaque URL un nom d'affichage comme « prod env » dans la page des options, et la popup pourra afficher cette étiquette au lieu de l'URL brute. Basculez à tout moment entre l'affichage par étiquette et par URL grâce aux boutons en bas de la popup."
+   },
+   "popup_drag_reorder": {
+      "message": "Glisser pour réorganiser"
+   },
+   "popup_announce_close": {
+      "message": "Fermer"
+   },
+   "popup_announce_v2_5_0_labels": {
+      "message": "Vous pouvez désormais étiqueter vos URL."
+   },
+   "popup_announce_v2_5_0_reorder": {
+      "message": "Vous pouvez désormais réorganiser l'ordre d'affichage par glisser-déposer."
+   },
+   "popup_open_new_tab": {
+      "message": "Ouvrir un nouvel onglet"
+   },
+   "popup_open_same_tab": {
+      "message": "Ouvrir le même onglet"
+   },
+   "option_remove_url_row": {
+      "message": "Supprimer cette racine de document"
    }
 }

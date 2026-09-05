@@ -33,7 +33,7 @@
       "message": "Güncelleme geçmişi"
    },
    "option_message_10": {
-      "message": "Lütfen <a href='https://chrome.google.com/webstore/detail/the-switcher/ibnjhiipcjlebggficnjfanodgpabpcm' target='_blank'>Chrome Web Mağazası</a>'nı kontrol edin."
+      "message": "Lütfen Chrome Web Mağazası'nı kontrol edin."
    },
    "option_message_11": {
       "message": "İpucu ▼"
@@ -43,18 +43,6 @@
    },
    "option_message_13": {
       "message": "Chrome'da ayarladığınız URL'yi içeren bir web sayfasını gezinirken, uzantı sekmesindeki <img class='icon' src='./image/icon16.png'> simgesine tıklayarak geçiş için bir bağlantı görüntülenir."
-   },
-   "option_message_14": {
-      "message": "(1) Eğer yalnızca <span style='color: red'>iki doküman kökü ayarlanmışsa, doğrudan yeni bir sekme açılır</span>."
-   },
-   "option_message_14_0": {
-      "message": "Farklı olan üç önemli özellik"
-   },
-   "option_message_15": {
-      "message": "(2) <span style='color:red;'>Sayfa içinde sağ tıklandığında da bir bağlam menüsü görüntülenir</span>."
-   },
-   "option_message_16": {
-      "message": "(3) <span class='code'>ctrl</span> + <span class='code'>Shift</span> + <span class='code'>Up</span> (yukarı ok) tuşlarına basarak <span style='color: red;'>kısayol ile başlatabilirsiniz</span>! URL'ye odaklandığınızda <span class='code'>Enter</span>'a basarak geçiş yaparsınız. Sade ama kullanışlıdır. <span class='code'>Up</span>, <span class='code'>Down</span> ile seçim yapabilirsiniz."
    },
    "option_message_17": {
       "message": "Aynı sekmede aç (2 URL varsa tıklayınca anında geçiş; OFF yeni sekme)"
@@ -220,5 +208,26 @@
    },
    "option_feature_09_body": {
       "message": "Ayarlar sayfasında her URL'ye \"prod env\" gibi bir görünen ad verin; açılır pencere ham URL yerine bu etiketi gösterebilir. Açılır pencerenin altındaki düğmelerle etiket ve URL görünümü arasında istediğiniz zaman geçiş yapabilirsiniz."
+   },
+   "popup_drag_reorder": {
+      "message": "Sıralamak için sürükleyin"
+   },
+   "popup_announce_close": {
+      "message": "Kapat"
+   },
+   "popup_announce_v2_5_0_labels": {
+      "message": "Artık URL'lerinizi etiketleyebilirsiniz."
+   },
+   "popup_announce_v2_5_0_reorder": {
+      "message": "Artık görüntüleme sırasını sürükleyip bırakarak değiştirebilirsiniz."
+   },
+   "popup_open_new_tab": {
+      "message": "Yeni sekmede aç"
+   },
+   "popup_open_same_tab": {
+      "message": "Aynı sekmede aç"
+   },
+   "option_remove_url_row": {
+      "message": "Bu belge kökünü kaldır"
    }
 }

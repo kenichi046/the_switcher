@@ -33,7 +33,7 @@
       "message": "Історія оновлень"
    },
    "option_message_10": {
-      "message": "Будь ласка, перевірте на <a href='https://chrome.google.com/webstore/detail/the-switcher/ibnjhiipcjlebggficnjfanodgpabpcm' target='_blank'>Crome Web Store</a>."
+      "message": "Будь ласка, перевірте на Chrome Web Store."
    },
    "option_message_11": {
       "message": "Підказка ▼"
@@ -43,18 +43,6 @@
    },
    "option_message_13": {
       "message": "При перегляді веб-сторінки в Chrome, що містить налаштований URL, натисніть на <img class='icon' src='./image/icon16.png'> у вкладці розширення, щоб відобразити посилання для перемикання."
-   },
-   "option_message_14": {
-      "message": "(1) Якщо налаштовано лише <span style='color: red'>два корені документів, нова вкладка відкривається безпосередньо</span>."
-   },
-   "option_message_14_0": {
-      "message": "Три ключові особливості, що відрізняють нас"
-   },
-   "option_message_15": {
-      "message": "(2) <span style='color:red;'>Також відображається контекстне меню при правому кліку на сторінці</span>."
-   },
-   "option_message_16": {
-      "message": "(3) Натисніть <span class='code'>ctrl</span> + <span class='code'>Shift</span> + <span class='code'>Up</span> (стрілка вгору) для <span style='color: red;'>запуску за допомогою гарячих клавіш</span>! Натиснення <span class='code'>Enter</span>, коли URL у фокусі, здійснить перемикання. Це зручно і непомітно. Вибір можливий за допомогою <span class='code'>Up</span>, <span class='code'>Down</span>."
    },
    "option_message_17": {
       "message": "Відкрити в тій самій вкладці (за 2 URL — миттєво за кліком; OFF — нова вкладка)"
@@ -220,5 +208,26 @@
    },
    "option_feature_09_body": {
       "message": "Задайте для кожного URL назву для показу, наприклад «prod env», на сторінці налаштувань — і спливне вікно зможе показувати цю мітку замість самого URL. Перемикайтеся між відображенням мітки та URL у будь-який момент за допомогою кнопок унизу спливного вікна."
+   },
+   "popup_drag_reorder": {
+      "message": "Перетягніть для зміни порядку"
+   },
+   "popup_announce_close": {
+      "message": "Закрити"
+   },
+   "popup_announce_v2_5_0_labels": {
+      "message": "Тепер ви можете додавати мітки до URL."
+   },
+   "popup_announce_v2_5_0_reorder": {
+      "message": "Тепер порядок відображення можна змінювати перетягуванням."
+   },
+   "popup_open_new_tab": {
+      "message": "Відкрити в новій вкладці"
+   },
+   "popup_open_same_tab": {
+      "message": "Відкрити в тій самій вкладці"
+   },
+   "option_remove_url_row": {
+      "message": "Видалити цей кореневий каталог"
    }
 }

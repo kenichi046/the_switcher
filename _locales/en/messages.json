@@ -33,7 +33,7 @@
       "message": "updates"
    },
    "option_message_10": {
-      "message": "Please check the <a href='https://chrome.google.com/webstore/detail/the-switcher/ibnjhiipcjlebggficnjfanodgpabpcm' target='_blank'>Crome Web Store</a>"
+      "message": "Please check the Chrome Web Store"
    },
    "option_message_11": {
       "message": "More HINT ▼"
@@ -43,18 +43,6 @@
    },
    "option_message_13": {
       "message": "When browsing a web page containing the set URL in Chrome, clicking on the extension tab (<img class='icon' src='./image/icon16.png'>) will display links for switching."
-   },
-   "option_message_14": {
-      "message": "(1) If only two document roots are set, another tab will <span style='color:red;'>open directly</span>."
-   },
-   "option_message_14_0": {
-      "message": "CHEK IT"
-   },
-   "option_message_15": {
-      "message": "(2) You can also <span style='color:red;'>right-click within the page to display the context menu</span>."
-   },
-   "option_message_16": {
-      "message": "(3) In addition, <span class='code'>ctrl</span> + <span class='code'>Shift</span> + <span class='code'>Up</span> (up arrow) opens the shortcut! Soberly convenient."
    },
    "option_message_17": {
       "message": "Open in the same tab (with exactly 2 URLs, switch instantly on click; OFF uses a new tab)"
@@ -220,5 +208,26 @@
    },
    "option_feature_09_body": {
       "message": "Give each URL a display name like \"prod env\" on the options page, and the popup can show that label instead of the raw URL. Switch between label and URL view anytime with the buttons at the bottom of the popup."
+   },
+   "popup_drag_reorder": {
+      "message": "Drag to reorder"
+   },
+   "popup_announce_close": {
+      "message": "Close"
+   },
+   "popup_announce_v2_5_0_labels": {
+      "message": "You can now label your URLs."
+   },
+   "popup_announce_v2_5_0_reorder": {
+      "message": "You can now drag and drop to reorder the display order."
+   },
+   "popup_open_new_tab": {
+      "message": "Open new tab"
+   },
+   "popup_open_same_tab": {
+      "message": "Open same tab"
+   },
+   "option_remove_url_row": {
+      "message": "Remove this document root"
    }
 }

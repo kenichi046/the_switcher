@@ -51,7 +51,8 @@
 }
 
 #theswitcher {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+  font-family: "Noto Sans JP", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial,
+    "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic UI", Meiryo, system-ui, sans-serif;
   background: var(--bg);
 }
 
@@ -104,8 +105,28 @@
   border-bottom: 1px solid var(--item-border);
   overflow: hidden;
   position: relative;
-  transition: background 0.12s ease;
+  transition: background 0.12s ease, opacity .15s ease;
 }
+
+.urlBlock.dragging { opacity: .5; }
+
+/* Drag grip — small sibling of the options-page .urlDragHandle */
+.urlBlock .urlDragHandle {
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 22px;
+  color: var(--text-muted);
+  cursor: grab;
+  border-radius: 6px;
+  font-size: .8em;
+  transition: color .14s ease, background .14s ease;
+}
+
+.urlBlock .urlDragHandle:hover { color: var(--accent); background: var(--hover-bg); }
+.urlBlock .urlDragHandle:active { cursor: grabbing; }
 
 .urlBlock:last-child {
   border-bottom: none;
@@ -176,7 +197,7 @@
 }
 
 /* External-link icon */
-.urlBlock i {
+.urlBlock > .icon {
   font-size: 0.58rem;
   color: var(--icon-color);
   flex-shrink: 0;
@@ -244,7 +265,7 @@
   margin-top: 4px;
 }
 
-#theswitcher .switcherContainer .urlBlock.colorHint i {
+#theswitcher .switcherContainer .urlBlock.colorHint .icon {
   color: var(--accent);
   font-size: 0.9em;
   flex: none;
@@ -281,13 +302,13 @@
   background: var(--sametab-bg);
   color: var(--sametab-color);
 }
-.urlBlock .copyBtn i {
+.urlBlock .copyBtn .icon {
   font-size: 0.82rem;
   color: inherit;
   margin: 0;
 }
 .urlBlock .copyBtn.copied,
-.urlBlock .copyBtn.copied i {
+.urlBlock .copyBtn.copied .icon {
   color: var(--copied-color);
 }
 
@@ -357,6 +378,66 @@
 
 #theswitcher .switcherContainer .urlBlock.active a:first-of-type .urlDiff {
   color: #60a5fa;
+}
+
+/* ── "What's new" announcement banner ────────────────── */
+.announceBanner {
+  position: relative;
+  padding: 10px 30px 10px 14px;
+  border-top: 1px solid var(--item-border);
+  background: var(--hover-bg);
+}
+
+.announceList {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.announceList li {
+  position: relative;
+  padding-left: 14px;
+  font-size: 0.76rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+.announceList li + li {
+  margin-top: 4px;
+}
+
+.announceList li::before {
+  content: "";
+  position: absolute;
+  left: 2px;
+  top: 0.55em;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+.announceClose {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 20px;
+  height: 20px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: transparent;
+  color: var(--text-muted);
+  font-size: 0.7rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: color .14s ease, background .14s ease;
+}
+
+.announceClose:hover {
+  color: var(--accent);
+  background: var(--card-bg);
 }
 
 .copyright {

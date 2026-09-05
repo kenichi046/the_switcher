@@ -33,7 +33,7 @@
       "message": "更新歷史"
    },
    "option_message_10": {
-      "message": "<a href='https://chrome.google.com/webstore/detail/the-switcher/ibnjhiipcjlebggficnjfanodgpabpcm' target='_blank'>查看Chrome Web Store</a>。"
+      "message": "查看Chrome Web Store。"
    },
    "option_message_11": {
       "message": "提示 ▼"
@@ -43,18 +43,6 @@
    },
    "option_message_13": {
       "message": "在Chrome中查看包含設置的URL的網頁時，點擊擴展標籤中的<img class='icon' src='./image/icon16.png'>，切換鏈接將顯示。"
-   },
-   "option_message_14": {
-      "message": "(1) 如果僅設置了<span style='color: red'>2個文檔根目錄，將直接在新標籤頁中打開<span>。"
-   },
-   "option_message_14_0": {
-      "message": "3個不同特點的亮點"
-   },
-   "option_message_15": {
-      "message": "(2) 在頁面內右鍵點擊也會顯示上下文菜單</span>。"
-   },
-   "option_message_16": {
-      "message": "(3) )<span class='code'>ctrl</span> + <span class='code'>Shift</span> + <span class='code'>Up</span>（上箭頭）可以<span style='color: red;'>快捷啟動</span>！URL聚焦狀態下按<span class='code'>Enter</span>切換...。非常方便。<span class='code'>Up</span>和<span class='code'>Down</span>可選擇。"
    },
    "option_message_17": {
       "message": "在同一標籤頁中打開（僅2個URL時點擊即切換；關閉則用新標籤頁）"
@@ -220,5 +208,26 @@
    },
    "option_feature_09_body": {
       "message": "在選項頁面為每個網址設定顯示名稱，例如「prod env」，彈出視窗即可顯示該標籤而非原始網址。可隨時透過彈出視窗底部的按鈕在標籤檢視和網址檢視之間切換。"
+   },
+   "popup_drag_reorder": {
+      "message": "拖曳以重新排序"
+   },
+   "popup_announce_close": {
+      "message": "關閉"
+   },
+   "popup_announce_v2_5_0_labels": {
+      "message": "現在可以為網址設定標籤了。"
+   },
+   "popup_announce_v2_5_0_reorder": {
+      "message": "現在可以透過拖放調整顯示順序了。"
+   },
+   "popup_open_new_tab": {
+      "message": "在新標籤頁中開啟"
+   },
+   "popup_open_same_tab": {
+      "message": "在同一標籤頁中開啟"
+   },
+   "option_remove_url_row": {
+      "message": "刪除此文件根目錄"
    }
 }

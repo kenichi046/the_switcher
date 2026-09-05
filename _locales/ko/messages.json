@@ -33,7 +33,7 @@
       "message": "업데이트 내역"
    },
    "option_message_10": {
-      "message": "자세한 내용은 <a href='https://chrome.google.com/webstore/detail/the-switcher/ibnjhiipcjlebggficnjfanodgpabpcm' target='_blank'>Chrome 웹 스토어</a>에서 확인하세요."
+      "message": "자세한 내용은 Chrome 웹 스토어에서 확인하세요."
    },
    "option_message_11": {
       "message": "힌트 ▼"
@@ -43,18 +43,6 @@
    },
    "option_message_13": {
       "message": "설정한 URL이 포함된 웹 페이지를 Chrome에서 탐색할 때 확장 기능 탭에 있는 <img class='icon' src='./image/icon16.png'>를 클릭하면 전환용 링크가 표시됩니다."
-   },
-   "option_message_14": {
-      "message": "(1) 문서 루트가 <span style='color: red'>2개만 설정되어 있는 경우, 직접 새 탭이 열립니다</span>."
-   },
-   "option_message_14_0": {
-      "message": "주요 특징 3가지"
-   },
-   "option_message_15": {
-      "message": "(2) <span style='color:red;'>페이지 안에서 오른쪽 클릭으로도 컨텍스트 메뉴가 표시됩니다</span>."
-   },
-   "option_message_16": {
-      "message": "(3) <span class='code'>ctrl</span> + <span class='code'>Shift</span> + <span class='code'>Up</span>（위쪽 화살표）를 눌러 <span style='color: red;'>단축키로 실행할 수 있습니다</span>! URL에 포커스가 맞춰진 상태에서 <span class='code'>Enter</span>를 누르면 Switching...합니다. 간편하고 유용합니다. <span class='code'>Up</span>, <span class='code'>Down</span>으로 선택 가능합니다."
    },
    "option_message_17": {
       "message": "같은 탭에서 열기 (URL이 2개면 클릭 시 즉시 전환 / OFF는 새 탭)"
@@ -220,5 +208,26 @@
    },
    "option_feature_09_body": {
       "message": "옵션 페이지에서 각 URL에 \"prod env\"와 같은 표시 이름을 설정하면, 팝업에서 URL 대신 해당 라벨을 표시할 수 있습니다. 팝업 하단 버튼으로 라벨 표시/URL 표시를 언제든지 전환할 수 있습니다."
+   },
+   "popup_drag_reorder": {
+      "message": "드래그하여 순서 변경"
+   },
+   "popup_announce_close": {
+      "message": "닫기"
+   },
+   "popup_announce_v2_5_0_labels": {
+      "message": "이제 URL에 라벨을 설정할 수 있습니다."
+   },
+   "popup_announce_v2_5_0_reorder": {
+      "message": "이제 드래그 앤 드롭으로 표시 순서를 변경할 수 있습니다."
+   },
+   "popup_open_new_tab": {
+      "message": "새 탭에서 열기"
+   },
+   "popup_open_same_tab": {
+      "message": "같은 탭에서 열기"
+   },
+   "option_remove_url_row": {
+      "message": "이 문서 루트 삭제"
    }
 }

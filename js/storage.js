@@ -6,10 +6,11 @@
 //   theswitcher = [ {name, url:[...], colors:[...], labels:[...]}, ..., {sametab:bool} ]
 //
 // Keys:
-//   theswitcher              - the active config (local, or sync when enabled)
-//   theswitcher_sync         - sync-enabled flag (stored in sync so other devices know)
-//   theswitcher_backup       - { data, savedAt } snapshot of the previous non-empty config (local)
-//   theswitcher_display_mode - popup display mode, "url" or "label" (always local, per-device)
+//   theswitcher                 - the active config (local, or sync when enabled)
+//   theswitcher_sync            - sync-enabled flag (stored in sync so other devices know)
+//   theswitcher_backup          - { data, savedAt } snapshot of the previous non-empty config (local)
+//   theswitcher_display_mode    - popup display mode, "url" or "label" (always local, per-device)
+//   theswitcher_dismissed_notes - array of dismissed popup-announcement IDs (always local, per-device)
 (function (global) {
   const DATA_KEY = 'theswitcher';
   const SYNC_FLAG = 'theswitcher_sync';
@@ -17,6 +18,7 @@
   const DISPLAY_MODE_KEY = 'theswitcher_display_mode';
   const DISPLAY_MODE_URL = 'url';
   const DISPLAY_MODE_LABEL = 'label';
+  const DISMISSED_NOTES_KEY = 'theswitcher_dismissed_notes';
 
   // A config "has projects" if it contains at least one project object (with a url array).
   function hasProjects(data) {
@@ -97,10 +99,31 @@
     await chrome.storage.local.set({ [DISPLAY_MODE_KEY]: value });
   }
 
+  // Popup announcements — a small "what's new" banner shown at the bottom of
+  // the popup. Dismissal is tracked per announcement ID so a future
+  // announcement can reuse this same mechanism. Always local-only, since
+  // "have I seen this notice" is a per-device UI state, not project data.
+  async function isNoteDismissed(noteId) {
+    const r = await chrome.storage.local.get(DISMISSED_NOTES_KEY);
+    const dismissed = Array.isArray(r[DISMISSED_NOTES_KEY]) ? r[DISMISSED_NOTES_KEY] : [];
+    return dismissed.indexOf(noteId) > -1;
+  }
+
+  async function dismissNote(noteId) {
+    const r = await chrome.storage.local.get(DISMISSED_NOTES_KEY);
+    const dismissed = Array.isArray(r[DISMISSED_NOTES_KEY]) ? r[DISMISSED_NOTES_KEY] : [];
+    if (dismissed.indexOf(noteId) === -1) {
+      dismissed.push(noteId);
+      await chrome.storage.local.set({ [DISMISSED_NOTES_KEY]: dismissed });
+    }
+  }
+
   global.TheSwitcherStore = {
     DATA_KEY, SYNC_FLAG, BACKUP_KEY,
     DISPLAY_MODE_KEY, DISPLAY_MODE_URL, DISPLAY_MODE_LABEL,
+    DISMISSED_NOTES_KEY,
     load, save, loadBackup, hasProjects,
-    loadDisplayMode, saveDisplayMode
+    loadDisplayMode, saveDisplayMode,
+    isNoteDismissed, dismissNote
   };
 })(self);

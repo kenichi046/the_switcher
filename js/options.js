@@ -6,44 +6,44 @@ document.addEventListener('DOMContentLoaded', function () {
   const btnSave = '.saveData';
   const btnAddURL = 'addURL';
   const btnRemoveProject = 'btnRemeveProject';
+  const btnRemoveUrlRow = 'btnRemoveUrlRow';
   const projectWrap = 'projectWrap';
-  const placeholderURL = 'placeholder="ex) https://yourprojectdomain/"';
-  const placeholderProject = 'placeholder="ex) PROJECT-001"';
+  const URL_PLACEHOLDER = 'ex) https://yourprojectdomain/';
+  const LABEL_PLACEHOLDER = 'ex) prod env';
+  const PROJECT_PLACEHOLDER = 'ex) PROJECT-001';
+  const DRAG_TO_REORDER = 'Drag to reorder';
+  const placeholderURL = `placeholder="${URL_PLACEHOLDER}"`;
+  const placeholderProject = `placeholder="${PROJECT_PLACEHOLDER}"`;
+  const placeholderLabel = `placeholder="${LABEL_PLACEHOLDER}"`;
 
   // small DOM helpers
   const qs = (sel, root = document) => root.querySelector(sel);
   const qsa = (sel, root = document) => Array.from(root.querySelectorAll(sel));
   const markChanged = () => { const sd = qs(btnSave); if (sd) sd.classList.add('changed'); };
 
-  // JSON DATA
-  let userJSON = [];
   // becomes true only after the initial load + render settles, so saves
   // can never run against an empty (not-yet-populated) form
   let isReady = false;
 
-  // if has localstorage theswithcer, it should be removed
-  if (localStorage.key('theswitcher')) {
-    localStorage.removeItem('theswitcher');
-  }
-
-  const placeholderLabel = 'placeholder="ex) prod env"';
   const projectDom = `
   <div class="${projectWrap}" draggable="true">
     <dl>
       <dt>
-        <span class="dragHandle" title="Drag to reorder"><i class="fa-solid fa-grip-vertical"></i></span>
+        <span class="dragHandle" title="${DRAG_TO_REORDER}"><svg class="icon"><use href="#icon-grip-vertical"></use></svg></span>
         <span>Project Name : </span><input ${placeholderProject} type="text" value="" data-proname="projectName1" />
-        <span class="${btnRemoveProject}"><button><i class="fa-solid fa-circle-xmark"></i> __MSG_option_message_07__</button></span>
+        <span class="${btnRemoveProject}"><button><svg class="icon"><use href="#icon-circle-xmark"></use></svg> __MSG_option_message_07__</button></span>
       </dt>
       <dd>
         <div class="urlRow">
+          <span class="urlDragHandle" title="${DRAG_TO_REORDER}"><svg class="icon"><use href="#icon-grip-vertical"></use></svg></span>
           <input ${placeholderURL} type="text" class="urlInput" value="" data-envname="url1" />
           <input ${placeholderLabel} type="text" class="urlLabelInput" value="">
           <input type="color" class="urlColorPicker" value="#808080">
+          <button type="button" class="${btnRemoveUrlRow}" title="__MSG_option_remove_url_row__"><svg class="icon"><use href="#icon-xmark"></use></svg></button>
         </div>
       </dd>
     </dl>
-    <button class="${btnAddURL}"><i class="fa-solid fa-circle-plus"></i> __MSG_option_message_08__</button>
+    <button class="${btnAddURL}"><svg class="icon"><use href="#icon-circle-plus"></use></svg> __MSG_option_message_08__</button>
   </div>
   `;
 
@@ -52,6 +52,13 @@ document.addEventListener('DOMContentLoaded', function () {
     el.innerHTML = text;
     return el.value;
   }
+
+  // Mirror a URL row's color picker onto its own --node-color, so the
+  // rail's node dot (drawn via box-shadow on the row's inputs) matches.
+  const syncNodeColor = function (colorInput) {
+    const row = colorInput.closest('.urlRow');
+    if (row) row.style.setProperty('--node-color', colorInput.value);
+  };
 
   // INIT APP — render saved data into the form
   const init = function (jsonData) {
@@ -73,8 +80,8 @@ document.addEventListener('DOMContentLoaded', function () {
           const dt = document.createElement('dt');
           const handle = document.createElement('span');
           handle.className = 'dragHandle';
-          handle.title = 'Drag to reorder';
-          handle.innerHTML = '<i class="fa-solid fa-grip-vertical"></i>';
+          handle.title = DRAG_TO_REORDER;
+          handle.innerHTML = '<svg class="icon"><use href="#icon-grip-vertical"></use></svg>';
           dt.appendChild(handle);
           const label = document.createElement('span');
           label.textContent = 'Project Name : ';
@@ -82,7 +89,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
           const nameInput = document.createElement('input');
           nameInput.type = 'text';
-          nameInput.placeholder = 'ex) PROJECT-001';
+          nameInput.placeholder = PROJECT_PLACEHOLDER;
           nameInput.setAttribute('data-proname', `projectName${index + 1}`);
           nameInput.value = rawName;
           dt.appendChild(nameInput);
@@ -90,7 +97,7 @@ document.addEventListener('DOMContentLoaded', function () {
           const removeWrap = document.createElement('span');
           removeWrap.className = btnRemoveProject;
           const removeBtn = document.createElement('button');
-          removeBtn.innerHTML = '<i class="fa-solid fa-circle-xmark"></i> ';
+          removeBtn.innerHTML = '<svg class="icon"><use href="#icon-circle-xmark"></use></svg> ';
           removeBtn.appendChild(document.createTextNode(chrome.i18n.getMessage('option_message_07')));
           removeWrap.appendChild(removeBtn);
           dt.appendChild(removeWrap);
@@ -102,7 +109,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
           const addURLBtn = document.createElement('button');
           addURLBtn.className = btnAddURL;
-          addURLBtn.innerHTML = '<i class="fa-solid fa-circle-plus"></i> ';
+          addURLBtn.innerHTML = '<svg class="icon"><use href="#icon-circle-plus"></use></svg> ';
           addURLBtn.appendChild(document.createTextNode(chrome.i18n.getMessage('option_message_08')));
 
           const block = document.createElement('div');
@@ -116,31 +123,41 @@ document.addEventListener('DOMContentLoaded', function () {
             if (item.url[i]) {
               const urlRow = document.createElement('div');
               urlRow.className = 'urlRow';
+              const urlDragHandle = document.createElement('span');
+              urlDragHandle.className = 'urlDragHandle';
+              urlDragHandle.title = DRAG_TO_REORDER;
+              urlDragHandle.innerHTML = '<svg class="icon"><use href="#icon-grip-vertical"></use></svg>';
               const urlInput = document.createElement('input');
               urlInput.type = 'text';
               urlInput.className = 'urlInput';
-              urlInput.placeholder = 'ex) https://yourprojectdomain/';
+              urlInput.placeholder = URL_PLACEHOLDER;
               urlInput.value = htmlDecode(item.url[i]);
               const labelInput = document.createElement('input');
               labelInput.type = 'text';
               labelInput.className = 'urlLabelInput';
-              labelInput.placeholder = 'ex) prod env';
+              labelInput.placeholder = LABEL_PLACEHOLDER;
               labelInput.value = (item.labels && item.labels[i]) ? htmlDecode(item.labels[i]) : '';
               const colorInput = document.createElement('input');
               colorInput.type = 'color';
               colorInput.className = 'urlColorPicker';
               colorInput.value = (item.colors && item.colors[i]) ? item.colors[i] : '#808080';
+              const removeUrlBtn = document.createElement('button');
+              removeUrlBtn.type = 'button';
+              removeUrlBtn.className = btnRemoveUrlRow;
+              removeUrlBtn.title = chrome.i18n.getMessage('option_remove_url_row') || 'Remove this document root';
+              removeUrlBtn.innerHTML = '<svg class="icon"><use href="#icon-xmark"></use></svg>';
+              urlRow.appendChild(urlDragHandle);
               urlRow.appendChild(urlInput);
               urlRow.appendChild(labelInput);
               urlRow.appendChild(colorInput);
+              urlRow.appendChild(removeUrlBtn);
               dd.appendChild(urlRow);
+              syncNodeColor(colorInput);
             }
           }
-        } else if (item && typeof item === 'object' && item.sametab) {
-          if (item.sametab === true) {
-            const cb = qs('#sametab');
-            if (cb) cb.checked = true;
-          }
+        } else if (item && typeof item === 'object' && item.sametab === true) {
+          const cb = qs('#sametab');
+          if (cb) cb.checked = true;
         }
       });
     });
@@ -151,35 +168,48 @@ document.addEventListener('DOMContentLoaded', function () {
     const wrap = btnEl.closest('.' + projectWrap);
     if (!wrap) return;
     const dd = wrap.querySelector('dd');
-    const areaNumber = wrap.querySelectorAll('dd input[type="text"]').length + 1;
+    const areaNumber = wrap.querySelectorAll('dd .urlInput').length + 1;
     const urlRow = document.createElement('div');
     urlRow.className = 'urlRow';
+    const urlDragHandle = document.createElement('span');
+    urlDragHandle.className = 'urlDragHandle';
+    urlDragHandle.title = DRAG_TO_REORDER;
+    urlDragHandle.innerHTML = '<svg class="icon"><use href="#icon-grip-vertical"></use></svg>';
     const input = document.createElement('input');
     input.type = 'text';
     input.className = 'urlInput';
-    input.placeholder = 'ex) https://yourprojectdomain/';
+    input.placeholder = URL_PLACEHOLDER;
     input.value = '';
     input.setAttribute('data-envname', `url${areaNumber}`);
     const labelInput = document.createElement('input');
     labelInput.type = 'text';
     labelInput.className = 'urlLabelInput';
-    labelInput.placeholder = 'ex) prod env';
+    labelInput.placeholder = LABEL_PLACEHOLDER;
     labelInput.value = '';
     const colorInput = document.createElement('input');
     colorInput.type = 'color';
     colorInput.className = 'urlColorPicker';
     colorInput.value = '#808080';
+    const removeUrlBtn = document.createElement('button');
+    removeUrlBtn.type = 'button';
+    removeUrlBtn.className = btnRemoveUrlRow;
+    removeUrlBtn.title = chrome.i18n.getMessage('option_remove_url_row') || 'Remove this document root';
+    removeUrlBtn.innerHTML = '<svg class="icon"><use href="#icon-xmark"></use></svg>';
+    urlRow.appendChild(urlDragHandle);
     urlRow.appendChild(input);
     urlRow.appendChild(labelInput);
     urlRow.appendChild(colorInput);
+    urlRow.appendChild(removeUrlBtn);
     dd.appendChild(urlRow);
+    syncNodeColor(colorInput);
+    setupUrlRowDragReorder(urlRow);
   };
 
   // CONVERT FORM -> JSON
   const convertJSON = function () {
     const sametabEl = qs('#sametab');
     const isSametab = !!(sametabEl && sametabEl.checked);
-    userJSON = [];
+    const userJSON = [];
     qsa('.' + projectWrap).forEach(function (wrap) {
       const nameEl = wrap.querySelector('dt input');
       const pName = escapeHtml(nameEl ? nameEl.value : '');
@@ -359,7 +389,7 @@ document.addEventListener('DOMContentLoaded', function () {
     if (!btn) return;
     const origHTML = btn.innerHTML;
     btn.classList.add('copied');
-    btn.innerHTML = '<i class="fa-solid fa-check"></i> ' + escapeHtml(label);
+    btn.innerHTML = '<svg class="icon"><use href="#icon-check"></use></svg> ' + escapeHtml(label);
     setTimeout(function () {
       btn.classList.remove('copied');
       btn.innerHTML = origHTML;
@@ -437,7 +467,7 @@ document.addEventListener('DOMContentLoaded', function () {
       const c = qs(container);
       const rect = wrap.getBoundingClientRect();
       const before = (e.clientY - rect.top) < rect.height / 2;
-      c.insertBefore(dragSrcEl, before ? wrap : wrap.nextSibling);
+      c.insertBefore(dragSrcEl, before ? wrap : wrap.nextElementSibling);
       markChanged();
     });
   };
@@ -447,6 +477,77 @@ document.addEventListener('DOMContentLoaded', function () {
       if (wrap.dataset.dragWired) return;
       wrap.dataset.dragWired = '1';
       setupDragReorder(wrap);
+    });
+    attachUrlRowDragHandlersToAll();
+  };
+
+  // ── DRAG-TO-REORDER URL ROWS (within a single project) ──
+  // The row is moved live as the pointer passes over other rows during
+  // dragover, rather than computed once at drop time — this avoids any
+  // stale-rect / boundary-condition mismatch between where the row visibly
+  // lands and where it's actually inserted.
+  let urlRowDragSrcEl = null;
+  const setupUrlRowDragReorder = function (row) {
+    if (row.dataset.dragWired) return;
+    row.dataset.dragWired = '1';
+
+    const handle = row.querySelector('.urlDragHandle');
+    if (!handle) return;
+
+    // Only start a drag when the pointer went down on the handle —
+    // the row itself holds text inputs and a color picker that must
+    // stay normally interactive.
+    handle.addEventListener('mousedown', function () {
+      row.draggable = true;
+    });
+    row.addEventListener('mouseup', function () {
+      row.draggable = false;
+    });
+
+    row.addEventListener('dragstart', function (e) {
+      urlRowDragSrcEl = row;
+      row.classList.add('dragging');
+      e.dataTransfer.effectAllowed = 'move';
+      try { e.dataTransfer.setData('text/plain', ''); } catch (err) { /* some browsers require this */ }
+    });
+    row.addEventListener('dragend', function () {
+      row.classList.remove('dragging');
+      row.draggable = false;
+      const dd = row.closest('dd');
+      if (dd) qsa('.urlRow', dd).forEach(function (r) { r.classList.remove('dragOver'); });
+      urlRowDragSrcEl = null;
+      // The DOM order is already final at this point (updated live during
+      // dragover) — persist it now that the drag gesture is complete.
+      saveCurrent().then(function () {
+        const sd = qs(btnSave);
+        if (sd) sd.classList.remove('changed');
+      }).catch(function (err) { console.log(err); });
+    });
+    row.addEventListener('dragover', function (e) {
+      e.preventDefault();
+      if (!urlRowDragSrcEl || urlRowDragSrcEl === row) return;
+      const dd = row.closest('dd');
+      // Only reorder within the same project's own URL list.
+      if (!dd || urlRowDragSrcEl.closest('dd') !== dd) return;
+      const rect = row.getBoundingClientRect();
+      const before = (e.clientY - rect.top) < rect.height / 2;
+      const target = before ? row : row.nextElementSibling;
+      // No-op guard: skip the DOM write entirely when the row is already
+      // in the requested position, to avoid redundant reflows/flicker.
+      if (target === urlRowDragSrcEl) return;
+      if (urlRowDragSrcEl.nextElementSibling === target) return;
+      dd.insertBefore(urlRowDragSrcEl, target);
+    });
+    row.addEventListener('drop', function (e) {
+      e.preventDefault();
+      // Actual reordering already happened live during dragover;
+      // dragend handles the save. Nothing left to do here.
+    });
+  };
+  // Attach drag handlers to every current URL row (call after any (re)render)
+  const attachUrlRowDragHandlersToAll = function () {
+    qsa('.urlRow').forEach(function (row) {
+      setupUrlRowDragReorder(row);
     });
   };
 
@@ -497,6 +598,7 @@ document.addEventListener('DOMContentLoaded', function () {
       const c = qs(container);
       c.insertAdjacentHTML('beforeend', projectDom);
       localizeHtmlPageForElement(c.lastElementChild);
+      qsa('.urlColorPicker', c.lastElementChild).forEach(syncNodeColor);
       attachDragHandlersToAll();
       applyProjectFilter();
       return;
@@ -505,6 +607,13 @@ document.addEventListener('DOMContentLoaded', function () {
     if (removeEl) {
       const wrap = removeEl.closest('.' + projectWrap);
       if (wrap) wrap.remove();
+      markChanged();
+      return;
+    }
+    const removeUrlEl = e.target.closest('.' + btnRemoveUrlRow);
+    if (removeUrlEl) {
+      const row = removeUrlEl.closest('.urlRow');
+      if (row) row.remove();
       markChanged();
       return;
     }
@@ -556,6 +665,7 @@ document.addEventListener('DOMContentLoaded', function () {
       applyProjectFilter();
       return;
     }
+    if (e.target.matches('.urlColorPicker')) syncNodeColor(e.target);
     if (e.target.matches('input')) markChanged();
   });
 

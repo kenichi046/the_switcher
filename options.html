@@ -5,13 +5,42 @@
   <title>The Switcher - options</title>
   <link rel="stylesheet" href="./css/reset.css">
   <link rel="stylesheet" href="./css/options.css">
-  <link rel="stylesheet" href="./fontawesome-free-6.2.1-web/css/fontawesome.min.css">
-  <link rel="stylesheet" href="./fontawesome-free-6.2.1-web/css/solid.css">
   <script src="./js/storage.js"></script>
   <script src="./js/options.js"></script>
 </head>
 
 <body id="theswitcher">
+  <svg style="display:none" aria-hidden="true">
+    <!-- Icon paths adapted from Font Awesome Free 6.2.1 (CC BY 4.0 - https://fontawesome.com/license/free) -->
+    <symbol id="icon-share-nodes" viewBox="0 0 448 512"><path d="M320 96a32 32 0 1 1 64 0 32 32 0 1 1 -64 0zm32 96c-16.8 0-32.2-5.1-45.1-13.7L164.8 254.2c1.4 5.6 2.2 11.6 2.2 17.8s-.8 12.1-2.2 17.8l142.1 75.9c12.9-8.6 28.3-13.7 45.1-13.7c44.2 0 80 35.8 80 80s-35.8 80-80 80s-80-35.8-80-80c0-6.2 .8-12.1 2.2-17.8L132.1 339.3C119.2 347.9 103.8 353 87 353c-44.2 0-80-35.8-80-80s35.8-80 80-80c16.8 0 32.2 5.1 45.1 13.7l142.1-75.9c-1.4-5.6-2.2-11.6-2.2-17.8c0-44.2 35.8-80 80-80s80 35.8 80 80s-35.8 80-80 80z"/></symbol>
+    <symbol id="icon-file-export" viewBox="0 0 576 512"><path d="M64 0C28.7 0 0 28.7 0 64V448c0 35.3 28.7 64 64 64H320c35.3 0 64-28.7 64-64V160H256c-17.7 0-32-14.3-32-32V0H64zM256 0V128H384L256 0zM216 408c0 13.3-10.7 24-24 24s-24-10.7-24-24V305.9l-31 31c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l72-72c9.4-9.4 24.6-9.4 33.9 0l72 72c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-31-31V408zM544 224c17.7 0 32 14.3 32 32V456c0 30.9-25.1 56-56 56H424c-13.3 0-24-10.7-24-24s10.7-24 24-24h96c4.4 0 8-3.6 8-8V336H432c-17.7 0-32-14.3-32-32V256c0-17.7 14.3-32 32-32h112z"/></symbol>
+    <symbol id="icon-clipboard" viewBox="0 0 384 512"><path d="M280 64h40c35.3 0 64 28.7 64 64V448c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V128C0 92.7 28.7 64 64 64h40 9.6C121 27.5 153.3 0 192 0s71 27.5 78.4 64H280zM64 112c-8.8 0-16 7.2-16 16V448c0 8.8 7.2 16 16 16H320c8.8 0 16-7.2 16-16V128c0-8.8-7.2-16-16-16H304v24c0 13.3-10.7 24-24 24H192 104c-13.3 0-24-10.7-24-24V112H64zm128-8a24 24 0 1 0 0-48 24 24 0 1 0 0 48z"/></symbol>
+    <symbol id="icon-file-import" viewBox="0 0 512 512"><path d="M64 0C28.7 0 0 28.7 0 64V448c0 35.3 28.7 64 64 64H320c35.3 0 64-28.7 64-64V160H256c-17.7 0-32-14.3-32-32V0H64zM256 0V128H384L256 0zM337 289L241 385c-9.4 9.4-24.6 9.4-33.9 0l-96-96c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l55 55V184c0-13.3 10.7-24 24-24s24 10.7 24 24V310.1l55-55c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z"/></symbol>
+    <symbol id="icon-clock-rotate-left" viewBox="0 0 512 512"><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></symbol>
+    <symbol id="icon-rotate-right" viewBox="0 0 512 512"><path d="M463.5 224H472c13.3 0 24-10.7 24-24V72c0-9.7-5.8-18.5-14.8-22.2s-19.3-1.7-26.2 5.2L413.4 96.6c-87.6-86.5-228.7-86.2-315.8 1c-87.5 87.5-87.5 229.3 0 316.8s229.3 87.5 316.8 0c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0c-62.5 62.5-163.8 62.5-226.3 0s-62.5-163.8 0-226.3c62.2-62.2 162.7-62.5 225.3-1L327 183c-6.9 6.9-8.9 17.2-5.2 26.2s12.5 14.8 22.2 14.8H463.5z"/></symbol>
+    <symbol id="icon-floppy-disk" viewBox="0 0 448 512"><path d="M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V173.3c0-17-6.7-33.3-18.7-45.3L352 50.7C340 38.7 323.7 32 306.7 32H64zm0 96c0-17.7 14.3-32 32-32H288c17.7 0 32 14.3 32 32v64c0 17.7-14.3 32-32 32H96c-17.7 0-32-14.3-32-32V128zM224 288a64 64 0 1 1 0 128 64 64 0 1 1 0-128z"/></symbol>
+    <symbol id="icon-file-circle-plus" viewBox="0 0 576 512"><path d="M0 64C0 28.7 28.7 0 64 0H224V128c0 17.7 14.3 32 32 32H384V288H272c-26.5 0-48 21.5-48 48v96H64c-35.3 0-64-28.7-64-64V64zm384 64H256V0L384 128zM272 512c-8.8 0-16-7.2-16-16V400H176c-8.8 0-16-7.2-16-16s7.2-16 16-16h80V288c0-8.8 7.2-16 16-16s16 7.2 16 16v80h80c8.8 0 16 7.2 16 16s-7.2 16-16 16H288v96c0 8.8-7.2 16-16 16z"/></symbol>
+    <symbol id="icon-magnifying-glass" viewBox="0 0 512 512"><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"/></symbol>
+    <symbol id="icon-star" viewBox="0 0 576 512"><path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195.1 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"/></symbol>
+    <symbol id="icon-keyboard" viewBox="0 0 576 512"><path d="M64 96H512c17.7 0 32 14.3 32 32V384c0 17.7-14.3 32-32 32H64c-17.7 0-32-14.3-32-32V128c0-17.7 14.3-32 32-32zM0 128V384c0 35.3 28.7 64 64 64H512c35.3 0 64-28.7 64-64V128c0-35.3-28.7-64-64-64H64C28.7 64 0 92.7 0 128zM176 160H112c-8.8 0-16 7.2-16 16v32c0 8.8 7.2 16 16 16h64c8.8 0 16-7.2 16-16V176c0-8.8-7.2-16-16-16zm112 0H224c-8.8 0-16 7.2-16 16v32c0 8.8 7.2 16 16 16h64c8.8 0 16-7.2 16-16V176c0-8.8-7.2-16-16-16zm112 0H336c-8.8 0-16 7.2-16 16v32c0 8.8 7.2 16 16 16h64c8.8 0 16-7.2 16-16V176c0-8.8-7.2-16-16-16zm112 0H448c-8.8 0-16 7.2-16 16v32c0 8.8 7.2 16 16 16h64c8.8 0 16-7.2 16-16V176c0-8.8-7.2-16-16-16zM112 240c-8.8 0-16 7.2-16 16v32c0 8.8 7.2 16 16 16h64c8.8 0 16-7.2 16-16V256c0-8.8-7.2-16-16-16H112zm128 16v32c0 8.8 7.2 16 16 16h64c8.8 0 16-7.2 16-16V256c0-8.8-7.2-16-16-16H256c-8.8 0-16 7.2-16 16zm176-16c-8.8 0-16 7.2-16 16v32c0 8.8 7.2 16 16 16h64c8.8 0 16-7.2 16-16V256c0-8.8-7.2-16-16-16H416zM112 320c-8.8 0-16 7.2-16 16v32c0 8.8 7.2 16 16 16H336c8.8 0 16-7.2 16-16V336c0-8.8-7.2-16-16-16H112zm288 16v32c0 8.8 7.2 16 16 16h64c8.8 0 16-7.2 16-16V336c0-8.8-7.2-16-16-16H416c-8.8 0-16 7.2-16 16z"/></symbol>
+    <symbol id="icon-arrows-up-down" viewBox="0 0 320 512"><path d="M137.4 41.4c12.5-12.5 32.8-12.5 45.3 0l96 96c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L192 141.3V448c0 17.7-14.3 32-32 32s-32-14.3-32-32V141.3L86.6 182.6c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3l96-96z"/></symbol>
+    <symbol id="icon-filter" viewBox="0 0 512 512"><path d="M3.9 54.9C10.5 40.9 24.5 32 40 32H472c15.5 0 29.5 8.9 36.1 22.9s4.6 30.5-5.2 42.5L320 320.9V448c0 12.1-6.8 23.2-17.7 28.6s-23.8 4.3-33.5-3l-64-48c-8.1-6-12.8-15.5-12.8-25.6V320.9L9 97.4C-.7 85.4-2.8 68.8 3.9 54.9z"/></symbol>
+    <symbol id="icon-copy" viewBox="0 0 448 512"><path d="M208 0H332.1c12.7 0 24.9 5.1 33.9 14.1l67.9 67.9c9 9 14.1 21.2 14.1 33.9V336c0 26.5-21.5 48-48 48H208c-26.5 0-48-21.5-48-48V48c0-26.5 21.5-48 48-48zM48 128h80v64H64V448H256V416h64v48c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V176c0-26.5 21.5-48 48-48z"/></symbol>
+    <symbol id="icon-cloud" viewBox="0 0 640 512"><path d="M144 480C64.5 480 0 415.5 0 336c0-62.8 40.2-116.2 96.2-135.9c-.1-2.7-.2-5.4-.2-8.1c0-88.4 71.6-160 160-160c59.3 0 111 32.2 138.7 80.2C409.9 102 428.3 96 448 96c53 0 96 43 96 96c0 12.2-2.3 23.8-6.4 34.6C596 238.4 640 290.1 640 352c0 70.7-57.3 128-128 128H144z"/></symbol>
+    <symbol id="icon-bolt" viewBox="0 0 448 512"><path d="M349.4 44.6c5.9-13.7 1.5-29.7-10.6-38.5s-28.6-8-39.9 1.8l-256 224c-10 8.8-13.6 22.9-8.9 35.3S50.7 288 64 288H175.5L98.6 467.4c-5.9 13.7-1.5 29.7 10.6 38.5s28.6 8 39.9-1.8l256-224c10-8.8 13.6-22.9 8.9-35.3s-16.6-20.7-30-20.7H272.5L349.4 44.6z"/></symbol>
+    <symbol id="icon-palette" viewBox="0 0 512 512"><path d="M204.3 5C104.9 24.4 24.8 104.3 5.2 203.6c-37 187 132.2 349.5 311.7 306.8c14.9-3.6 27.6-13.7 34.9-27.9c7.9-15.3 8.7-33.3 2.1-49.2c-6.2-14.9-3.1-31.9 8.1-43.1c30.6-30.6 21.2-83.1-17.1-97.4c-15.7-5.8-24.2-22.5-19.9-38.5c1.7-6.5 1.7-13.5 0-20c-6.2-24.6-31.1-38.4-55-30.4c-23.9 8-39.5 32.4-33.3 57C240.5 269.4 224 289.6 224 313.8c0 32.4-26.6 58.9-59.2 58.4c-33.1-.5-59.7-28.1-59.7-61.4c0-3.1 .2-6.1 .6-9.1c-6.8-14.3-10.6-30.4-10.6-47.4c0-61.9 50.1-112 112-112c1.2 0 2.5 0 3.7 .1c26.7 1.6 51.5-11.3 65.9-33.9c14.4-22.6 15.9-51.1 4-75.1c-11.6-23.4-31.7-40.6-56.4-49.4z"/></symbol>
+    <symbol id="icon-tag" viewBox="0 0 448 512"><path d="M0 80V229.5c0 17 6.7 33.3 18.7 45.3l176 176c25 25 65.5 25 90.5 0L418.7 317.3c25-25 25-65.5 0-90.5l-176-176c-12-12-28.3-18.7-45.3-18.7H48C21.5 32 0 53.5 0 80zm112 32a32 32 0 1 1 0 64 32 32 0 1 1 0-64z"/></symbol>
+    <symbol id="icon-circle-question" viewBox="0 0 512 512"><path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM169.8 165.3c7.9-22.3 29.1-37.3 52.8-37.3h58.3c34.9 0 63.1 28.3 63.1 63.1c0 22.6-12.1 43.5-31.7 54.8L280 264.4c-.2 13-10.9 23.6-24 23.6c-13.3 0-24-10.7-24-24V250.5c0-8.6 4.6-16.5 12.1-20.8l44.3-25.4c4.7-2.7 7.6-7.7 7.6-13.1c0-8.4-6.8-15.1-15.1-15.1H222.6c-3.4 0-6.4 2.1-7.5 5.3l-.4 1.2c-4.4 12.5-18.2 19-30.6 14.6s-19-18.2-14.6-30.6l.4-1.2zM224 352a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z"/></symbol>
+    <symbol id="icon-chevron-down" viewBox="0 0 512 512"><path d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"/></symbol>
+    <symbol id="icon-gear" viewBox="0 0 512 512"><path d="M495.9 166.6c3.2 8.7 .5 18.4-6.4 24.6l-43.3 39.4c1.1 8.3 1.7 16.8 1.7 25.4s-.6 17.1-1.7 25.4l43.3 39.4c6.9 6.2 9.6 15.9 6.4 24.6c-4.4 11.9-9.7 23.3-15.8 34.3l-4.7 8.1c-6.6 11-14 21.4-22.1 31.2c-5.9 7.2-15.7 9.6-24.5 6.8l-55.7-17.7c-13.4 10.3-28.2 18.9-44 25.4l-12.5 57.1c-2 9.1-9 16.3-18.2 17.8c-13.8 2.3-28 3.5-42.5 3.5s-28.7-1.2-42.5-3.5c-9.2-1.5-16.2-8.7-18.2-17.8l-12.5-57.1c-15.8-6.5-30.6-15.1-44-25.4L83.1 425.9c-8.8 2.8-18.6 .3-24.5-6.8c-8.1-9.8-15.5-20.2-22.1-31.2l-4.7-8.1c-6.1-11-11.4-22.4-15.8-34.3c-3.2-8.7-.5-18.4 6.4-24.6l43.3-39.4C64.6 273.1 64 264.6 64 256s.6-17.1 1.7-25.4L22.4 191.2c-6.9-6.2-9.6-15.9-6.4-24.6c4.4-11.9 9.7-23.3 15.8-34.3l4.7-8.1c6.6-11 14-21.4 22.1-31.2c5.9-7.2 15.7-9.6 24.5-6.8l55.7 17.7c13.4-10.3 28.2-18.9 44-25.4l12.5-57.1c2-9.1 9-16.3 18.2-17.8C227.3 1.2 241.5 0 256 0s28.7 1.2 42.5 3.5c9.2 1.5 16.2 8.7 18.2 17.8l12.5 57.1c15.8 6.5 30.6 15.1 44 25.4l55.7-17.7c8.8-2.8 18.6-.3 24.5 6.8c8.1 9.8 15.5 20.2 22.1 31.2l4.7 8.1c6.1 11 11.4 22.4 15.8 34.3zM256 336a80 80 0 1 0 0-160 80 80 0 1 0 0 160z"/></symbol>
+    <symbol id="icon-xmark" viewBox="0 0 384 512"><path d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"/></symbol>
+    <symbol id="icon-grip-vertical" viewBox="0 0 320 512"><path d="M40 352a40 40 0 1 0 0 80 40 40 0 1 0 0-80zm0-160a40 40 0 1 0 0 80 40 40 0 1 0 0-80zM80 80A40 40 0 1 0 0 80a40 40 0 1 0 80 0zM280 352a40 40 0 1 0 0 80 40 40 0 1 0 0-80zm40-160a40 40 0 1 0 -80 0 40 40 0 1 0 80 0zM280 40a40 40 0 1 0 -80 0 40 40 0 1 0 80 0z"/></symbol>
+    <symbol id="icon-circle-xmark" viewBox="0 0 512 512"><path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM175 175c9.4-9.4 24.6-9.4 33.9 0l47 47 47-47c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9l-47 47 47 47c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-47-47-47 47c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l47-47-47-47c-9.4-9.4-9.4-24.6 0-33.9z"/></symbol>
+    <symbol id="icon-circle-plus" viewBox="0 0 512 512"><path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM232 344V280H168c-13.3 0-24-10.7-24-24s10.7-24 24-24h64V168c0-13.3 10.7-24 24-24s24 10.7 24 24v64h64c13.3 0 24 10.7 24 24s-10.7 24-24 24H280v64c0 13.3-10.7 24-24 24s-24-10.7-24-24z"/></symbol>
+    <symbol id="icon-check" viewBox="0 0 448 512"><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/></symbol>
+    <symbol id="icon-up-right-from-square" viewBox="0 0 512 512"><path d="M352 0c-12.9 0-24.6 7.8-29.6 19.8s-2.2 25.7 6.9 34.9L370.7 96 201.4 265.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L416 141.3l41.4 41.4c9.2 9.2 22.9 11.9 34.9 6.9s19.8-16.6 19.8-29.6V32c0-17.7-14.3-32-32-32H352zM80 32C35.8 32 0 67.8 0 112V432c0 44.2 35.8 80 80 80H400c44.2 0 80-35.8 80-80V320c0-17.7-14.3-32-32-32s-32 14.3-32 32V432c0 8.8-7.2 16-16 16H80c-8.8 0-16-7.2-16-16V112c0-8.8 7.2-16 16-16H192c17.7 0 32-14.3 32-32s-14.3-32-32-32H80z"/></symbol>
+    <symbol id="icon-circle-check" viewBox="0 0 512 512"><path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM369 209L241 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L335 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z"/></symbol>
+  </svg>
   <div class="page">
 
     <header class="masthead">
@@ -36,13 +65,13 @@
       </section>
 
       <section class="card dataTools">
-        <p class="sectionLabel"><i class="fa-solid fa-share-nodes"></i> __MSG_option_data_tools_title__</p>
+        <p class="sectionLabel"><svg class="icon"><use href="#icon-share-nodes"></use></svg> __MSG_option_data_tools_title__</p>
         <div class="dataToolsRow">
           <div class="btnGroup">
-            <button class="ghostBtn btnExport" type="button"><i class="fa-solid fa-file-export"></i> __MSG_option_export__</button>
-            <button class="ghostBtn btnExportCopy" type="button"><i class="fa-solid fa-clipboard"></i> __MSG_option_export_copy__</button>
-            <button class="ghostBtn btnImport" type="button"><i class="fa-solid fa-file-import"></i> __MSG_option_import__</button>
-            <button class="ghostBtn btnRestore" type="button"><i class="fa-solid fa-clock-rotate-left"></i> __MSG_option_restore__</button>
+            <button class="ghostBtn btnExport" type="button"><svg class="icon"><use href="#icon-file-export"></use></svg> __MSG_option_export__</button>
+            <button class="ghostBtn btnExportCopy" type="button"><svg class="icon"><use href="#icon-clipboard"></use></svg> __MSG_option_export_copy__</button>
+            <button class="ghostBtn btnImport" type="button"><svg class="icon"><use href="#icon-file-import"></use></svg> __MSG_option_import__</button>
+            <button class="ghostBtn btnRestore" type="button"><svg class="icon"><use href="#icon-clock-rotate-left"></use></svg> __MSG_option_restore__</button>
             <input type="file" id="importFile" accept="application/json,.json" style="display:none">
           </div>
           <label class="switchRow compact syncToggle">
@@ -57,17 +86,17 @@
         <div class="projectsHead">
           <p class="sectionLabel">__MSG_option_section_projects__</p>
           <div class="toolbar right-btns">
-            <button class="reload" type="button"><i class="fa-solid fa-rotate-right"></i> __MSG_option_message_05__</button>
-            <button class="saveData" type="button"><i class="fa-solid fa-floppy-disk"></i> __MSG_option_message_06__</button>
+            <button class="reload" type="button"><svg class="icon"><use href="#icon-rotate-right"></use></svg> __MSG_option_message_05__</button>
+            <button class="saveData" type="button"><svg class="icon"><use href="#icon-floppy-disk"></use></svg> __MSG_option_message_06__</button>
           </div>
         </div>
 
         <div class="projectsTools">
           <div class="left_btns">
-            <button class="btnAddProject" type="button"><i class="fa-solid fa-file-circle-plus"></i> __MSG_option_message_04__</button>
+            <button class="btnAddProject" type="button"><svg class="icon"><use href="#icon-file-circle-plus"></use></svg> __MSG_option_message_04__</button>
           </div>
           <div class="projectFilterWrap">
-            <i class="fa-solid fa-magnifying-glass"></i>
+            <svg class="icon"><use href="#icon-magnifying-glass"></use></svg>
             <input type="text" id="projectFilter" class="projectFilter" placeholder="__MSG_option_filter_placeholder__">
             <span class="filterCount" id="filterCount"></span>
           </div>
@@ -81,72 +110,69 @@
         <ul class="logs">
           <li>__MSG_option_message_10__</li>
         </ul>
-        <figure class="sample">
-          <img src="./image/sample.png" alt="">
-        </figure>
       </section>
 
       <section class="card featuresCard">
-        <p class="sectionLabel"><i class="fa-solid fa-star"></i> __MSG_option_features_title__</p>
+        <p class="sectionLabel"><svg class="icon"><use href="#icon-star"></use></svg> __MSG_option_features_title__</p>
         <ul class="featureList">
           <li class="featureItem">
-            <span class="featureIcon"><i class="fa-solid fa-keyboard"></i></span>
+            <span class="featureIcon"><svg class="icon"><use href="#icon-keyboard"></use></svg></span>
             <div class="featureBody">
               <strong class="featureLabel">__MSG_option_feature_01_label__</strong>
               <span class="featureDesc">__MSG_option_feature_01_body__</span>
             </div>
           </li>
           <li class="featureItem">
-            <span class="featureIcon"><i class="fa-solid fa-arrows-up-down"></i></span>
+            <span class="featureIcon"><svg class="icon"><use href="#icon-arrows-up-down"></use></svg></span>
             <div class="featureBody">
               <strong class="featureLabel">__MSG_option_feature_02_label__</strong>
               <span class="featureDesc">__MSG_option_feature_02_body__</span>
             </div>
           </li>
           <li class="featureItem">
-            <span class="featureIcon"><i class="fa-solid fa-filter"></i></span>
+            <span class="featureIcon"><svg class="icon"><use href="#icon-filter"></use></svg></span>
             <div class="featureBody">
               <strong class="featureLabel">__MSG_option_feature_03_label__</strong>
               <span class="featureDesc">__MSG_option_feature_03_body__</span>
             </div>
           </li>
           <li class="featureItem">
-            <span class="featureIcon"><i class="fa-solid fa-copy"></i></span>
+            <span class="featureIcon"><svg class="icon"><use href="#icon-copy"></use></svg></span>
             <div class="featureBody">
               <strong class="featureLabel">__MSG_option_feature_04_label__</strong>
               <span class="featureDesc">__MSG_option_feature_04_body__</span>
             </div>
           </li>
           <li class="featureItem">
-            <span class="featureIcon"><i class="fa-solid fa-file-export"></i></span>
+            <span class="featureIcon"><svg class="icon"><use href="#icon-file-export"></use></svg></span>
             <div class="featureBody">
               <strong class="featureLabel">__MSG_option_feature_05_label__</strong>
               <span class="featureDesc">__MSG_option_feature_05_body__</span>
             </div>
           </li>
           <li class="featureItem">
-            <span class="featureIcon"><i class="fa-solid fa-cloud"></i></span>
+            <span class="featureIcon"><svg class="icon"><use href="#icon-cloud"></use></svg></span>
             <div class="featureBody">
               <strong class="featureLabel">__MSG_option_feature_06_label__</strong>
               <span class="featureDesc">__MSG_option_feature_06_body__</span>
             </div>
           </li>
           <li class="featureItem">
-            <span class="featureIcon"><i class="fa-solid fa-bolt"></i></span>
+            <span class="featureIcon"><svg class="icon"><use href="#icon-bolt"></use></svg></span>
             <div class="featureBody">
               <strong class="featureLabel">__MSG_option_feature_07_label__</strong>
               <span class="featureDesc">__MSG_option_feature_07_body__</span>
             </div>
           </li>
           <li class="featureItem">
-            <span class="featureIcon"><i class="fa-solid fa-palette"></i></span>
+            <span class="featureIcon"><svg class="icon"><use href="#icon-palette"></use></svg></span>
             <div class="featureBody">
               <strong class="featureLabel">__MSG_option_feature_08_label__</strong>
               <span class="featureDesc">__MSG_option_feature_08_body__</span>
             </div>
           </li>
           <li class="featureItem">
-            <span class="featureIcon"><i class="fa-solid fa-tag"></i></span>
+            <span class="featureIcon"><svg class="icon"><use href="#icon-tag"></use></svg></span>
             <div class="featureBody">
               <strong class="featureLabel">__MSG_option_feature_09_label__</strong>
               <span class="featureDesc">__MSG_option_feature_09_body__</span>
@@ -156,24 +182,18 @@
       </section>
 
       <section class="card subtle help">
-        <h2 class="morehint"><a><i class="fa-solid fa-circle-question"></i> __MSG_option_message_11__ <i class="fa-solid fa-chevron-down chev"></i></a></h2>
+        <h2 class="morehint"><a><svg class="icon"><use href="#icon-circle-question"></use></svg> __MSG_option_message_11__ <svg class="icon chev"><use href="#icon-chevron-down"></use></svg></a></h2>
         <div class="close">
           <div class="operation">
             <p>__MSG_option_message_12__</p>
             <p>__MSG_option_message_13__</p>
-            <h3 class="checkitout">__MSG_option_message_14_0__</h3>
-            <p class="checkpoint">__MSG_option_message_14__</p>
-            <p class="checkpoint">__MSG_option_message_15__</p>
-            <p class="checkpoint">__MSG_option_message_16__</p>
           </div>
         </div>
       </section>
 
     </main>
 
-    <footer>(c) <a
-        href="https://engineering.webstudio168.jp/2023/02/multi-domain-switching-and-changeng-extension-the-switcher/"
-        target="_blank"><span class="icon-ew168"></span>engineering.webstudio168.jp</a> All rights reserved. 2021-</footer>
+    <footer>(c) engineering.webstudio168.jp All rights reserved. 2021-</footer>
 
   </div>
 </body>

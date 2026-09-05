@@ -33,7 +33,7 @@
       "message": "ประวัติการอัปเดต"
    },
    "option_message_10": {
-      "message": "โปรดตรวจสอบที่ <a href='https://chrome.google.com/webstore/detail/the-switcher/ibnjhiipcjlebggficnjfanodgpabpcm' target='_blank'>Crome Web Store</a>"
+      "message": "โปรดตรวจสอบที่ Chrome Web Store"
    },
    "option_message_11": {
       "message": "เคล็ดลับ ▼"
@@ -43,18 +43,6 @@
    },
    "option_message_13": {
       "message": "เมื่อคุณเรียกดูหน้าเว็บที่มี URL ที่ตั้งค่าไว้ใน Chrome คลิกที่ <img class='icon' src='./image/icon16.png'> ในแท็บส่วนขยายเพื่อแสดงลิงก์สำหรับสลับ"
-   },
-   "option_message_14": {
-      "message": "(1) หากมีการตั้งค่ารากเอกสารเพียง <span style='color: red'>2 รากเท่านั้น จะเปิดแท็บใหม่โดยตรง</span>"
-   },
-   "option_message_14_0": {
-      "message": "3 คุณสมบัติสำคัญที่แตกต่าง"
-   },
-   "option_message_15": {
-      "message": "(2) <span style='color:red;'>คลิกขวาภายในหน้าเพจเพื่อแสดงเมนูบริบท</span>"
-   },
-   "option_message_16": {
-      "message": "(3) กด <span class='code'>ctrl</span> + <span class='code'>Shift</span> + <span class='code'>Up</span> (ลูกศรขึ้น) เพื่อ<span style='color: red;'>เริ่มด้วยทางลัด</span>! กด <span class='code'>Enter</span> เมื่อ URL อยู่ในโฟกัสเพื่อสลับ มีประโยชน์แบบไม่ฉูดฉาด เลือกได้ด้วย <span class='code'>Up</span>, <span class='code'>Down</span>"
    },
    "option_message_17": {
       "message": "เปิดในแท็บเดียวกัน (ถ้ามี 2 URL จะสลับทันทีเมื่อคลิก / OFF เปิดแท็บใหม่)"
@@ -220,5 +208,26 @@
    },
    "option_feature_09_body": {
       "message": "ตั้งชื่อที่แสดงผลให้แต่ละ URL เช่น \"prod env\" ในหน้าตัวเลือก แล้วป๊อปอัปจะแสดงชื่อนั้นแทน URL จริงได้ สลับระหว่างมุมมองป้ายกำกับกับ URL ได้ทุกเมื่อด้วยปุ่มด้านล่างของป๊อปอัป"
+   },
+   "popup_drag_reorder": {
+      "message": "ลากเพื่อจัดเรียงลำดับ"
+   },
+   "popup_announce_close": {
+      "message": "ปิด"
+   },
+   "popup_announce_v2_5_0_labels": {
+      "message": "ตอนนี้คุณสามารถตั้งชื่อป้ายกำกับให้ URL ได้แล้ว"
+   },
+   "popup_announce_v2_5_0_reorder": {
+      "message": "ตอนนี้คุณสามารถลากและวางเพื่อจัดเรียงลำดับการแสดงผลได้แล้ว"
+   },
+   "popup_open_new_tab": {
+      "message": "เปิดแท็บใหม่"
+   },
+   "popup_open_same_tab": {
+      "message": "เปิดแท็บเดียวกัน"
+   },
+   "option_remove_url_row": {
+      "message": "ลบ document root นี้"
    }
 }

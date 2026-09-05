@@ -33,7 +33,7 @@
       "message": "История обновлений"
    },
    "option_message_10": {
-      "message": "Пожалуйста, проверьте на <a href='https://chrome.google.com/webstore/detail/the-switcher/ibnjhiipcjlebggficnjfanodgpabpcm' target='_blank'>Crome Web Store</a>."
+      "message": "Пожалуйста, проверьте на Chrome Web Store."
    },
    "option_message_11": {
       "message": "Совет ▼"
@@ -43,18 +43,6 @@
    },
    "option_message_13": {
       "message": "При просмотре веб-страницы в Chrome, содержащей настроенный URL, нажмите на <img class='icon' src='./image/icon16.png'> во вкладке расширения, чтобы отобразить ссылку для переключения."
-   },
-   "option_message_14": {
-      "message": "(1) Если установлены только <span style='color: red'>два корневых документа, новая вкладка открывается непосредственно</span>."
-   },
-   "option_message_14_0": {
-      "message": "Три ключевые особенности, которые отличают нас"
-   },
-   "option_message_15": {
-      "message": "(2) <span style='color:red;'>В контекстном меню страницы также отображается при правом клике</span>."
-   },
-   "option_message_16": {
-      "message": "(3) Нажмите <span class='code'>ctrl</span> + <span class='code'>Shift</span> + <span class='code'>Up</span> (стрелка вверх) для <span style='color: red;'>запуска с помощью сочетания клавиш</span>! Нажатие <span class='code'>Enter</span>, когда URL находится в фокусе, произведет переключение. Это удобно и незаметно. Выбор возможен с помощью <span class='code'>Up</span>, <span class='code'>Down</span>."
    },
    "option_message_17": {
       "message": "Открыть в той же вкладке (при 2 URL — мгновенно по клику; OFF — новая вкладка)"
@@ -220,5 +208,26 @@
    },
    "option_feature_09_body": {
       "message": "Задайте для каждого URL отображаемое имя, например «prod env», на странице настроек — и всплывающее окно сможет показывать эту метку вместо самого URL. Переключайтесь между отображением метки и URL в любой момент с помощью кнопок внизу всплывающего окна."
+   },
+   "popup_drag_reorder": {
+      "message": "Перетащите для изменения порядка"
+   },
+   "popup_announce_close": {
+      "message": "Закрыть"
+   },
+   "popup_announce_v2_5_0_labels": {
+      "message": "Теперь вы можете добавлять метки к URL."
+   },
+   "popup_announce_v2_5_0_reorder": {
+      "message": "Теперь порядок отображения можно менять перетаскиванием."
+   },
+   "popup_open_new_tab": {
+      "message": "Открыть в новой вкладке"
+   },
+   "popup_open_same_tab": {
+      "message": "Открыть в той же вкладке"
+   },
+   "option_remove_url_row": {
+      "message": "Удалить этот корневой каталог"
    }
 }

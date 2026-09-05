@@ -51,12 +51,25 @@ function getIsSametabValue(obj) {
 let activeTabURL = '';
 let currentSametab = false;
 let currentDisplayMode = TheSwitcherStore.DISPLAY_MODE_URL;
+// Every per-row "open in the other tab mode" link — kept so their label can
+// be refreshed in one place whenever currentSametab changes (see
+// refreshSameTabLinkLabels, called from the footer quick-toggle handler).
+let sameTabLinkEls = [];
+
+function refreshSameTabLinkLabels() {
+  const newTabText = chrome.i18n.getMessage('popup_open_new_tab') || 'Open new tab';
+  const sameTabText = chrome.i18n.getMessage('popup_open_same_tab') || 'Open same tab';
+  sameTabLinkEls.forEach(function (el) {
+    el.textContent = currentSametab ? newTabText : sameTabText;
+  });
+}
 
 getCurrentTab().then((tab) => {
   try {
     const appContainer = document.querySelector('.appContainer');
     let myOptions;
     let syncEnabled = false;
+    setupAnnouncementBanner();
     Promise.all([TheSwitcherStore.load(), TheSwitcherStore.loadDisplayMode()]).then(function (results) {
       const result = results[0];
       currentDisplayMode = results[1];
@@ -89,7 +102,7 @@ getCurrentTab().then((tab) => {
                 gear.href = 'options.html';
                 gear.target = '_blank';
                 gear.className = 'setting';
-                gear.innerHTML = '<i class="fa-solid fa-gear"></i>';
+                gear.innerHTML = '<svg class="icon"><use href="#icon-gear"></use></svg>';
                 h2.appendChild(gear);
                 appContainer.appendChild(h2);
 
@@ -103,6 +116,12 @@ getCurrentTab().then((tab) => {
                   const div = document.createElement('div');
                   div.className = 'urlBlock';
                   if (isActive) div.classList.add('active');
+
+                  const dragHandle = document.createElement('span');
+                  dragHandle.className = 'urlDragHandle';
+                  dragHandle.title = chrome.i18n.getMessage('popup_drag_reorder') || 'Drag to reorder';
+                  dragHandle.innerHTML = '<svg class="icon"><use href="#icon-grip-vertical"></use></svg>';
+                  div.appendChild(dragHandle);
 
                   const urlColor = (proj.colors && proj.colors[j]) ? proj.colors[j] : '';
                   if (urlColor) {
@@ -126,15 +145,21 @@ getCurrentTab().then((tab) => {
                   }
                   if (isActive) mainLink.setAttribute('autofocus', '');
 
-                  const icon = document.createElement('i');
-                  icon.className = 'fa-solid fa-up-right-from-square';
+                  const icon = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+                  icon.setAttribute('class', 'icon');
+                  const iconUse = document.createElementNS('http://www.w3.org/2000/svg', 'use');
+                  iconUse.setAttribute('href', '#icon-up-right-from-square');
+                  icon.appendChild(iconUse);
 
                   const sameTabLink = document.createElement('a');
-                  sameTabLink.textContent = '>>SameTab';
                   sameTabLink.id = `openInSameTab_${urlsize}`;
                   sameTabLink.setAttribute('tabindex', tabindex);
                   sameTabLink.href = newURL;
                   sameTabLink.target = '_blank';
+                  // This button always offers the opposite of the current
+                  // "open in same tab" setting, so mainLink and this button
+                  // together cover both ways to open a URL.
+                  sameTabLinkEls.push(sameTabLink);
 
                   const copyBtn = document.createElement('button');
                   copyBtn.type = 'button';
@@ -142,13 +167,15 @@ getCurrentTab().then((tab) => {
                   copyBtn.setAttribute('tabindex', tabindex);
                   copyBtn.title = chrome.i18n.getMessage('popup_copy') || 'Copy URL';
                   copyBtn.setAttribute('aria-label', copyBtn.title);
-                  copyBtn.innerHTML = '<i class="fa-solid fa-copy"></i>';
+                  copyBtn.innerHTML = '<svg class="icon"><use href="#icon-copy"></use></svg>';
 
+                  div.dataset.origIndex = j;
                   div.appendChild(mainLink);
                   div.appendChild(icon);
                   div.appendChild(copyBtn);
                   div.appendChild(sameTabLink);
                   appContainer.appendChild(div);
+                  setupPopupUrlRowDragReorder(div, proj, myOptions, syncEnabled);
 
                   const capturedURL = newURL;
                   mainLink.addEventListener('click', function (event) {
@@ -168,9 +195,17 @@ getCurrentTab().then((tab) => {
                   });
                   sameTabLink.addEventListener('click', function (event) {
                     event.preventDefault();
-                    chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
-                      chrome.tabs.update(tabs[0].id, { url: capturedURL });
-                    });
+                    if (currentSametab) {
+                      // Current setting is "same tab" -> this button offers "new tab".
+                      chrome.tabs.query({ currentWindow: true, active: true }, function (tabs) {
+                        chrome.tabs.create({ url: capturedURL, index: tabs[0].index + 1 });
+                      });
+                    } else {
+                      // Current setting is "new tab" -> this button offers "same tab".
+                      chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
+                        chrome.tabs.update(tabs[0].id, { url: capturedURL });
+                      });
+                    }
                     window.close();
                   });
                   urlsize++;
@@ -202,6 +237,7 @@ getCurrentTab().then((tab) => {
 
       // 3+ roots (or single/no match): keep the popup open and set up the quick toggle.
       const hasSwitchTargets = isSafeUrl(targetURL);
+      refreshSameTabLinkLabels();
       setupSametabQuickToggle(myOptions, isSametab, syncEnabled, hasSwitchTargets);
       setupDisplayModeToggle(hasSwitchTargets);
 
@@ -210,7 +246,7 @@ getCurrentTab().then((tab) => {
       if (urlsize >= 3 && !hasCustomColor) {
         const hint = document.createElement('div');
         hint.className = 'urlBlock colorHint';
-        hint.innerHTML = '<i class="fa-solid fa-palette"></i> ' + htmlDecode(chrome.i18n.getMessage('popup_color_hint'));
+        hint.innerHTML = '<svg class="icon"><use href="#icon-palette"></use></svg> ' + htmlDecode(chrome.i18n.getMessage('popup_color_hint'));
         appContainer.appendChild(hint);
       }
     });
@@ -250,6 +286,115 @@ function setupDisplayModeToggle(visible) {
   });
 }
 
+// ── DRAG-TO-REORDER URL ROWS (popup) ─────────────────────
+// Same live-reorder-during-dragover approach as the options page (see
+// js/options.js) rather than computing the drop position once at drop
+// time, which is prone to boundary-condition drift.
+let popupUrlRowDragSrcEl = null;
+function setupPopupUrlRowDragReorder(row, proj, myOptions, syncEnabled) {
+  const handle = row.querySelector('.urlDragHandle');
+  if (!handle) return;
+
+  handle.addEventListener('mousedown', function () {
+    row.draggable = true;
+  });
+  row.addEventListener('mouseup', function () {
+    row.draggable = false;
+  });
+
+  row.addEventListener('dragstart', function (e) {
+    popupUrlRowDragSrcEl = row;
+    row.classList.add('dragging');
+    e.dataTransfer.effectAllowed = 'move';
+    try { e.dataTransfer.setData('text/plain', ''); } catch (err) { /* some browsers require this */ }
+  });
+  row.addEventListener('dragend', function () {
+    row.classList.remove('dragging');
+    row.draggable = false;
+    const parent = row.parentElement;
+    popupUrlRowDragSrcEl = null;
+    if (!parent) return;
+
+    // Rebuild proj.url/colors/labels from the current DOM order. Rows that
+    // weren't rendered (e.g. filtered out as unsafe) keep their original
+    // relative order, appended after the rows that were visible.
+    const visibleRows = Array.from(parent.querySelectorAll('.urlBlock[data-orig-index]'));
+    const usedIdx = new Set();
+    const newUrl = [];
+    const newColors = [];
+    const newLabels = [];
+    visibleRows.forEach(function (r) {
+      const idx = r.dataset.origIndex;
+      usedIdx.add(idx);
+      newUrl.push(proj.url[idx]);
+      newColors.push((proj.colors && proj.colors[idx]) ? proj.colors[idx] : '#808080');
+      newLabels.push((proj.labels && proj.labels[idx]) ? proj.labels[idx] : '');
+    });
+    for (const idx in proj.url) {
+      if (!usedIdx.has(idx)) {
+        newUrl.push(proj.url[idx]);
+        newColors.push((proj.colors && proj.colors[idx]) ? proj.colors[idx] : '#808080');
+        newLabels.push((proj.labels && proj.labels[idx]) ? proj.labels[idx] : '');
+      }
+    }
+    proj.url = newUrl;
+    proj.colors = newColors;
+    proj.labels = newLabels;
+
+    TheSwitcherStore.save(myOptions, syncEnabled).catch(function (err) { console.log(err); });
+  });
+  row.addEventListener('dragover', function (e) {
+    e.preventDefault();
+    if (!popupUrlRowDragSrcEl || popupUrlRowDragSrcEl === row) return;
+    const parent = row.parentElement;
+    if (!parent || popupUrlRowDragSrcEl.parentElement !== parent) return;
+    const rect = row.getBoundingClientRect();
+    const before = (e.clientY - rect.top) < rect.height / 2;
+    const target = before ? row : row.nextElementSibling;
+    if (target === popupUrlRowDragSrcEl) return;
+    if (popupUrlRowDragSrcEl.nextElementSibling === target) return;
+    parent.insertBefore(popupUrlRowDragSrcEl, target);
+  });
+  row.addEventListener('drop', function (e) {
+    e.preventDefault();
+    // Reordering already happened live during dragover; dragend persists it.
+  });
+}
+
+// ── "What's new" popup announcement banner ──────────────
+// A small dismissible banner near the bottom of the popup. Once closed,
+// it never shows again (tracked per announcement ID in local storage).
+const ANNOUNCE_V2_5_0_ID = 'v2_5_0_labels_and_reorder';
+function setupAnnouncementBanner() {
+  const banner = document.getElementById('announceBanner');
+  const list = document.getElementById('announceList');
+  const closeBtn = document.getElementById('announceCloseBtn');
+  if (!banner || !list || !closeBtn) return;
+
+  TheSwitcherStore.isNoteDismissed(ANNOUNCE_V2_5_0_ID).then(function (dismissed) {
+    if (dismissed) return;
+
+    const items = [
+      chrome.i18n.getMessage('popup_announce_v2_5_0_labels'),
+      chrome.i18n.getMessage('popup_announce_v2_5_0_reorder')
+    ];
+    items.forEach(function (text) {
+      if (!text) return;
+      const li = document.createElement('li');
+      li.textContent = text;
+      list.appendChild(li);
+    });
+    if (list.children.length > 0) {
+      banner.style.display = '';
+    }
+  }).catch(function (err) { console.log(err); });
+
+  closeBtn.addEventListener('click', function () {
+    banner.style.display = 'none';
+    TheSwitcherStore.dismissNote(ANNOUNCE_V2_5_0_ID).catch(function (err) { console.log(err); });
+  });
+}
+
 // Wire the footer SameTab quick-toggle: reflect current value, persist on change.
 // Hidden entirely when this page has no environment to switch to.
 function setupSametabQuickToggle(myOptions, isSametab, syncEnabled, visible) {
@@ -265,6 +410,7 @@ function setupSametabQuickToggle(myOptions, isSametab, syncEnabled, visible) {
   toggle.addEventListener('change', function () {
     const next = toggle.checked;
     currentSametab = next;
+    refreshSameTabLinkLabels();
     const updated = (myOptions || []).map(function (item) {
       if (item && typeof item === 'object' && typeof item.sametab === 'boolean') {
         return { sametab: next };
@@ -356,7 +502,7 @@ function flashCopied(btn) {
   const originalHTML = btn.innerHTML;
   const originalTitle = btn.title;
   btn.classList.add('copied');
-  btn.innerHTML = '<i class="fa-solid fa-check"></i>';
+  btn.innerHTML = '<svg class="icon"><use href="#icon-check"></use></svg>';
   btn.title = chrome.i18n.getMessage('popup_copied') || 'Copied!';
   setTimeout(function () {
     btn.classList.remove('copied');

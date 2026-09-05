@@ -33,7 +33,7 @@
       "message": "更新履歴"
    },
    "option_message_10": {
-      "message": "<a href='https://chrome.google.com/webstore/detail/the-switcher/ibnjhiipcjlebggficnjfanodgpabpcm' target='_blank'>Crome Web Store</a>をご確認ください。"
+      "message": "Chrome Web Storeをご確認ください。"
    },
    "option_message_11": {
       "message": "ヒント ▼"
@@ -43,18 +43,6 @@
    },
    "option_message_13": {
       "message": "設定したURLを含むウェブページをChromeで閲覧している時に、拡張機能タブにある<img class='icon' src='./image/icon16.png'>をクリックすることで切り替え用のリンクが表示されます。"
-   },
-   "option_message_14": {
-      "message": "(1) ドキュメントルートが<span style='color: red'>2個のみ設定されている場合は、ダイレクトに別タブが開きます<span>。"
-   },
-   "option_message_14_0": {
-      "message": "アピールポイントココが違う3つの特長"
-   },
-   "option_message_15": {
-      "message": "(2) <span style='color:red;'>ページ内で右クリックでもコンテキストメニューが表示</span>されます。"
-   },
-   "option_message_16": {
-      "message": "(3) )<span class='code'>ctrl</span> + <span class='code'>Shift</span> + <span class='code'>Up</span>（上矢印）で<span style='color: red;'>ショートカット起動できます</span>！URLにフォーカスが当たった状態で<span class='code'>Enter</span>を押すとSwitching...します。地味に便利です。<span class='code'>Up</span>,<span class='code'>Down</span>で選択可能です。"
    },
    "option_message_17": {
       "message": "同じタブで開く（登録URLが2つの時はアイコン押下で即切替／OFFは別タブ）"
@@ -220,5 +208,26 @@
    },
    "option_feature_09_body": {
       "message": "オプションページで各 URL に「prod env」のような表示名を設定すると、ポップアップで URL の代わりにそのラベルを表示できます。ラベル表示 / URL表示はポップアップ下部のボタンでいつでも切り替え可能です。"
+   },
+   "popup_drag_reorder": {
+      "message": "ドラッグして並べ替え"
+   },
+   "popup_announce_close": {
+      "message": "閉じる"
+   },
+   "popup_announce_v2_5_0_labels": {
+      "message": "ラベル機能が利用できるようになりました。"
+   },
+   "popup_announce_v2_5_0_reorder": {
+      "message": "表示順序をドラッグ＆ドロップで並べ替えられるようになりました。"
+   },
+   "popup_open_new_tab": {
+      "message": "別タブで開く"
+   },
+   "popup_open_same_tab": {
+      "message": "同じタブで開く"
+   },
+   "option_remove_url_row": {
+      "message": "このドキュメントルートを削除"
    }
 }
