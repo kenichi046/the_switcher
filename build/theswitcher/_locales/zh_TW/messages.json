@@ -1,0 +1,233 @@
+{
+   "Description": {
+      "message": "將當前打開的網頁URL部分替換並在新標籤頁中打開。可用於切換域名或測試環境等。"
+   },
+   "Name": {
+      "message": "The Switcher[域名切換]"
+   },
+   "option_message_01": {
+      "message": "※自ver.1.20起，數據的存儲位置已更改。對於使用較早版本的用戶，請重新設置。"
+   },
+   "option_message_02": {
+      "message": "此外，舊數據在選項頁面首次顯示時將被刪除。"
+   },
+   "option_message_03": {
+      "message": "這是一個將當前打開的網頁URL部分替換並在新標籤頁中打開的擴展功能。可用於切換域名或測試環境等。"
+   },
+   "option_message_04": {
+      "message": "添加項目"
+   },
+   "option_message_05": {
+      "message": "更新"
+   },
+   "option_message_06": {
+      "message": "保存"
+   },
+   "option_message_07": {
+      "message": "刪除項目"
+   },
+   "option_message_08": {
+      "message": "添加文檔根目錄"
+   },
+   "option_message_09": {
+      "message": "更新歷史"
+   },
+   "option_message_10": {
+      "message": "查看Chrome Web Store。"
+   },
+   "option_message_11": {
+      "message": "提示 ▼"
+   },
+   "option_message_12": {
+      "message": "如上示例，設置“生產環境”、“暫存環境”、“本地環境”等域名路徑。"
+   },
+   "option_message_13": {
+      "message": "在Chrome中查看包含設置的URL的網頁時，點擊擴展標籤中的<img class='icon' src='./image/icon16.png'>，切換鏈接將顯示。"
+   },
+   "option_message_17": {
+      "message": "在同一標籤頁中打開（僅2個URL時點擊即切換；關閉則用新標籤頁）"
+   },
+   "popup_message_01": {
+      "message": "此URL不在範圍內。請在<a href='options.html' target='_blank'>選項頁面</a>中添加項目或URL。"
+   },
+   "popup_message_02": {
+      "message": "※自ver.1.20起，數據的存儲位置已更改。請重新設置。"
+   },
+   "option_data_tools_title": {
+      "message": "設定共享與同步"
+   },
+   "option_export": {
+      "message": "匯出"
+   },
+   "option_import": {
+      "message": "匯入"
+   },
+   "option_import_confirm": {
+      "message": "將覆蓋目前設定，是否繼續？"
+   },
+   "option_import_invalid": {
+      "message": "設定檔案格式不正確。"
+   },
+   "option_import_done": {
+      "message": "設定已載入。"
+   },
+   "option_save_error": {
+      "message": "設定儲存失敗。"
+   },
+   "option_sync_error": {
+      "message": "無法同步設定，可能超出了同步大小限制。"
+   },
+   "option_export_unsaved": {
+      "message": "有未儲存的變更。是否匯出最後一次儲存的設定？（未儲存的編輯不包含在內）"
+   },
+   "popup_copy": {
+      "message": "複製URL"
+   },
+   "popup_copied": {
+      "message": "已複製"
+   },
+   "omnibox_hint": {
+      "message": "切換此頁面的環境"
+   },
+   "omnibox_filter": {
+      "message": "輸入以篩選，或從下方候選中選擇"
+   },
+   "omnibox_nomatch": {
+      "message": "此頁面沒有符合的環境"
+   },
+   "option_restore": {
+      "message": "從備份還原"
+   },
+   "option_restore_confirm": {
+      "message": "從備份還原設定，目前設定將被覆蓋。是否繼續？"
+   },
+   "option_restore_done": {
+      "message": "已從備份還原。"
+   },
+   "option_restore_none": {
+      "message": "尚無備份。"
+   },
+   "option_empty_save_confirm": {
+      "message": "專案數為0。儲存後將以空資料覆蓋設定，是否繼續？"
+   },
+   "option_export_copy": {
+      "message": "複製匯出內容"
+   },
+   "option_export_copied": {
+      "message": "已複製"
+   },
+   "option_export_copy_failed": {
+      "message": "複製到剪貼簿失敗。"
+   },
+   "popup_sametab_quick": {
+      "message": "在同一分頁中開啟"
+   },
+   "option_filter_placeholder": {
+      "message": "依專案名稱或URL篩選..."
+   },
+   "option_eyebrow": {
+      "message": "選項"
+   },
+   "option_section_behavior": {
+      "message": "行為設定"
+   },
+   "option_section_projects": {
+      "message": "專案"
+   },
+   "option_sync_label": {
+      "message": "在多台裝置間同步設定"
+   },
+   "option_sync_description": {
+      "message": "設定將在登入相同Google帳號的所有裝置之間同步。"
+   },
+   "option_features_title": {
+      "message": "9 大實用功能！"
+   },
+   "option_feature_01_label": {
+      "message": "從網址列直接啟動"
+   },
+   "option_feature_01_body": {
+      "message": "在網址列輸入「sw」並按空白鍵，即可顯示目前頁面的切換目標。還可輸入關鍵字進一步篩選。"
+   },
+   "option_feature_02_label": {
+      "message": "拖曳排序"
+   },
+   "option_feature_02_body": {
+      "message": "拖曳專案卡片，依喜好調整順序。將常用專案置頂，操作更順暢。"
+   },
+   "option_feature_03_label": {
+      "message": "即時專案搜尋"
+   },
+   "option_feature_03_body": {
+      "message": "透過專案名稱或URL關鍵字即時篩選清單，專案再多也能快速找到目標。"
+   },
+   "option_feature_04_label": {
+      "message": "一鍵複製URL"
+   },
+   "option_feature_04_body": {
+      "message": "彈出視窗的每個URL列都有複製按鈕，點擊即可將目標URL複製至剪貼簿。"
+   },
+   "option_feature_05_label": {
+      "message": "匯出 / 匯入設定"
+   },
+   "option_feature_05_body": {
+      "message": "將設定匯出為JSON檔案，或從檔案匯入。方便與團隊共享或在換電腦時快速還原。"
+   },
+   "option_feature_06_label": {
+      "message": "跨裝置自動同步"
+   },
+   "option_feature_06_body": {
+      "message": "透過Google帳號自動同步設定，登入相同帳號的任何Chrome裝置都能立即使用相同設定。"
+   },
+   "option_feature_07_label": {
+      "message": "從彈出視窗切換分頁模式"
+   },
+   "option_feature_07_body": {
+      "message": "直接在彈出視窗底部切換「同分頁 / 新分頁」，不需開啟選項頁面。"
+   },
+   "option_feature_08_label": {
+      "message": "為環境URL新增顏色標籤"
+   },
+   "option_feature_08_body": {
+      "message": "在選項頁面為每個URL設定顏色後，彈出視窗中該URL前方會顯示彩色圓點。一眼即可區分dev / stg / prod等不同環境。"
+   },
+   "popup_color_hint": {
+      "message": "不容易區分？您可以在選項頁面為每個專案設定顏色。"
+   },
+   "popup_display_mode": {
+      "message": "顯示模式"
+   },
+   "popup_display_mode_url": {
+      "message": "URL"
+   },
+   "popup_display_mode_label": {
+      "message": "標籤"
+   },
+   "option_feature_09_label": {
+      "message": "為網址設定標籤"
+   },
+   "option_feature_09_body": {
+      "message": "在選項頁面為每個網址設定顯示名稱，例如「prod env」，彈出視窗即可顯示該標籤而非原始網址。可隨時透過彈出視窗底部的按鈕在標籤檢視和網址檢視之間切換。"
+   },
+   "popup_drag_reorder": {
+      "message": "拖曳以重新排序"
+   },
+   "popup_announce_close": {
+      "message": "關閉"
+   },
+   "popup_announce_v2_5_0_labels": {
+      "message": "現在可以為網址設定標籤了。"
+   },
+   "popup_announce_v2_5_0_reorder": {
+      "message": "現在可以透過拖放調整顯示順序了。"
+   },
+   "popup_open_new_tab": {
+      "message": "在新標籤頁中開啟"
+   },
+   "popup_open_same_tab": {
+      "message": "在同一標籤頁中開啟"
+   },
+   "option_remove_url_row": {
+      "message": "刪除此文件根目錄"
+   }
+}

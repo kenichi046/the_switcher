@@ -1,0 +1,233 @@
+{
+   "Description": {
+      "message": "Ouvre dans un nouvel onglet l'URL de la page Web actuellement ouverte après en avoir partiellement substitué. Utilisez-le pour changer de domaine ou basculer vers un environnement de test."
+   },
+   "Name": {
+      "message": "The Switcher[Changement de Domaine]"
+   },
+   "option_message_01": {
+      "message": "※Depuis la version 1.20, l'emplacement de sauvegarde des données a été modifié. Veuillez reconfigurer si vous utilisiez une version antérieure."
+   },
+   "option_message_02": {
+      "message": "De plus, les anciennes données seront supprimées lors de la première affichage de l'écran des options."
+   },
+   "option_message_03": {
+      "message": "C'est une extension qui ouvre dans un nouvel onglet l'URL de la page Web actuellement ouverte après en avoir partiellement substitué. Utilisez-le pour changer de domaine ou basculer vers un environnement de test."
+   },
+   "option_message_04": {
+      "message": "Ajouter un projet"
+   },
+   "option_message_05": {
+      "message": "Mettre à jour"
+   },
+   "option_message_06": {
+      "message": "Sauvegarder"
+   },
+   "option_message_07": {
+      "message": "Supprimer un projet"
+   },
+   "option_message_08": {
+      "message": "Ajouter une racine de document"
+   },
+   "option_message_09": {
+      "message": "Historique des mises à jour"
+   },
+   "option_message_10": {
+      "message": "Veuillez vérifier sur le Chrome Web Store."
+   },
+   "option_message_11": {
+      "message": "Astuce ▼"
+   },
+   "option_message_12": {
+      "message": "Comme dans l'exemple ci-dessus, configurez les racines de domaine telles que 'environnement de production', 'environnement de staging', 'environnement local'."
+   },
+   "option_message_13": {
+      "message": "Lorsque vous naviguez sur une page Web contenant l'URL configurée dans Chrome, cliquez sur <img class='icon' src='./image/icon16.png'> dans l'onglet de l'extension pour afficher le lien de basculement."
+   },
+   "option_message_17": {
+      "message": "Ouvrir dans le même onglet (avec 2 URL, bascule instantanée au clic ; OFF = nouvel onglet)"
+   },
+   "popup_message_01": {
+      "message": "Cette URL n'est pas concernée. Veuillez ajouter un projet ou une URL sur la <a href='options.html' target='_blank'>page des options</a>."
+   },
+   "popup_message_02": {
+      "message": "※Depuis la version 1.20, l'emplacement de sauvegarde des données a été modifié. Veuillez reconfigurer."
+   },
+   "option_data_tools_title": {
+      "message": "Partage et synchronisation des paramètres"
+   },
+   "option_export": {
+      "message": "Exporter"
+   },
+   "option_import": {
+      "message": "Importer"
+   },
+   "option_import_confirm": {
+      "message": "Cela va écraser vos paramètres actuels. Continuer ?"
+   },
+   "option_import_invalid": {
+      "message": "Format de fichier de configuration invalide."
+   },
+   "option_import_done": {
+      "message": "Paramètres importés."
+   },
+   "option_save_error": {
+      "message": "Échec de la sauvegarde des paramètres."
+   },
+   "option_sync_error": {
+      "message": "Impossible de synchroniser les paramètres. Ils dépassent peut-être la limite de taille de synchronisation."
+   },
+   "option_export_unsaved": {
+      "message": "Des modifications non sauvegardées existent. Exporter les derniers paramètres sauvegardés ? (Les modifications non sauvegardées ne seront pas incluses.)"
+   },
+   "popup_copy": {
+      "message": "Copier l'URL"
+   },
+   "popup_copied": {
+      "message": "Copié !"
+   },
+   "omnibox_hint": {
+      "message": "Basculer l'environnement de cette page"
+   },
+   "omnibox_filter": {
+      "message": "Saisir pour filtrer, ou choisir un environnement ci-dessous"
+   },
+   "omnibox_nomatch": {
+      "message": "Aucun environnement correspondant pour cette page"
+   },
+   "option_restore": {
+      "message": "Restaurer depuis la sauvegarde"
+   },
+   "option_restore_confirm": {
+      "message": "Restaurer les paramètres depuis la sauvegarde ? Vos paramètres actuels seront écrasés."
+   },
+   "option_restore_done": {
+      "message": "Paramètres restaurés depuis la sauvegarde."
+   },
+   "option_restore_none": {
+      "message": "Aucune sauvegarde disponible pour l'instant."
+   },
+   "option_empty_save_confirm": {
+      "message": "Il n'y a aucun projet. Sauvegarder maintenant écrasera vos paramètres avec des données vides. Continuer ?"
+   },
+   "option_export_copy": {
+      "message": "Copier l'export dans le presse-papier"
+   },
+   "option_export_copied": {
+      "message": "Copié !"
+   },
+   "option_export_copy_failed": {
+      "message": "Échec de la copie dans le presse-papier."
+   },
+   "popup_sametab_quick": {
+      "message": "Ouvrir dans le même onglet"
+   },
+   "option_filter_placeholder": {
+      "message": "Filtrer par nom de projet ou URL..."
+   },
+   "option_eyebrow": {
+      "message": "Options"
+   },
+   "option_section_behavior": {
+      "message": "Comportement"
+   },
+   "option_section_projects": {
+      "message": "Projets"
+   },
+   "option_sync_label": {
+      "message": "Synchroniser les paramètres entre les appareils"
+   },
+   "option_sync_description": {
+      "message": "Les paramètres sont synchronisés sur tous les appareils connectés au même compte Google."
+   },
+   "option_features_title": {
+      "message": "9 fonctionnalités pratiques !"
+   },
+   "option_feature_01_label": {
+      "message": "Lancement depuis la barre d'adresse"
+   },
+   "option_feature_01_body": {
+      "message": "Tapez « sw » dans la barre d'adresse et appuyez sur Espace pour afficher les cibles de la page courante. Affinez avec un mot-clé."
+   },
+   "option_feature_02_label": {
+      "message": "Réorganiser par glisser-déposer"
+   },
+   "option_feature_02_body": {
+      "message": "Faites glisser une carte de projet pour la repositionner. Mettez vos projets les plus utilisés en tête de liste."
+   },
+   "option_feature_03_label": {
+      "message": "Recherche en temps réel"
+   },
+   "option_feature_03_body": {
+      "message": "Filtrez la liste de projets par nom ou URL au fil de la saisie. Reste rapide quelle que soit la quantité de projets."
+   },
+   "option_feature_04_label": {
+      "message": "Copie d'URL en un clic"
+   },
+   "option_feature_04_body": {
+      "message": "Chaque ligne d'URL dans le popup dispose d'un bouton de copie pour obtenir instantanément l'URL cible dans le presse-papier."
+   },
+   "option_feature_05_label": {
+      "message": "Exporter / Importer les paramètres"
+   },
+   "option_feature_05_body": {
+      "message": "Sauvegardez vos paramètres en JSON ou partagez-les avec votre équipe. Réimportez en quelques secondes sur une nouvelle machine."
+   },
+   "option_feature_06_label": {
+      "message": "Synchronisation automatique entre appareils"
+   },
+   "option_feature_06_body": {
+      "message": "Les paramètres se synchronisent via votre compte Google. La même configuration est disponible sur chaque appareil Chrome connecté."
+   },
+   "option_feature_07_label": {
+      "message": "Basculer le mode d'onglet depuis le popup"
+   },
+   "option_feature_07_body": {
+      "message": "Changez entre « même onglet » et « nouvel onglet » directement depuis le bas du popup, sans ouvrir les options."
+   },
+   "option_feature_08_label": {
+      "message": "Colorier chaque URL d'environnement"
+   },
+   "option_feature_08_body": {
+      "message": "Attribuez une couleur à chaque URL dans les options — un point coloré apparaît devant l'URL dans le popup. Distinguez dev, staging et production d'un coup d'œil."
+   },
+   "popup_color_hint": {
+      "message": "Difficile à distinguer ? Vous pouvez définir une couleur pour chaque projet dans la page des options."
+   },
+   "popup_display_mode": {
+      "message": "Mode d'affichage"
+   },
+   "popup_display_mode_url": {
+      "message": "URL"
+   },
+   "popup_display_mode_label": {
+      "message": "Étiquette"
+   },
+   "option_feature_09_label": {
+      "message": "Étiquetez vos URL"
+   },
+   "option_feature_09_body": {
+      "message": "Donnez à chaque URL un nom d'affichage comme « prod env » dans la page des options, et la popup pourra afficher cette étiquette au lieu de l'URL brute. Basculez à tout moment entre l'affichage par étiquette et par URL grâce aux boutons en bas de la popup."
+   },
+   "popup_drag_reorder": {
+      "message": "Glisser pour réorganiser"
+   },
+   "popup_announce_close": {
+      "message": "Fermer"
+   },
+   "popup_announce_v2_5_0_labels": {
+      "message": "Vous pouvez désormais étiqueter vos URL."
+   },
+   "popup_announce_v2_5_0_reorder": {
+      "message": "Vous pouvez désormais réorganiser l'ordre d'affichage par glisser-déposer."
+   },
+   "popup_open_new_tab": {
+      "message": "Ouvrir un nouvel onglet"
+   },
+   "popup_open_same_tab": {
+      "message": "Ouvrir le même onglet"
+   },
+   "option_remove_url_row": {
+      "message": "Supprimer cette racine de document"
+   }
+}
